@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'MainWelderRU',
+      name: 'MainWelder',
       port: '3001',
       exec_mode: 'cluster',
       instances: 'max',
