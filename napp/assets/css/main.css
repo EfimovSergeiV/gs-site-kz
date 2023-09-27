@@ -1,0 +1,193 @@
+@font-face {
+  font-family: 'Play-Regular';
+  src: url('./fonts/Play/Play-Regular.ttf') format('woff2');
+}
+
+/* @font-face {
+  font-family: 'Ruslan-Display';
+  src: url('./fonts/Ruslan-Display/RuslanDisplay-Regular.ttf') format('woff2');
+} */
+
+::selection {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s;
+}
+.fade-enter-from, 
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Появление фильтров товаров слева */
+.filter-enter-active {
+  transition: all 0.3s ease-out;
+}
+.filter-leave-active {
+  transition: all 0.2s ease-out;
+}
+.filter-enter-from,
+.filter-leave-to {
+  transform: translateX(-12em);
+  opacity: 0;
+}
+
+
+
+/* .absolute-left-emergence-enter,
+.absolute-left-emergence-leave-to {
+  opacity: 0;
+  position: absolute;
+  transform: translateX(-15em);
+}
+.absolute-left-emergence-enter-active,
+.absolute-left-emergence-leave-active {
+  transition: all 0.3s ease;
+} */
+
+/* Исчезновение влево и стили корзины !!!НЕРАБОЧИЙ СТАРТ */
+.left-emergence-enter,
+.left-emergence-leave-to {
+  opacity: 0;
+  transform: translateX(-12em);
+}
+.left-emergence-enter-active,
+.left-emergence-leave-active {
+  transition: all 0.3s ease;
+}
+
+
+/* Исчезновение уведомлений*/
+.right-emergence-enter-active {
+  transition: all 0.3s ease-out;
+}
+.right-emergence-leave-active {
+  transition: all 0.2s ease-out;
+}
+.right-emergence-enter-from,
+.right-emergence-leave-to {
+  transform: translateX(12em);
+  opacity: 0;
+}
+
+
+
+/* body {
+  font-family: Play, Helvetica, Arial, sans-serif;
+} */
+
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: #202020;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #f8dc08;
+  border-radius: 6px;
+  box-shadow: inset 1px 1px 10px #f8dc08;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #f8dc08;
+}
+
+blockquote {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+dl {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+dd {
+  display: block;
+  margin-left: 40px;
+}
+
+h1 {
+	display: block;
+  font-size: 1.5em;
+  /* font-weight: bold; */
+}
+
+h2 {
+	display: block;
+  font-size: 1.4em;
+  /* font-weight: bold; */
+}
+
+h3 {
+	display: block;
+  font-size: 1.17em;
+  /* font-weight: bold; */
+}
+
+h4 {
+	display: block;
+  /* font-weight: bold; */
+}
+
+h5 {
+	display: block;
+  font-size: .83em;
+  /* font-weight: bold; */
+}
+
+h6 {
+  display: block;
+  font-size: .67em;
+  /* font-weight: bold; */
+}
+
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+
+figure {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+pre {
+  margin: 0;
+}
+
+.background-animate {
+    background-size: 400%;
+
+    -webkit-animation: AnimationName 10s ease infinite;
+    -moz-animation: AnimationName 10s ease infinite;
+    animation: AnimationName 10s ease infinite;
+  }
+
+  @keyframes AnimationName {
+    
+    0%, 100% {
+      background-position: 0% 100%;
+    }
+    70% {
+      background-position: 100% 0%;
+    }
+  }

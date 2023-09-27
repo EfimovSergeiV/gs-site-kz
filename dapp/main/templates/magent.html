@@ -1,0 +1,18 @@
+<pre>
+Заказ {{ order_number }}
+Магазин: {{ adress }}
+Клиент: {{ person }}
+Контакты: 
+          тел. {{ phone}} 
+          email: {{ email}}
+Итог заказа: {{ total }}RUB
+Доставка: {{ delivery }}
+Адрес: {{ delivery_adress }}
+Комментарий: {{ comment }}
+</pre>
+{% for product in client_product %}
+id: {{ product.product_id }}    vcode: {{ product.vcode }}
+<a href="https://glsvar.ru/product/{{ product.product_id }}">{{ product.name }}</a>
+Кол-во: {{ product.quantity }} 
+Стоимость (шт.): {{ product.price }} RUB
+{% endfor %}
