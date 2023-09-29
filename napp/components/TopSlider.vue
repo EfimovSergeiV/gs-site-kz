@@ -42,7 +42,6 @@
             height="320px"
             class="rounded-md border dark:border-gray-700"
             :alt="slide.name"
-            onerror="this.src='./noimage-960-540.jpg'"
           />
 
           <nuxt-link v-if="slide.path" :to="slide.path">  
