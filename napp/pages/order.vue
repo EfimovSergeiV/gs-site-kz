@@ -56,7 +56,7 @@
             <div class="grid grid-cols-1 gap-2 py-4">
 
               <div v-for="product in orderinfo.client_product" :key="product.id" class="bg-white dark:bg-gray-700 px-2 py-2 border border-gray-200 dark:border-gray-700 rounded-md flex items-center gap-6">
-                <img :src="product.preview_image" class="h-14 rounded-md" />
+                <img :src="product.preview_image" class="h-14 rounded-md bg-white px-2" />
                 <p class="text-sm">{{ product.vcode }}</p>
                 <nuxt-link :to="{ name: 'product-id', params: { id: product.product_id } }">{{ product.name }}</nuxt-link>
                 <p>{{ product.price }} x {{ product.quantity }}</p>
