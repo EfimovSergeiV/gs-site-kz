@@ -38,5 +38,6 @@
     <Recommend :recommends="recommends" />
     <ShopMaps />    
     <CorouselBrands />
+    <AppFooter />
   </div>
 </template>

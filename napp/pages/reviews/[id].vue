@@ -111,5 +111,7 @@
 
     </div>
 
+    <AppFooter />
+
   </div>
 </template>

@@ -21,7 +21,7 @@
     "Петрозаводск" : "https://yandex.ru/map-widget/v1/?um=constructor%3A7a6886838355b4c4aab4597dd2ee3dcd40eb7c6cd2bab5638666af5f1606c267&amp;source=constructor",
   }
 
-  const descriptionData = 'С 2009 года Главный сварщик – ваш надежный партнер в мире сварочного оборудования! Наши магазины – это место, где профессионалы и энтузиасты приходят за лучшими решениями для сварочных работ. Сварка - это искусство, и мы знаем, как сделать его доступным и эффективным для каждого.'
+  const descriptionData = 'С 2009 года Главный сварщик – ваш надежный партнер в мире сварочного оборудования! '
 
   useSeoMeta({
     title: `Сеть магазинов Главный Сварщик - О нас - Адреса магазинов`,
@@ -43,7 +43,7 @@
 
     <div class="container mx-auto px-4 max-w-6xl lg:px-8 min-h-[40rem]">
 
-      <div class="bg-white dark:bg-gray-800 rounded-md border border-white/20 mt-2 mb-4">
+      <div class="bg-white dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-700 mt-2 mb-4">
         <div class="">
           <img src="/bnr/banner_image-1.webp" class=" rounded-t-md" />
         </div>
@@ -107,12 +107,37 @@
               </div>              
             </div>
 
-
-
           </div>
 
+        </div>
+      </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+
+
+      <div class="bg-white dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-700 py-4 px-4 my-4">
+        
+        <div class="py-4">
+
+          <div class="">
+            <div class="py-4">
+
+              <div class="py-1">
+                <p class="text-lg">{{ descriptionData }}</p>  
+              </div>
+              <div class="py-1 max-w-3xl">
+                <p class="text-sm">
+                  Наши магазины – это место, где профессионалы и энтузиасты приходят за лучшими решениями для сварочных работ. Сварка - это искусство, и мы знаем, как сделать его доступным и эффективным для каждого.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="flex items-center py-4">
               <div class="">
                 <p class="text-2xl text-center">Сертификаты</p>
@@ -138,58 +163,22 @@
           </div>
 
 
-          <div class="py-4">
 
-            <div class="grid grid-cols-2 gap-4">
-              <div class="grid grid-cols-1 content-between gap-4">
-
-                <div class="grid grid-cols-3 gap-2">
-                  <button class="bg-white dark:bg-gray-700 rounded-md shadow-md shadow-black/50 flex items-center justify-center border border-gray-200 dark:border-gray-600 py-2">
-                    <p class="">Москва</p>
-                  </button>
-                  <button class="bg-white dark:bg-gray-700 rounded-md shadow-md shadow-black/50 flex items-center justify-center border border-gray-200 dark:border-gray-600 py-2">
-                    <p class="">Санкт-Петербург</p>
-                  </button>
-                  <button class="bg-white dark:bg-gray-700 rounded-md shadow-md shadow-black/50 flex items-center justify-center border border-gray-200 dark:border-gray-600 py-2">
-                    <p class="">Псков</p>
-                  </button>
-                  <button class="bg-white dark:bg-gray-700 rounded-md shadow-md shadow-black/50 flex items-center justify-center border border-gray-200 dark:border-gray-600 py-2">
-                    <p class="">Смоленск</p>
-                  </button>
-                  <button class="bg-white dark:bg-gray-700 rounded-md shadow-md shadow-black/50 flex items-center justify-center border border-gray-200 dark:border-gray-600 py-2">
-                    <p class="">Петрозаводск</p>
-                  </button>
-                  <button class="bg-white dark:bg-gray-700 rounded-md shadow-md shadow-black/50 flex items-center justify-center border border-gray-200 dark:border-gray-600 py-2">
-                    <p class="">Великие Луки</p>
-                  </button>
-                </div>
-
-                <div class="bg-white dark:bg-gray-700 rounded-md shadow-md shadow-black/50 flex items-center justify-center border border-gray-200 dark:border-gray-600 py-2 px-2">
-                  <p class="text-sm text-center">{{ descriptionData }}</p>  
-                </div>
-
-              </div>
-              <!-- <div class="">
-                <iframe :src="mapURLs[clientStore.client.city]" width="100%" height="260" frameborder="0" loading="lazy" class="rounded-md shadow-md shadow-black/50"></iframe>
-              </div> -->
-
-            </div>
-          </div>
 
           <!-- <p class="text-xs">{{ clientStore.client.adress }}</p> -->
 
           
-          <div class="bg-white dark:bg-gray-700 rounded-md shadow-md shadow-black/50 flex items-center justify-center border border-gray-200 dark:border-gray-600 py-2 px-4">
+          <!-- <div class="bg-white dark:bg-gray-700 rounded-md shadow-md shadow-black/50 flex items-center justify-center border border-gray-200 dark:border-gray-600 py-2 px-4">
             <p class="text-sm">
               Здесь вы найдете бренды известных производителей, таких как  EWM, ESAB, Fubag, Aurora, Grovers, Cebora и многих других. Поддайтесь очарованию нашего профессионального и широкого ассортимента изделий: от сварочных аппаратов для инверторных, MIG/MAG, TIG или плазменных процессов, до многочисленных дополнительных материалов и до кислородно-топливной технологии. Каждый гарантированно найдет то, что ищет. Главный сварщик предлагает вам сварочную технику как для новичков, так и профессиональное оборудование. Мы также уделяем первостепенное внимание области безопасности труда сварщиков: будь то защита тела, защита ног, защита рук, защита головы, защита глаз и лица, защита рабочего места или защитные шторы для сварки - просто выберите подходящее оборудование для ваших нужд и стань настоящим героем сварки!
             </p>
-          </div>
-
-
-
-        </div>
+          </div> -->
       </div>
 
+
     </div>
+
+    <AppFooter />
+    
   </div>
 </template>

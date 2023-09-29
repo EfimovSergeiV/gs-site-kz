@@ -104,5 +104,8 @@
 
       
     </div>
+
+    <AppFooter />
+  
   </div>
 </template>

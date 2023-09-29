@@ -63,5 +63,7 @@
 
     </div>
 
+    <AppFooter />
+
   </div>
 </template>

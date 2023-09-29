@@ -14,6 +14,6 @@ useHead({
     
     <CartForm :shops="shops" />
 
-
+    <AppFooter />
   </div>
 </template>

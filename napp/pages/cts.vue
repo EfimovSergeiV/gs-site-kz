@@ -15,5 +15,6 @@
     <Categories />
     <Recommend />
     <CorouselBrands />
+    <AppFooter />
   </div>
 </template>
