@@ -64,7 +64,7 @@
       <div class="">
         <div v-if="products.meta.inserted" class="flex items-center justify-end">
           <div id="" class="">
-            <div class="flex flex-wrap gap-2 justify-end max-w-[700px]">
+            <div class="flex flex-wrap gap-2 justify-end">
               <div v-for="inserted in products.meta.inserted" :key="inserted.id" class="">
                 <div class="bg-white dark:bg-gray-800 rounded-xl border hover:border-gray-300 dark:border-gray-700 border-gray-200 hover:dark:border-gray-700 transition-all shadow-md">
                   
