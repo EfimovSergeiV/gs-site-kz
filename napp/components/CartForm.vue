@@ -42,18 +42,18 @@
   const errorMsg = ref(null)
 
   const sendOrder = async () => {
-    if ( (phoneValidate.value || emailValidate.value) && (clientStore.client.adress) ) {
+    if ( (phoneValidate.value || emailValidate.value) ) {
       const { data: response } = await useFetch(`${ config.public.baseURL }o/order/`, {
         method: 'POST',
         body: {
           shop_id: clientStore.client.id,
-          region_code: clientStore.client.adress.region_code,
+          region_code: 'KZ',
           person: clientStore.client.person,
           phone: clientStore.client.phone,
           email: clientStore.client.email,
           comment: clientStore.client.comment,
           delivery: clientStore.client.delivery,    
-          adress: clientStore.client.adress.adress,
+          // adress: clientStore.client.adress.adress,
 
           entity: clientStore.client.entity,
           company: clientStore.client.company,
@@ -82,7 +82,7 @@
       productsStore.clearCartProducts()
 
     } else {
-      errorMsg.value = 'Ошибка: Укажите как с вами связаться и выберите магазин.'
+      errorMsg.value = 'Ошибка: Укажите как с вами связаться.'
       notificationsStore.pushToast({ id: 1, type: 'error', text: 'Ошибка: Проверте правильно ли заполнены обязательные поля.' })
     }
   }
@@ -299,16 +299,9 @@
           </div>
 
 
-          <label for="countries" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Выберите магазин</label>
           <div class="border dark:border-gray-700 rounded-md bg-gray-50 dark:bg-gray-700">
             <div class="">
               <div class="grid lg:grid-cols-2 justify-items-stretch items-center ">
-                <div class="mx-2 my-2">
-                  <select v-model="clientStore.client.adress" id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-700 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    <option disabled value="null">Выберие магазин</option>
-                    <option v-for="shop in props.shops" :key="shop.id" :value="shop">{{ shop.adress }}</option>
-                  </select>                    
-                </div>
 
                 <div class="justify-self-center mx-2 my-2" v-if="clientStore.client.adress">
                   <div class="" v-if="clientStore.client.adress.phone">

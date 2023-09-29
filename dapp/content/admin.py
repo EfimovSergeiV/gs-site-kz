@@ -67,14 +67,14 @@ class ArticleAdmin(admin.ModelAdmin):
 
 
 
-admin.site.register(VotesInterviewedModel)
-admin.site.register(ArticleModel, ArticleAdmin)
+# admin.site.register(VotesInterviewedModel)
+# admin.site.register(ArticleModel, ArticleAdmin)
 
-admin.site.register(ReviewsModel, ) #ReviewsAdmin
-admin.site.register(FooterFileModel)
+# admin.site.register(ReviewsModel, ) #ReviewsAdmin
+# admin.site.register(FooterFileModel)
 admin.site.register(MainBannerModel, MainBannerAdmin)
-admin.site.register(VotesModel, VotesAdmin)
-admin.site.register(MainPromoBannerModel, MainPromoBannerAdmin)
+# admin.site.register(VotesModel, VotesAdmin)
+# admin.site.register(MainPromoBannerModel, MainPromoBannerAdmin)
 admin.site.register(WideBannersModel, )
 # admin.site.register(SecondPromoBannerModel, SecondPromoBannerAdmin)
 # admin.site.register(SecondBannerModel, SecondBannerAdmin)

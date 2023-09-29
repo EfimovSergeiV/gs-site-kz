@@ -248,10 +248,10 @@ class CatalogFileAdmin(admin.ModelAdmin):
 
 
 admin.site.register(BrandProductModel, BrandProductAdmin)
-admin.site.register(CityModel)
+# admin.site.register(CityModel)
 admin.site.register(CategoryModel, CategoryAdmin)
-admin.site.register(ProductSetModel, ProductSetAdmin)
-admin.site.register(ShopAdressModel, ShopArdessAdmin)
+# admin.site.register(ProductSetModel, ProductSetAdmin)
+# admin.site.register(ShopAdressModel, ShopArdessAdmin)
 admin.site.register(ProductModel, ProductAdmin)
 admin.site.register(PropsNameModel, PropNameAdmin)
 admin.site.register(CatalogFileModel, CatalogFileAdmin)

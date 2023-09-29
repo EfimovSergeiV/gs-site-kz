@@ -12,7 +12,7 @@ class CustomerModel(models.Model):
     date_created = models.DateTimeField(verbose_name="Дата создания заказа", default=timezone.now)
     order_number = models.CharField(verbose_name="Номер заказа", unique=True, max_length=15)
     
-    adress = models.CharField(verbose_name="Адрес магазина", max_length=150)
+    # adress = models.CharField(verbose_name="Адрес магазина", max_length=150)
     position_total = models.PositiveIntegerField(verbose_name="Сумма по позициям", default=0)
     total = models.PositiveIntegerField(verbose_name="Итог заказа", default=0)
     online_pay = models.BooleanField(verbose_name="Оплачен онлайн", default=False)

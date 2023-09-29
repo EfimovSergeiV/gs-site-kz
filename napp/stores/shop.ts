@@ -7,7 +7,7 @@ interface Product {
   vcode: string
   name: string
   rating: any
-  price: any
+  price: number | null,
   status: string
   preview_image: string
   description: string,
@@ -108,13 +108,14 @@ export const useProductsStore = defineStore('ProductsStore', {
     },
     cartTotalPrice: (state) => {
       let result = 0
-      state.cart.forEach((el) => (result += el.price * el.quantity))
+      state.cart.forEach((el) => (result += el.price * el.quantity)) /// Проверка на null
       return result
     },
   },
   actions: {
     /// Добавление или удаление товаров
     addProduct(target: string, payload: Product) {
+      console.log('addProd')
       const product: Product = { ...payload}
       
       /// Добавление или удаление товара в корзину

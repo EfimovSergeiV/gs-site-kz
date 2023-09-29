@@ -23,8 +23,6 @@
 
     <div class="container mx-auto py-2 px-4 max-w-6xl lg:px-8">
 
-
-
       <div class="">
         <transition name="fade" mode="out-in">
           <div id="comp-data" v-if="productsStore.comp.length > 0" class="">

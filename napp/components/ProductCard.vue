@@ -34,11 +34,12 @@
         </div>
 
         <div class="">
-          <p v-if="props.product.price === 0" class="text-xs text-right font-medium text-gray-900 dark:text-gray-200">стоимость по запросу</p>
-          <div v-else class="flex gap-1 items-start">
-            <p class="text-base text-right font-medium text-gray-900 dark:text-gray-200">{{ props.product.price.toLocaleString() }}</p>
+          <div v-if="props.product.price" class="flex gap-1 items-start">
+            <p class="text-base text-right font-medium text-gray-900 dark:text-gray-200">{{ props.product.price }}</p>
             <p class="text-base">₸</p>
-          </div>
+          </div>          
+          <p v-else  class="text-xs text-right font-medium text-gray-900 dark:text-gray-200">стоимость по запросу</p>
+
 
           <p v-if="props.product.status === 'stock'" class="text-xs text-right font-medium text-gray-900 dark:text-gray-200">в наличии</p>
           <p v-if="props.product.status === 'order'" class="text-xs text-right font-medium text-gray-900 dark:text-gray-200">под заказ</p>
@@ -60,14 +61,16 @@
         </div>
 
         <div class="flex gap-4 items-end">
-          <button @click="productsStore.addRequestPrice(props.product)" v-if="props.product.price === 0" class="">
+
+          <CartBtnSmall v-if="props.product.price" :product="props.product" />
+          <button v-else @click="productsStore.addRequestPrice(props.product)" class="">
             <div class=" text-sm text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
               <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
                 <p class="text-white text-sm w-36 md:w-24 py-1.5">Запросить</p>
               </div>
             </div>
           </button>
-          <CartBtnSmall v-else :product="props.product" />
+          
         </div>
 
       </div>

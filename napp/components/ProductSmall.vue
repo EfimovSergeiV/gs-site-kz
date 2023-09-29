@@ -21,21 +21,23 @@
     </nuxt-link>
     <div class="flex items-center gap-4">
       <div class="">
-        <button @click="productsStore.addRequestPrice(product)" v-if="product.price === 0" class="">
+
+        <CartBtnSmall v-if="product.price" cls="px-4 py-2" :product="product" />
+        <button @click="productsStore.addRequestPrice(product)" v-else class="">
           <div class=" text-sm text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
             <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
               <p class="text-white text-sm w-36 md:w-24 py-1.5">Запросить</p>
             </div>
           </div>
         </button>
-        <CartBtnSmall v-else cls="px-4 py-2" :product="product" />
+        
       </div>
       <div class="">
-        <p v-if="product.price === 0" class="text-xs text-right dark:text-gray-300">Стоим. по запросу</p>
-        <div v-else class="flex gap-1 justify-end">
+        <div v-if="product.price" class="flex gap-1 justify-end">
           <p class="text-base font-bold dark:text-gray-300">{{ product.price.toLocaleString() }}</p>
           <p class="text-base font-bold dark:text-gray-300">〒</p>
-        </div>
+        </div>        
+        <p v-else class="text-xs text-right dark:text-gray-300">Стоим. по запросу</p>
       </div>
     </div>
   </div>

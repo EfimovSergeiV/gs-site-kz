@@ -210,7 +210,7 @@ class OrderViews(APIView):
         """ Извлечение данных и структурирование заказа """
         data=request.data
         print(data)
-        region_code = data.pop('region_code')
+        region_code = 'KZ'
         
         prods_id = [product['id'] for product in data['client_product']]
         products_qs = ProductModel.objects.filter(id__in=prods_id)#.values()
@@ -235,11 +235,14 @@ class OrderViews(APIView):
         data['client_product'] = products
 
         serializer = self.serializer_class(data=data)
+
+        print(f'serializer: {serializer.is_valid()}')
+
         if serializer.is_valid():
             serializer.save()
 
             # Логика оповещений
-            send_alert_to_agent(order=serializer.data)
+            # send_alert_to_agent(order=serializer.data)
 
             mail_list = [
                 # 'shop@glsvar.ru',
@@ -248,7 +251,7 @@ class OrderViews(APIView):
             if serializer.data['email']:
                 mail_list.append(serializer.data['email'])
 
-            OrderMails.send_notice(email=mail_list, data=serializer.data)
+            # OrderMails.send_notice(email=mail_list, data=serializer.data)
             return Response({ 'order': data['order_number'] })
         else:
             return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)

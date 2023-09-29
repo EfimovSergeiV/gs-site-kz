@@ -15,28 +15,20 @@ class OrderedProductInline(admin.TabularInline):
 class CustomerAdmin(admin.ModelAdmin):
     inlines = ( OrderedProductInline, )
 
-    def send_payment_mail(self, obj):
-        return mark_safe(
-            '''
-            <a style="background-color: #73ff54; padding: 7px; color: #3b3b3b; border-radius: 3px;" href="/o/sent_payment_email/%s/">
-            <b>📩 ОТПРАВИТЬ ПИСЬМО НА ОПЛАТУ</b></a>
-            '''
-            % (obj.uuid))
 
-    send_payment_mail.short_description = 'Действия'
 
         
     list_display = ('online_pay', 'order_number', 'phone', 'date_created', 'status')
     list_display_links = ('online_pay', 'order_number', 'phone', 'date_created',)
     list_editable = ('status', )
     readonly_fields = (
-        'order_number', 'date_created', 'adress', 'delivery_adress',
-        'person', 'phone', 'email', 'comment', 'delivery', 'send_payment_mail',
+        'order_number', 'date_created', 'delivery_adress', 'position_total', 'total',
+        'person', 'phone', 'email', 'comment', 'delivery',
         'company', 'legaladress', 'inn', 'kpp', 'okpo', 'bankname',
         'currentacc', 'corresponding', 'bic', 'online_pay', 'payment_uuid', 'uuid',
         )
     fieldsets = (
-        ("Заказ", {'fields': ( 'uuid', ('status', 'date_created'), ('order_number', 'position_total', 'total',), ('send_payment_mail', 'per_online_pay',), 'seller_comm', ('online_pay', 'payment_uuid',),'adress')}),
+        ("Заказ", {'fields': (('status', 'date_created'), ('order_number', 'position_total', 'total',), 'seller_comm',)}),
         ("Доставка", {'fields': ( ('delivery', 'delivery_summ',), 'delivery_adress',)}),
         ("Физическое лицо", {'fields': (('person', 'phone', 'email'), 'comment',)}),
         ("Юридическое лицо", {'fields': (
@@ -78,7 +70,6 @@ class ClientAdmin(admin.ModelAdmin):
     #     'company',
     #     'phone',
     #     'email',
-    #     'adress',
     #     'total',
     #     'comment'
     #     )
@@ -95,12 +86,7 @@ class RequestPriceAdmin(admin.ModelAdmin):
     readonly_fields = ('id', 'uuid', 'city', 'contact', 'product')
 
 
-admin.site.register(
-    CustomerModel, 
-    CustomerAdmin
-    )
-admin.site.register(
-    RequestPriceModel, 
-    RequestPriceAdmin
-    )
+admin.site.register(CustomerModel, CustomerAdmin)
+admin.site.register(RequestPriceModel, RequestPriceAdmin)
+    
 # admin.site.register(ClientModel, ClientAdmin)

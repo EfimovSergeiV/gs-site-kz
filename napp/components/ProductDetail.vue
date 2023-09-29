@@ -70,16 +70,20 @@
             <div class="border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 bg-gray-100 dark:bg-gray-700 transition-all px-4 py-2 rounded-md shadow-xl shadow-black/30">
               
               <div class="flex justify-between items-center my-2">
+                
                 <div class="">
-                  <p v-if="props.product.price === 0" class="text-sm font-bold dark:text-gray-300">Стоимость по запросу</p>
-                  <div v-else class="flex gap-1 items-center justify-end">
+                  <div v-if="props.product.price" class="flex gap-1 items-center justify-end">
                     <p class="text-3xl font-bold dark:text-gray-300">{{ props.product.price.toLocaleString() }}</p>
                     <p class="text-3xl font-bold dark:text-gray-300">〒</p>
-                  </div>
+                  </div>                  
+                  <p v-else class="text-sm font-bold dark:text-gray-300">Стоимость по запросу</p>
                 </div>
+
                 <div class="grid grid-cols-1 gap-4">
                   <div class="flex items-center justify-end">
-                    <button @click="productsStore.addRequestPrice(product)" v-if="props.product.price === 0" class="">
+                    <CartBtn v-if="props.product.price" :product="product" />    
+                    
+                    <button v-else @click="productsStore.addRequestPrice(product)" class="">
                       <div class=" text-sm text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
                         <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
                           <p class="text-white text-base w-32 md:w-52 py-2.5">Запросить</p>
@@ -87,7 +91,7 @@
                       </div>
                     </button>
 
-                    <CartBtn v-else :product="product" />                    
+                                    
                   </div>
                 </div>
               </div>

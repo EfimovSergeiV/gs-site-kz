@@ -89,7 +89,6 @@ class CustomerSerializer(serializers.ModelSerializer):
         fields = (
             'uuid',
             'order_number',
-            'adress',
             'position_total',
             'total',
             'delivery',
@@ -126,55 +125,3 @@ class RequestPriceSerializer(serializers.ModelSerializer):
         model = RequestPriceModel
         fields = '__all__'
 
-
-##################################
-
-
-# class OrderSerializer(serializers.ModelSerializer):
-#     """Сериализатор продуктов"""
-
-#     class Meta:
-#         model = OrderedGoodsModel
-#         fields = (
-#             'id',
-#             'vcode',
-#             'previewImage',
-#             'name',
-#             'quantity',
-#             'price',
-#         )
-
-
-# class ClientSerializer(serializers.ModelSerializer):
-#     """ Сериализатор клиента (старый) """
-#     client_product = OrderSerializer(many=True)
-
-#     class Meta:
-#         model = ClientModel
-#         fields = (
-#             'id',
-#             'order_numer',
-#             'person',
-#             'legaladress',
-#             'inn',
-#             'kpp',
-#             'okpo',
-#             'bankname',
-#             'currentacc',
-#             'corresponding',
-#             'bic',
-#             'company',
-#             'phone',
-#             'email',
-#             'adress',
-#             'total',
-#             'comment',
-#             'client_product',
-#         )
-
-#     def create(self, validated_data):
-#         client_product_data = validated_data.pop('client_product')
-#         client = ClientModel.objects.create(**validated_data)
-#         for order in client_product_data:
-#             OrderedGoodsModel.objects.create(client = client, **order)
-#         return client
