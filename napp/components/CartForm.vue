@@ -73,7 +73,7 @@
 
 
       console.log(response.value)
-      if ( productsStore.cartTotalPrice > 30000 ) {
+      if ( productsStore.cartTotalPrice > 100000 ) {
         clientStore.order = response.value.order
       } else {
         await router.push({ name: 'order', hash: `#${ response.value.order }` })
