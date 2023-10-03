@@ -107,7 +107,7 @@
                 <div class=" bg-blue-600 group rounded-l-md cursor-pointer transition-all duration-500">
                   <div class="flex items-center justify-center">
                     <div class="grid grid-cols-4 items-center gap-4 py-2 px-2">
-                      <p class="mdi mdi-arrow-left-circle text-gray-200"></p>
+                      <p class="mdi mdi-cellphone-link text-gray-200"></p>
                       <a class="" title="WhatsApp" :href="shopStore.shop.whatsapp" target="_blank">
                         <img src="/WhatsApp-logo.webp" class="w-5" />
                       </a>
