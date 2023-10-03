@@ -36,8 +36,8 @@
     <Reviews :reviews="randomreviews" />
     <ESAB />
     <Recommend :recommends="recommends" />
-    <ShopMaps />    
     <CorouselBrands />
+    <ShopMaps />
     <AppFooter />
   </div>
 </template>
