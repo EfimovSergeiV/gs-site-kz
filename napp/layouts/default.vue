@@ -101,13 +101,13 @@
 
 
         <div class="">
-          <div class="fixed z-40 bottom-16 -right-[110px] hover:right-0 focus:right-0 transition-all duration-500">
+          <div class="fixed z-40 bottom-16 -right-[126px] hover:right-0 focus:right-0 transition-all duration-500">
             <div class="relative">
               <div class="">
                 <div class=" bg-blue-600 group rounded-l-md cursor-pointer transition-all duration-500">
                   <div class="flex items-center justify-center">
-                    <div class="grid grid-cols-4 items-center gap-4 py-2 px-2">
-                      <p class="mdi mdi-cellphone-link text-gray-200"></p>
+                    <div class="grid grid-cols-4 items-center gap-4 px-1">
+                      <p class="mdi mdi-24px mdi-cellphone-link text-gray-200 pl-0.5"></p>
                       <a class="" title="WhatsApp" :href="shopStore.shop.whatsapp" target="_blank">
                         <img src="/WhatsApp-logo.webp" class="w-5" />
                       </a>
