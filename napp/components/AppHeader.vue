@@ -177,10 +177,11 @@
             <div class="grid grid-cols-1">
               <div class="hidden md:block">
                 <div class="grid grid-cols-1 gap-2 py-2">
-                  <div class="flex justify-end gap-4">
-                    <a v-if="clientStore.client.adress" :href="`tel:${clientStore.client.adress.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-center text-sm md:text-base font-semibold text-gray-100 hover:text-white transition-all"> {{ clientStore.client.adress.phone }}</a>
-                    <a v-else :href="`tel:${shopStore.shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-center text-sm md:text-base font-semibold text-gray-100 hover:text-white transition-all"> {{ shopStore.shop.phone }}</a>
-                    <a href="mailto:zakaz@glsvar.ru" target="_blank" class="text-center text-sm md:text-base  text-gray-100 hover:text-white">zakaz@glsvar.kz</a>          
+                  <div class="flex items-end justify-end gap-8">
+
+                    <a href="mailto:zakaz@glsvar.kz" target="_blank" class="text-center text-sm md:text-xl  text-gray-100 hover:text-white">zakaz@glsvar.kz</a>          
+                    <a :href="`tel:+77084238070`" class="text-center text-sm md:text-2xl font-semibold text-gray-100 hover:text-white transition-all"> +7 708 423 8070</a>
+                  
                   </div>
                 </div>
               </div>
