@@ -105,7 +105,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      baseURL: process.env.BASE_URL || 'https://api.glsvar.kz/',  ///'https://api.glsvar.kz/' 'http://127.0.0.1:8000/',
+      baseURL: process.env.BASE_URL || 'http://127.0.0.1:8000/',  ///'https://api.glsvar.kz/' 'http://127.0.0.1:8000/',
     },
   },
 
@@ -152,9 +152,5 @@ export default defineNuxtConfig({
   //   id: 'G-XXXXXXXXXX'
   // }
 
-  // loading: {
-  //   color: '#22c55e',
-  //   height: '1px',
-  // },
 
 })

@@ -26,7 +26,7 @@
                 width="800px"
                 height="400px"
                 alt="esab-1"
-                src="https://api.glsvar.ru/files/c/esab-banner-one.jpg" 
+                src="/esab-banner-one.jpg" 
               />              
 
             <div class="absolute bottom-0 left-0 top-0">

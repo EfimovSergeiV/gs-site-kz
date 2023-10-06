@@ -4,6 +4,7 @@
 
   const { data: recommends, pending, error} = await useFetch(`${ config.public.baseURL }c/recommend/`)
 
+
 </script>
 
 <template>
@@ -21,11 +22,61 @@
           
         </blockquote>
       </div>
-      <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+      <!-- <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         <div v-for="product in recommends" :key="product.id" class="">
           <ProductSmall :product="product" />
         </div>
-      </div>      
+      </div> -->
+
+
+
+      <div class="">
+
+        <!-- <swiper
+          :slidesPerView="4"
+          :spaceBetween="10"
+          :pagination="{
+            clickable: true,
+          }"
+          :modules="'pagination'"
+          class=""
+        >
+
+          <swiper-slide v-for="product in recommends" :key="product.id">
+            <ProductSmall :product="product" />
+          </swiper-slide>
+
+
+        </swiper> -->
+
+        <Swiper
+          :modules="[SwiperPagination]"
+          :slides-per-view="'auto'"
+          :slidesPerView="4"
+          :spaceBetween="10"
+          :creative-effect="{
+            prev: {
+              shadow: false,
+              translate: ['-20%', 0, -1],
+            },
+            next: {
+              translate: ['100%', 0, 0],
+            },
+          }"
+        >
+
+        
+          <SwiperSlide v-for="product in recommends" :key="product.id" class=" min-w-[280px]">
+            <ProductSmall :product="product" />
+          </SwiperSlide>
+          <SwiperControls />
+          
+        </Swiper>
+
+      </div>
+
+
+
     </div>
   </div>
 </template>
