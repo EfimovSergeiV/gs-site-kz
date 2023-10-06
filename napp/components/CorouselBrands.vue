@@ -26,6 +26,7 @@
         class=""
         :modules="[SwiperAutoplay]"
         :slides-per-view="5"
+        :loop="true"
         :spaceBetween="10"
         :autoplay="{
           delay: 4000,

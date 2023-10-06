@@ -54,6 +54,7 @@
           :slides-per-view="'auto'"
           :slidesPerView="4"
           :spaceBetween="10"
+          :loop="true"
           :creative-effect="{
             prev: {
               shadow: false,
