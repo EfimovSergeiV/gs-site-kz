@@ -181,19 +181,18 @@
                   <div class="flex items-end justify-between gap-8">
 
                     <div class="">
-                      <div class="">
-
-                        <p class="text-gray-600 dark:text-gray-200 text-sm font-semibold">Главный сварщик. Казахстан, <br/> ул. Топоркова 35, Рудный, 111500,</p>
-                      </div>
-                      
+                      <a href="https://maps.app.goo.gl/yh6zuQBe2mQJ5Xyr8" target="blank">
+                        <p class="text-gray-600 dark:text-gray-200 text-sm ">Главный сварщик. Казахстан,</p>
+                        <p class="text-gray-600 dark:text-gray-200 text-base "> ул. Топоркова 35, Рудный, 111500,</p>
+                      </a>
                     </div>
                     
                     <div class="grid grid-cols-1 justify-end items-end">
                       <div class="flex items-center justify-center">
-                        <a :href="`tel:+77084238070`" class="text-center text-base font-semibold text-gray-600 dark:text-gray-200 hover:text-white transition-all"> +7 708 423 8070</a>
+                        <a :href="`tel:+77084238070`" class="text-center text-base  text-gray-600 dark:text-gray-200 hover:text-white transition-all"> +7 708 423 8070</a>
                       </div>
                       <div class="flex items-center justify-end">
-                        <a href="mailto:zakaz@glsvar.kz" target="_blank" class="text-center text-sm font-semibold text-gray-600 dark:text-gray-200 hover:text-white">zakaz@glsvar.kz</a>          
+                        <a href="mailto:zakaz@glsvar.kz" target="_blank" class="text-center text-sm  text-gray-600 dark:text-gray-200 hover:text-white">zakaz@glsvar.kz</a>          
                       </div>
                     </div>
 
