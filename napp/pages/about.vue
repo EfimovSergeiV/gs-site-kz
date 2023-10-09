@@ -24,11 +24,11 @@
   const descriptionData = 'С 2009 года Главный сварщик – ваш надежный партнер в мире сварочного оборудования! '
 
   useSeoMeta({
-    title: `Сеть магазинов Главный Сварщик - О нас - Адреса магазинов`,
+    title: `Интернет магазин Главный Сварщик - О нас - Адреса магазинов`,
     description: `${ descriptionData.value }`,
     keywords: `Главный сварщик, сварочное оборудование, оборудование для сварки, купить электроды, купить проволоку, купить источник, купить сварочный инвертор`,
     ogLocale: 'ru_RU',
-    ogTitle: `Сеть магазинов Главный Сварщик`,
+    ogTitle: `Интернет магазин Главный Сварщик`,
     ogDescription: `${ descriptionData.value }`,
     ogImage: `https://api.glsvar.ru/files/og-image.png`,
     twitterCard: `https://api.glsvar.ru/files/og-image.png`,
