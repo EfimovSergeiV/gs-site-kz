@@ -9,8 +9,8 @@
   const search = ref('')
   const products = ref([])
 
-  const debouncedHandler = debounce(async query => {
 
+  const debouncedHandler = debounce(async query => {
 
     const { data: prods }  = await useFetch(`${ config.public.baseURL }c/search/`, {
       method: 'POST',
@@ -19,13 +19,10 @@
       }
     })
     
-    products.value = ( await prods.value )          
-
-  
-
-
+    products.value = ( await prods.value )    
 
   }, 300);
+
 
   watch(search, (searchRequest) => {
     debouncedHandler()
