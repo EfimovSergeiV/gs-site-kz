@@ -12,14 +12,14 @@
   const debouncedHandler = debounce(async query => {
 
 
-        const { data: prods }  = await useFetch(`${ config.public.baseURL }c/search/`, {
-          method: 'POST',
-          body: {
-            name: search
-          }
-        })
-        
-        products.value = ( await prods.value )          
+    const { data: prods }  = await useFetch(`${ config.public.baseURL }c/search/`, {
+      method: 'POST',
+      body: {
+        name: search
+      }
+    })
+    
+    products.value = ( await prods.value )          
 
   
 
