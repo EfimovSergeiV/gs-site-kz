@@ -59,7 +59,7 @@ export default defineNuxtConfig({
     transpile: ['jsonwebtoken']
   },
   auth: {
-    baseURL: 'https://api.glsvar.ru/',
+    baseURL: 'https://api.glsvar.kz/',
     provider: {
       type: 'local',
       // endpoints: {

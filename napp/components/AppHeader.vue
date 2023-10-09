@@ -190,10 +190,10 @@
                     
                     <div class="grid grid-cols-1 justify-end items-end">
                       <div class="flex items-center justify-center">
-                        <a :href="`tel:+77084238070`" class="text-center text-xl text-gray-100 hover:text-white transition-all"> +7 708 423 8070</a>
+                        <a :href="`tel:+77084238070`" class="text-center text-xl text-gray-700 dark:text-gray-100 hover:text-white transition-all"> +7 708 423 8070</a>
                       </div>
                       <div class="flex items-center justify-end">
-                        <a href="mailto:zakaz@glsvar.kz" target="_blank" class="text-center text-base  text-gray-100 hover:text-white">zakaz@glsvar.kz</a>          
+                        <a href="mailto:zakaz@glsvar.kz" target="_blank" class="text-center text-base text-gray-700 dark:text-gray-100 hover:text-white">zakaz@glsvar.kz</a>          
                       </div>
                     </div>
 
