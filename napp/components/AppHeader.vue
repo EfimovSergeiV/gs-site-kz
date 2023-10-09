@@ -175,12 +175,29 @@
         <div class="">          
           <div class="flex items-end h-full">
             <div class="grid grid-cols-1">
+              
               <div class="hidden md:block">
                 <div class="grid grid-cols-1 gap-2 py-2">
-                  <div class="flex items-end justify-end gap-8">
+                  <div class="flex items-end justify-between gap-8">
 
-                    <a href="mailto:zakaz@glsvar.kz" target="_blank" class="text-center text-sm md:text-xl  text-gray-100 hover:text-white">zakaz@glsvar.kz</a>          
-                    <a :href="`tel:+77084238070`" class="text-center text-sm md:text-2xl font-semibold text-gray-100 hover:text-white transition-all"> +7 708 423 8070</a>
+                    <div class="">
+                      <div class="">
+
+                        <p class=""> Казахстан <br/> ул. Топоркова 35, Рудный, 111500,</p>
+                      </div>
+                      
+                    </div>
+                    
+                    <div class="grid grid-cols-1 justify-end items-end">
+                      <div class="flex items-center justify-center">
+                        <a :href="`tel:+77084238070`" class="text-center text-xl text-gray-100 hover:text-white transition-all"> +7 708 423 8070</a>
+                      </div>
+                      <div class="flex items-center justify-end">
+                        <a href="mailto:zakaz@glsvar.kz" target="_blank" class="text-center text-base  text-gray-100 hover:text-white">zakaz@glsvar.kz</a>          
+                      </div>
+                    </div>
+
+
                   
                   </div>
                 </div>

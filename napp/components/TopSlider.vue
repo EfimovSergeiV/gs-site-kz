@@ -69,7 +69,7 @@
       </SwiperSlide>
       
       <div class="absolute bottom-0 right-0 z-50 p-3">
-        <SwiperControls />
+        <SwiperControls class="bg-gray-100/80 rounded-full border border-gray-200/50 hover:border-gray-300 dark:border-gray-600/50 dark:hover:border-gray-500 dark:bg-gray-700/80 transition-all duration-500 px-1" />
       </div>
       
     </Swiper>

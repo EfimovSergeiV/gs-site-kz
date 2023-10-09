@@ -70,7 +70,10 @@
           <SwiperSlide v-for="product in recommends" :key="product.id" class=" min-w-[280px]">
             <ProductSmall :product="product" />
           </SwiperSlide>
-          <SwiperControls />
+          <div class="flex justify-end mt-4">
+            <SwiperControls class="bg-gray-100 rounded-full border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 dark:bg-gray-700 transition-all duration-500 px-1" />
+          </div>
+          
           
         </Swiper>
 
