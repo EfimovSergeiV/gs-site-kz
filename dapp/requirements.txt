@@ -21,8 +21,8 @@ djangorestframework==3.14.0
 djangorestframework-recursive==0.1.2
 easy-thumbnails==2.8.5
 elastic-transport==8.4.0
-elasticsearch==8.10.0
-elasticsearch-dsl==8.9.0
+elasticsearch==7.17.9
+elasticsearch-dsl==7.4.1
 expiringdict==1.2.1
 frozenlist==1.4.0
 geographiclib==2.0

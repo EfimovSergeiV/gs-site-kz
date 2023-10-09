@@ -17,14 +17,9 @@
           body: {
             name: search
           }
-        }).then(
-          console.log(prods)
-          // products.value = ( await prods.value )
-        ).catch(
-          console.log('Bad request')
-        )
+        })
         
-               
+        products.value = ( await prods.value )          
 
   
 
@@ -54,7 +49,6 @@
               v-model="search" 
               type='search'
               id="phone"
-              disabled
               placeholder="Поиск по каталогу"
               class="bg-gray-50 border border-gray-300 text-gray-700 font-semibold dark:text-gray-700 text-sm 
               uppercase rounded-lg focus:ring-gray-300/0 focus:border-gray-300 block 
