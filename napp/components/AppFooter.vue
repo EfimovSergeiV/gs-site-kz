@@ -7,7 +7,7 @@
 
 <template>
   <div class="container mx-auto px-4 max-w-6xl lg:px-8 pt-2">
-    <div class="bg-gray-100 dark:bg-gray-800 rounded-t-md border-t border-x border-gray-200 dark:border-gray-700 px-4 relative">
+    <div class="bg-gray-100 dark:bg-gray-800 rounded-t-md border-t border-x border-gray-200 dark:border-gray-700 px-4 py-2 relative">
 
       <div class="md:flex md:justify-between items-center py-2">
 
