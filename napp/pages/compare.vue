@@ -40,8 +40,8 @@
             </div>
 
 
-            <div class="bg-white rounded-md dark:bg-gray-800 border border-gray-700 my-4">
-              <div class="px-2 py-4 bg-gray-700 border-b border-gray-600">
+            <div class="bg-white rounded-md dark:bg-gray-800 border border-gray-200 dark:border-gray-700 my-4">
+              <div class="px-2 py-4 bg-gray-200 dark:bg-gray-700 border-b border-gray-200 dark:border-gray-600">
                 <p class="text-base">Сравнение характеристик:</p>
               </div>
 
