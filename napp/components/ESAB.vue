@@ -31,7 +31,7 @@
 
             <div class="absolute bottom-0 left-0 top-0">
               <div class="">
-                <div class="flex items-center bg-gray-800/80">
+                <div class="flex items-center bg-gray-800/80 rounded-t-md">
                   <div class="p-1">
                     <nuxt-link :to="{ name: 'prods', query: { brnd: 3, page: 1 } }">
                       <img src="/esab-logo.jpg" class="w-[140px]" />
