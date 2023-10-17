@@ -22,32 +22,8 @@
           
         </blockquote>
       </div>
-      <!-- <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-        <div v-for="product in recommends" :key="product.id" class="">
-          <ProductSmall :product="product" />
-        </div>
-      </div> -->
-
-
 
       <div class="">
-
-        <!-- <swiper
-          :slidesPerView="4"
-          :spaceBetween="10"
-          :pagination="{
-            clickable: true,
-          }"
-          :modules="'pagination'"
-          class=""
-        >
-
-          <swiper-slide v-for="product in recommends" :key="product.id">
-            <ProductSmall :product="product" />
-          </swiper-slide>
-
-
-        </swiper> -->
 
         <Swiper
           :modules="[SwiperPagination]"
@@ -66,19 +42,17 @@
           }"
         >
 
-        
           <SwiperSlide v-for="product in recommends" :key="product.id" class=" min-w-[280px]">
             <ProductSmall :product="product" />
           </SwiperSlide>
+
           <div class="flex justify-end mt-4">
             <SwiperControls class="bg-gray-100 rounded-full border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 dark:bg-gray-700 transition-all duration-500 px-1" />
           </div>
           
-          
         </Swiper>
 
       </div>
-
 
 
     </div>
