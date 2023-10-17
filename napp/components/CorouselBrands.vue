@@ -21,6 +21,13 @@
 <template>
   <div class="container mx-auto max-w-6xl px-4 lg:px-8 py-2">
 
+    <!-- 
+      :autoplay="{
+          delay: 4000,
+          disableOnInteraction: false
+        }" 
+    -->
+
     <div class="p-2 bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-sm px-2 py-2">
       <Swiper
         class=""
@@ -28,10 +35,7 @@
         :slides-per-view="5"
         :loop="true"
         :spaceBetween="10"
-        :autoplay="{
-          delay: 4000,
-          disableOnInteraction: false
-        }"
+
         :creative-effect="{
           prev: {
             shadow: false,
@@ -47,7 +51,7 @@
           <nuxt-link :to="{ name: 'prods', query: { brnd: brand.id, page: 1 }}" class="flex items-center justify-center bg-gray-200 h-12 md:h-20 rounded-md shadow-md shadow-black/50 my-4">
             <img
               :src="brand.image"
-              class="w-14 md:w-20 lg:w-24 "
+              class=" w-[142px]"
             />                 
           </nuxt-link>
         </SwiperSlide>
