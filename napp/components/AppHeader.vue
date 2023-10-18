@@ -47,13 +47,24 @@
           <div class="h-full grid grid-cols-1 content-end">
 
             <div class="flex items-center justify-center">
-              <div class="py-6 w-[345px]">
+              <div class="py-4 w-[345px]">
                 <nuxt-link :to="{ name: 'index' }">
                   <img src="/images/blue-svar.webp" class="max-h-[4rem]" />
                   <p class="text-2xl font-semibold italic text-end px-4 text-gray-700 dark:text-gray-300"><span class="text-xs ml-4">интернет магазин</span> GLSVAR.KZ</p>
                 </nuxt-link>
               </div>
             </div>
+
+
+            <div class="grid grid-cols-1 justify-end items-end pb-4">
+              <div class=" flex items-end justify-start">
+                <p class="text-gray-600 dark:text-gray-200 text-sm ">Казахстан, Рудный</p>
+              </div>
+              <div class=" flex items-start justify-start">
+                <p class="text-gray-600 dark:text-gray-200 text- "> ул. Топоркова 35, 111500</p>
+              </div>                        
+            </div>
+
 
             <div class="grid grid-cols-1 gap-2">
               <div class="grid grid-cols-2 gap-x-2 gap-y-2">
@@ -181,10 +192,10 @@
               
 
               <div class="flex justify-end gap-4 uppercase font-semibold py-2">
-                <p class="">Избранное</p>
-                <p class="">Товары в сравнении</p>
-                <p class="">Корзина</p>
-                <p class="">О нас</p>
+                <nuxt-link :to="{ name: 'lk-name', params: { name: 'guest' } }" class="">Избранное</nuxt-link>
+                <nuxt-link :to="{ name: 'compare' }" class="">Товары в сравнении</nuxt-link>
+                <nuxt-link :to="{ name: 'cart' }" class="">Корзина</nuxt-link>
+                <nuxt-link :to="{ name: 'about' }" class="">О нас</nuxt-link>
               </div>
 
 
