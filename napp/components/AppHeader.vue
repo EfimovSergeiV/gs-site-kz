@@ -56,13 +56,16 @@
             </div>
 
 
-            <div class="grid grid-cols-1 justify-end items-end pb-4">
-              <div class=" flex items-end justify-start">
-                <p class="text-gray-600 dark:text-gray-200 text-sm ">Казахстан, Рудный</p>
+            <div class="flex justify-start pb-4">
+              <div class="">
+                <div class=" flex items-end justify-start">
+                  <p class="text-gray-600 dark:text-gray-200 text-sm ">Казахстан, Рудный</p>
+                </div>
+                <div class=" flex items-start justify-start">
+                  <p class="text-gray-600 dark:text-gray-200 text- "> ул. Топоркова 35, 111500</p>
+                </div>                 
               </div>
-              <div class=" flex items-start justify-start">
-                <p class="text-gray-600 dark:text-gray-200 text- "> ул. Топоркова 35, 111500</p>
-              </div>                        
+                       
             </div>
 
 
