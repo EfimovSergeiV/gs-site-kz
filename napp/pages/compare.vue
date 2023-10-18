@@ -73,25 +73,10 @@
 
           </div>
 
-          <div id="comp-leer" v-else class="bg-white dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-700 min-h-[70vh]">
-            <div class="flex gap-4 items-center justify-center h-full">
-
-              <div class="flex items-center gap-8 my-8">
-                <div class="grid gap-2 grid-cols-1">
-                  <div class="mx-4 text-center">
-                    <p class="text-2xl">У вас нет товаров для сравнения</p>
-                  </div>
-                  <div class="border-b border-gray-700 dark:border-gray-300"></div>
-                  <div class="mx-4 text-center">
-                    <nuxt-link :to="{ name: 'cts' }" class="text-sm hover:underline hover:text-gray-900 dark:hover:text-gray-100 ">Перейти в каталог</nuxt-link>
-                  </div>
-                </div>
-                <div>
-                  <p class="mdi mdi-close-outline text-3xl md:text-6xl"></p>
-                </div>
-              </div>
-
-            </div>  
+          <div v-else class="bg-white dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-700">
+            <div class="flex items-center justify-center min-h-[50vh]">
+              <p class="text-base">Нет товаров в сравнении</p>
+            </div>
           </div>
 
         </transition>

@@ -24,7 +24,7 @@
 
         <div v-else class="flex items-center justify-center min-h-[50vh]">
           <p class="text-base">Нет товаров в избранном</p>
-        </div>        
+        </div>
       </div>
     </div>
 
