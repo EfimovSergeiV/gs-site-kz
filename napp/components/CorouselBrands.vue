@@ -28,7 +28,7 @@
         }" 
     -->
 
-    <div class="p-2 bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-sm px-2 py-2">
+    <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-sm px-2">
       <Swiper
         class=""
         :modules="[SwiperAutoplay]"
@@ -48,7 +48,7 @@
       >
       
         <SwiperSlide v-for="brand in filteredCarouselBrands(brands)" :key="brand.id">
-          <nuxt-link :to="{ name: 'prods', query: { brnd: brand.id, page: 1 }}" class="flex items-center justify-center bg-gray-200 h-12 md:h-20 rounded-md shadow-md shadow-black/50 my-4">
+          <nuxt-link :to="{ name: 'prods', query: { brnd: brand.id, page: 1 }}" class="flex items-center justify-center bg-gray-200 h-12 md:h-20 rounded-md shadow-md shadow-black/50 my-2">
             <img
               :src="brand.image"
               class=" w-[142px]"
