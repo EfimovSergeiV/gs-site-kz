@@ -148,6 +148,11 @@ class ProductAdmin(admin.ModelAdmin):
         if obj.category_id:
             print(obj.category_id)
 
+            props = PropsNameModel.objects.filter(category=obj.category_id) #activated=True
+            print(len(props), props)
+
+            # Записываем свойства ...
+
             return mark_safe(f'<a href="" />получить и заполнить</a>')
         
         else:
