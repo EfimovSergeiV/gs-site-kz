@@ -164,7 +164,7 @@
               </div>
               <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2 mt-2">
                 <p class="text-base my-2">Описание:</p>
-                <p class="text-sm">{{ props.product.description }}</p> 
+                <div class="text-sm" v-html="props.product.description"></div> 
               </div>
             </div>
           </div>

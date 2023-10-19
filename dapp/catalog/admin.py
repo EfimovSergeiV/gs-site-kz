@@ -2,7 +2,9 @@ from django.contrib import admin
 from django.utils.safestring import mark_safe
 from mptt.admin import DraggableMPTTAdmin
 from catalog.models import *
+from django import forms
 
+from ckeditor.widgets import CKEditorWidget
 
 # Генератор
 import string
@@ -126,11 +128,25 @@ class ProductKeywordsInline(admin.TabularInline):
 
 
 ##### ОСНОВНЫЕ НАСТРОЙКИ ТОВАРОВ
+
+class ProductAdminForm(forms.ModelForm):
+    description = forms.CharField(widget=CKEditorWidget(), label='')
+
+    class Meta:
+        model = ProductModel
+        fields = '__all__'
+
 class ProductAdmin(admin.ModelAdmin):
+
+    form = ProductAdminForm
 
     def preview(self, obj):
         return mark_safe('<img style="margin-right:-10vh; background-color: white; padding: 15px; border-radius: 5px;" src="/files/%s" alt="Нет изображения" width="100" height="auto" />' % (obj.preview_image))
     preview.short_description = 'Изображение'
+
+    def get_property_ct(self, obj):
+        return mark_safe('<a href="" />получить и заполнить</a>')
+    get_property_ct.short_description = 'Свойства категории'
 
     """
     def rec(self, obj):
@@ -142,7 +158,7 @@ class ProductAdmin(admin.ModelAdmin):
         recommend.short_description = 'Рек'    
     """
 
-    readonly_fields = ('preview', 'currency' )
+    readonly_fields = ('preview', 'currency', 'get_property_ct', )
     list_display = ('id', 'vcode', 'name', 'activated', 'price', 'currency', 'status', ) #'recommend',
     list_display_links = ('id', )
     search_fields = ('id', 'vcode', 'name', 'UID',)
@@ -153,9 +169,9 @@ class ProductAdmin(admin.ModelAdmin):
         # ProductKeywordsInline,
         # AvailableInline, 
         # ProductSetInline, 
-        # ProdCompInline, 
+        # ProdCompInline,
+        PropStrInline,
         ProductImageInline, 
-        PropStrInline, 
         ProductDocumentInline, 
         ExternalLinkInline
         )
@@ -164,6 +180,7 @@ class ProductAdmin(admin.ModelAdmin):
         ("Отображение на сайте", {'fields': (('activated', 'recommend',), ('category', 'brand'), ( 'preview', 'preview_image',))}),
         ("Информация о товаре", {'fields': (('vcode', 'name',), ( 'rating', 'keywords',), 'description',)}),
         ("Стоимость и наличие", {'fields': ( ('price', 'currency', 'status', ),)}),
+        ("", {'fields': (('get_property_ct',),)}),
         # ("Сопутствующие категории", {'fields': (('related',),)}),
         )
 
