@@ -145,7 +145,14 @@ class ProductAdmin(admin.ModelAdmin):
     preview.short_description = 'Изображение'
 
     def get_property_ct(self, obj):
-        return mark_safe('<a href="" />получить и заполнить</a>')
+        if obj.category_id:
+            print(obj.category_id)
+
+            return mark_safe(f'<a href="" />получить и заполнить</a>')
+        
+        else:
+            return mark_safe(f'<p>категория не выбрана</p>')
+
     get_property_ct.short_description = 'Свойства категории'
 
     """
