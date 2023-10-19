@@ -44,7 +44,7 @@
       <div class="grid grid-cols-1 md:flex gap-4">
         <div class="min-w-[345px]">
 
-          <div class="h-full grid grid-cols-1 content-end">
+          <div class="h-full grid grid-cols-1 content-between">
 
             <div class="flex items-center justify-center">
               <div class="py-4 w-[345px]">
@@ -53,19 +53,6 @@
                   <p class="text-2xl font-semibold italic text-end px-4 text-gray-700 dark:text-gray-300"><span class="text-xs ml-4">интернет магазин</span> GLSVAR.KZ</p>
                 </nuxt-link>
               </div>
-            </div>
-
-
-            <div class="flex justify-start pb-4">
-              <div class="">
-                <div class=" flex items-end justify-start">
-                  <p class="text-gray-600 dark:text-gray-200 text-sm ">Казахстан, Рудный</p>
-                </div>
-                <div class=" flex items-start justify-start">
-                  <p class="text-gray-600 dark:text-gray-200 text- "> ул. Топоркова 35, 111500</p>
-                </div>                 
-              </div>
-                       
             </div>
 
 
