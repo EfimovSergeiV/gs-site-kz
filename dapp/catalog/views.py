@@ -316,8 +316,9 @@ class OneRandomProductView(APIView):
             
             return Response(serializer.data)
         
-        except KeyError or IndexError or ObjectDoesNotExist:
+        except (KeyError, IndexError, ObjectDoesNotExist):
             return Response([])
+
 
 
 class RecommendView(APIView):
