@@ -279,6 +279,7 @@ class PropsNameModel(AbsActivatedModel):
     class Meta:
         verbose_name = "Свойство категории"
         verbose_name_plural = "Свойства категорий"
+        ordering = ['position',]
 
     def __str__(self):
         return self.name
@@ -317,7 +318,7 @@ class PropStrModel(models.Model):
     Привязанное к товару
     """
 
-    name = models.CharField(verbose_name="Название свойства",  max_length=100)
+    name = models.CharField(verbose_name="Название свойства", null=True, blank=True, max_length=100)
     product = models.ForeignKey(
         ProductModel,
         verbose_name="Продукт",
@@ -325,7 +326,7 @@ class PropStrModel(models.Model):
         null=True,
         on_delete=models.SET_NULL)
 
-    value = models.CharField(verbose_name="Значение свойства", max_length=200)
+    value = models.CharField(verbose_name="Значение свойства", null=True, blank=True, max_length=200)
     qname = models.CharField(
         verbose_name="Псевдоним названия",
         # choices=options(), ДОБАВИТЬ ЗНАЧЕНИЕ ПО УМОЛЧАНИЮ ИЗ МОДЕЛИ
@@ -353,7 +354,7 @@ class PropStrModel(models.Model):
     class Meta:
         verbose_name = "Свойство товара"
         verbose_name_plural = "Свойства товаров"
-        ordering = ['qname',]
+        ordering = ['id',]
 
     def __str__(self):
         return self.name

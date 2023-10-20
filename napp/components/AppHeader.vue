@@ -181,7 +181,7 @@
             <div class="grid grid-cols-1">
               
 
-              <div class="flex justify-end gap-4 uppercase font-semibold py-2">
+              <div class="flex justify-end gap-6 uppercase font-semibold py-2">
                 <nuxt-link :to="{ name: 'lk-name', params: { name: 'guest' } }" class="">Избранное</nuxt-link>
                 <nuxt-link :to="{ name: 'compare' }" class="">Товары в сравнении</nuxt-link>
                 <nuxt-link :to="{ name: 'cart' }" class="">Корзина</nuxt-link>

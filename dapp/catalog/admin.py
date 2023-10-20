@@ -145,20 +145,24 @@ class ProductAdmin(admin.ModelAdmin):
     preview.short_description = 'Изображение'
 
     def get_property_ct(self, obj):
-        if obj.category_id:
-            print(obj.category_id)
+        """ Автоматическое заполнение возможных свойств товаров, если свойства отсутствуют """
 
-            props = PropsNameModel.objects.filter(category=obj.category_id) #activated=True
-            print(len(props), props)
+        if obj.category_id and len(obj.propstrmodel.all()) == 0:
+            props = PropsNameModel.objects.filter(category=obj.category_id, activated=True)
+            for prop in props:
+                print(f'{prop.id} {prop.name} {prop.prop_alias}')
+                prop_qs = PropStrModel.objects.create(
+                    product = obj,
+                    name = prop.name,
+                    qname = prop.prop_alias,
+                )
 
-            # Записываем свойства ...
+                prop_qs.save(force_insert=False)
 
-            return mark_safe(f'<a href="" />получить и заполнить</a>')
-        
-        else:
-            return mark_safe(f'<p>категория не выбрана</p>')
+        return mark_safe(f'')
 
-    get_property_ct.short_description = 'Свойства категории'
+
+    get_property_ct.short_description = ''
 
     """
     def rec(self, obj):
