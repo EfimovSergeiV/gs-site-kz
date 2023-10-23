@@ -134,7 +134,7 @@
                       <p v-else class="text-sm text-right font-medium text-gray-900 dark:text-gray-200">в наличии</p>
                       
                     </div>
-                    <div class="flex justify-center w-32"><p class="text-sm">{{ product.price.toLocaleString() }} 〒</p></div>
+                    <div class="flex justify-center w-32"><p class="text-sm">{{ product.price.toLocaleString() }} тг</p></div>
                     <div class="flex justify-center w-20">
                       <button @click="productsStore.addProduct('cart', product)" class="mdi mdi-24px mdi-close cursor-pointer"></button>
                     </div>
@@ -148,7 +148,7 @@
         </div>
 
         <div class="py-2 px-2">
-          <p class="">Итог: <span class="font-semibold pl-2">{{ productsStore.cartTotalPrice.toLocaleString() }}</span> <span>〒</span></p>
+          <p class="">Итог: <span class="font-semibold pl-2">{{ productsStore.cartTotalPrice.toLocaleString() }}</span> <span>тг</span></p>
         </div>
 
       </div>

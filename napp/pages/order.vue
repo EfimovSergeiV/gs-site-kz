@@ -45,9 +45,9 @@
           <div class=" py-6">
             <p class="my-2">Номер заказа: <span class="font-semibold ml-2">{{ orderinfo.order_number }}</span></p>
             <p class="my-2">Статус: <span class="font-semibold ml-2" v-if="orderinfo.status === 'notprocessed'">В обработке</span><span class=" ml-2" v-else>Обработан</span></p>
-            <p class="my-2">Сумма по позициям: <span class="font-semibold ml-2">{{ orderinfo.position_total }}</span> 〒</p>
+            <p class="my-2">Сумма по позициям: <span class="font-semibold ml-2">{{ orderinfo.position_total }}</span> тг</p>
             <p class="my-2" v-if="orderinfo.delivery_summ">Доставка: <span class="font-semibold ml-2">{{ orderinfo.delivery_summ }}</span></p>
-            <p class="my-2">Итог заказа: <span class="font-semibold ml-2">{{ orderinfo.total }}</span> 〒</p>            
+            <p class="my-2">Итог заказа: <span class="font-semibold ml-2">{{ orderinfo.total }}</span> тг</p>            
           </div>
 
           

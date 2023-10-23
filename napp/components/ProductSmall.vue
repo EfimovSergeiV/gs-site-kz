@@ -35,7 +35,7 @@
       <div class="">
         <div v-if="product.price" class="flex gap-1 justify-end">
           <p class="text-base font-bold dark:text-gray-300">{{ product.price.toLocaleString() }}</p>
-          <p class="text-base font-bold dark:text-gray-300">〒</p>
+          <p class="text-base font-bold dark:text-gray-300">тг</p>
         </div>        
         <p v-else class="text-xs text-right dark:text-gray-300">Стоим. по запросу</p>
       </div>

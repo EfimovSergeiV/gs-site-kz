@@ -64,7 +64,7 @@
             </div>
 
             <div class="flex justify-end items-center my-4">
-              <p v-if="product.price > 0" class="text-xl">{{ product.price.toLocaleString() }} 〒</p>
+              <p v-if="product.price > 0" class="text-xl">{{ product.price.toLocaleString() }} тг</p>
               <p v-else class="text-base">Стоимость по запросу</p>
             </div>
                       

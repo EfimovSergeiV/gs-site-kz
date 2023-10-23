@@ -9,7 +9,7 @@
 
 <template>
   <div class="container mx-auto px-4 py-2 max-w-6xl lg:px-8">
-    <div class="bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-700 rounded-md">
+    <div class="">
 
 
       <p v-if="pending">Загрузка данных...</p>
@@ -26,18 +26,24 @@
         <div class="">
           <div class="">
             
-            <div class="px-2 py-2">
+            <div class="">
               
-              <div class="columns-1 xl:columns-3 lg:columns-4">
+              <div class="grid grid-cols-4 gap-2">
                 <div v-for="ct in cts" :key="ct.id" class="break-inside-avoid-column">
                   <div class="">
 
 
-                    <div class="py-2 ">
+                    <div class="">
                       
-                      <div class="bg-gray-100/90 dark:bg-gray-700 border border-gray-200 dark:border-gray-700 rounded-md py-2 px-2">
-                        <div class="py-2">
-                          <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }" class=" text-gray-700 dark:text-gray-100 text-base transition-all">{{ ct.name }}</nuxt-link>              
+                      <div class="bg-white border border-gray-200 dark:border-gray-700 rounded-md py-2 px-2">
+                        <div class="grid grid-cols-1 gap-4">
+                          <div class="flex justify-center">
+                            <img v-if="ct.icon" :src="`/${ct.icon}`" class="h-16" />
+                          </div>
+                          
+                          <div class="flex justify-center">
+                            <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }" class=" text-gray-700 text-xl transition-all">{{ ct.name }}</nuxt-link>              
+                          </div>
                         </div>
 
                         <div>

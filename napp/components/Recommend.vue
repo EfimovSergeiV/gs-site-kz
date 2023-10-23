@@ -9,7 +9,7 @@
 
 <template>
   <div class="container py-2 mx-auto px-4 max-w-6xl lg:px-8">
-    <div class="p-2 bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-sm">
+    <div class="p-2 bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-sm relative">
       <div class="">
         <blockquote class="text-base lg:text-2xl font-semibold italic text-center text-gray-700 dark:text-gray-300">
           
@@ -24,37 +24,32 @@
       </div>
 
       <div class="">
-
         <Swiper
-          :modules="[SwiperPagination]"
-          :slides-per-view="'auto'"
-          :slidesPerView="4"
-          :spaceBetween="10"
+          class=""
+          :modules="[]"
+          :slidesPerView="'auto'"
           :loop="true"
-          :creative-effect="{
-            prev: {
-              shadow: false,
-              translate: ['-20%', 0, -1],
-            },
-            next: {
-              translate: ['100%', 0, 0],
-            },
-          }"
+          :spaceBetween="10"
         >
-
-          <SwiperSlide v-for="product in recommends" :key="product.id" class=" min-w-[280px]">
+        
+          <SwiperSlide  v-for="product in recommends" :key="product.id" class="">
             <ProductSmall :product="product" />
           </SwiperSlide>
 
-          <div class="flex justify-end mt-4">
+          <div class="absolute bottom-0 right-0 py-1 px-1 z-50">
             <SwiperControls class="bg-gray-100 rounded-full border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 dark:bg-gray-700 transition-all duration-500 px-1" />
           </div>
-          
-        </Swiper>
 
+        </Swiper>
       </div>
 
 
     </div>
   </div>
 </template>
+
+<style scoped>
+.swiper-slide {
+  width: 260px;
+}
+</style>

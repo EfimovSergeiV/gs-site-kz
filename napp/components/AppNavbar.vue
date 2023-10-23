@@ -93,7 +93,7 @@
                           </div>
                           <div class="">
                             <p class="text-sm">{{ product.name }}</p>
-                            <p v-if="product.price > 0" class="">{{ product.price.toLocaleString() }} <span class="text-xs">〒</span></p>
+                            <p v-if="product.price > 0" class="">{{ product.price.toLocaleString() }} <span class="text-xs">тг</span></p>
                             <p v-else class="text-xs">Стоимость по запросу</p>
                           </div>
                         </div>

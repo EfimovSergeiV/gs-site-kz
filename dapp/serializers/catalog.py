@@ -10,7 +10,7 @@ class CategoryRecursiveSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CategoryModel
-        fields = ('id','name', 'level', 'inserted', 'related')
+        fields = ('id','name', 'icon', 'level', 'inserted', 'related')
 
 
 """ СЕРИАЛИЗАЦИЯ ДОПОЛНИТЕЛЬНЫХ ПОЛЕЙ ПРОДУКТА """

@@ -36,7 +36,7 @@
         <div class="">
           <div v-if="props.product.price" class="flex gap-1 items-start">
             <p class="text-base text-right font-medium text-gray-900 dark:text-gray-200">{{ props.product.price.toLocaleString() }}</p>
-            <p class="text-base">₸</p>
+            <p class="text-base">тг</p>
           </div>          
           <p v-else  class="text-xs text-right font-medium text-gray-900 dark:text-gray-200">стоимость по запросу</p>
 

@@ -64,8 +64,9 @@ class CategoryModel(MPTTModel, AbsActivatedModel):
     """Подкатегории каталога"""
     name = models.CharField(verbose_name="Название", max_length=100)
     description = models.TextField(verbose_name="Описание", max_length=1000, default="Нет описания", null=True, blank=True)
+    icon = models.CharField(verbose_name="Иконка категории", null=True,  blank=True, max_length=100)
+
     parent = TreeForeignKey('self', verbose_name="Вложенность", on_delete=models.CASCADE, null=True, blank=True, related_name='children')
-    
     related = models.ManyToManyField('self', verbose_name='Связанные категории', blank=True)
 
     class Meta:
