@@ -34,7 +34,7 @@
 
 <template>
   <div class="">
-    <div class="container mx-auto py-2 px-4 max-w-6xl lg:px-8">
+    <div class="container mx-auto py- 2 px-4 max-w-6xl lg:px-8">
 
 
 
@@ -75,8 +75,8 @@
               w-full pl-12 p-2 dark:bg-white dark:border-gray-700 dark:placeholder-gray-500
               ring-0 dark:focus:ring-gray-600/0 dark:focus:border-gray-700" >
             
-              <div v-if="search.length > 1" class="absolute py-2 z-30 w-full invisible group-hover:visible ease-in-out transition-opacity duration-100 opacity-0 group-hover:opacity-100">
-              <div class="bg-white/90 dark:bg-gray-700/80 border border-gray-100 dark:border-gray-700 backdrop-blur-md rounded-md py-2 px-2 min-h-[80px]">
+              <div v-if="search.length > 1" class="absolute py- 2 z-30 w-full invisible group-hover:visible ease-in-out transition-opacity duration-100 opacity-0 group-hover:opacity-100">
+              <div class="bg-white/90 dark:bg-gray-700/80 border border-gray-100 dark:border-gray-700 backdrop-blur-md rounded-md py -2 px-2 min-h-[80px]">
                 <div class="px-2 h-96 overflow-y-auto my-2">
                   <div v-if="search.length > 3 && products.length === 0" class="">
                     <p class="">Ничего не найдено</p>
@@ -85,7 +85,7 @@
                     <p class="">Введите запрос</p>
                   </div>
                   <transition-group name="fade">
-                    <div class="px-2 py-2 my-1 bg-gray-100 dark:bg-gray-800 border border-gray-200 hover:border-gray-300 dark:border-gray-500 hover:dark:border-gray-400 rounded-md transition-all" v-for="product in products" :key="product.id">
+                    <div class="px-2 py -2 my-1 bg-gray-100 dark:bg-gray-800 border border-gray-200 hover:border-gray-300 dark:border-gray-500 hover:dark:border-gray-400 rounded-md transition-all" v-for="product in products" :key="product.id">
                       <nuxt-link :to="{ name: 'product-id', params: { id: product.id }}" class="">
                         <div class="flex gap-4">
                           <div class="">
