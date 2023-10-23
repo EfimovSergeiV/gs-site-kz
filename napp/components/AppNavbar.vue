@@ -34,7 +34,7 @@
 
 <template>
   <div class="">
-    <div class="container mx-auto py- 2 px-4 max-w-6xl lg:px-8">
+    <div class="container mx-auto py-0.5 px-4 max-w-6xl lg:px-8">
 
 
 

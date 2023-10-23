@@ -135,14 +135,21 @@
                   <div v-if=" route.path !== '/cts'" class="py-2 absolute w-full left-0 z-40 invisible group-hover:visible ease-in-out transition-opacity duration-100 opacity-0 group-hover:opacity-100">
                     <div class="bg-white/90 dark:bg-gray-700/90 border border-gray-100 dark:border-gray-700 backdrop-blur-md rounded-t-md rounded-b-2xl">
                       <div class="px-2 py-2">
-                        <div class="columns-1 xl:columns-3 lg:columns-4">
+                        <div class="grid grid-cols-4 gap-2">
                           <div v-for="ct in cts" :key="ct.id" class="break-inside-avoid-column">
                             <div class="">
-                              <div class="py-2 ">
-                                <div class="bg-gray-100/90 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-500 rounded-md py-2 px-2">
-                                  <div class="py-2">
-                                    <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }" class=" text-gray-700 dark:text-gray-100 text-lg transition-all">{{ ct.name }}</nuxt-link>              
+                              <div class="">
+                                <div class="bg-white border border-gray-200 dark:border-gray-700 rounded-md py-2 px-2">
+                                  <div class="grid grid-cols-1 gap-4">
+                                    <div class="flex justify-center">
+                                      <img v-if="ct.icon" :src="`/${ct.icon}`" class="h-16" />
+                                    </div>
+                                    
+                                    <div class="flex justify-center">
+                                      <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }" class=" text-gray-700 text-xl transition-all">{{ ct.name }}</nuxt-link>              
+                                    </div>
                                   </div>
+
                                   <div>
                                     <ul>
                                       <li v-for="sct in ct.inserted" :key="sct.id" class="inline-block ">
@@ -154,14 +161,19 @@
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div class="flex items-center justify-end">
-                          <nuxt-link :to="{ name: 'cts' }" class="border border-gray-500 text-gray-100 bg-blue-600 hover:bg-blue-600 rounded-md  border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
-                            <div class="bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-md h-full w-full px-8 py-2">
-                              <p>Перейти в категории</p>
+
+                          <div class="">
+                            <div class="flex items-center justify-center w-full">
+                              <nuxt-link :to="{ name: 'cts' }" class=" w-full border border-gray-500 text-gray-100 bg-blue-600 hover:bg-blue-600 rounded-md  border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
+                                <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-md h-full w-full px-8 py-2">
+                                  <p class="text-center">Перейти в категории</p>
+                                </div>
+                              </nuxt-link>
                             </div>
-                          </nuxt-link>
+                          </div>
+
                         </div>
+
                       </div>
                     </div>  
                   </div>
