@@ -122,9 +122,9 @@
         </div>
         <div class="" v-else>
 
-          <div class="bg-white dark:bg-gray-800 min-h-[50vh] rounded-md border border-gray-200 dark:border-gray-700">
-            <div class="flex items-center justify-center py-12">
-              <p class=""> Ничего не найдено</p>
+          <div class="bg-white dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-700">
+            <div class="flex items-center justify-center min-h-[50vh]">
+              <p class="text-xl"> Ничего не найдено</p>
             </div>
           </div>
           
@@ -135,12 +135,8 @@
 
 
 
-
-
-    
-
-    <div class="mx-auto px-4 my-4 max-w-6xl lg:px-8">
-      <div class="flex items-center justify-end">
+    <div class="mx-auto px-4 my-2 max-w-6xl lg:px-8">
+      <div v-if="products.count > 0" class="flex items-center justify-end">
         <Pagination :count="products.count" />
       </div>
     </div>

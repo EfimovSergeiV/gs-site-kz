@@ -58,8 +58,8 @@
 
             <div class="grid grid-cols-1 gap-2">
               <div class="grid grid-cols-2 gap-x-2 gap-y-2">
-                <button @click="clientStore.locationModal = true" class="py-1 cursor-pointer bg-gray-100 dark:bg-gray-600 shadow-lg shadow-black/30 border border-gray-100/10 dark:border-white/20 rounded-lg transition-all duration-500">
-                  <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300">
+                <button @click="clientStore.locationModal = true" class="py-1 cursor-pointer bg-gray-100 shadow-lg shadow-black/30 border border-gray-100/10 dark:border-white/20 rounded-lg transition-all duration-500">
+                  <div class="flex items-center gap-2 text-gray-700">
                     <span class="px-2 mdi mdi-map-marker-radius border-r border-gray-300"></span>
                     <p v-if="clientStore.client.city.length < 16" class="text-sm ">{{ clientStore.client.city }}</p>
                     <p v-else class="text-sm " :title="clientStore.client.city" >{{ clientStore.client.city.slice(0, 16) }} ...</p>
@@ -67,20 +67,20 @@
                 </button>
 
                 <div id="color-mode">
-                  <button v-if="$colorMode.preference === 'system'" @click="$colorMode.preference = 'dark'" class="bg-gray-100 dark:bg-gray-600 shadow-lg shadow-black/30 border border-gray-100/10 dark:border-white/20 rounded-lg transition-all duration-500 w-full h-full flex items-center">
-                    <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300">
+                  <button v-if="$colorMode.preference === 'system'" @click="$colorMode.preference = 'dark'" class="bg-gray-100 shadow-lg shadow-black/30 border border-gray-100/10 dark:border-white/20 rounded-lg transition-all duration-500 w-full h-full flex items-center">
+                    <div class="flex items-center gap-2 text-gray-700 ">
                       <span class="px-2 mdi mdi-laptop border-r border-gray-300"></span>
                       <p class="text-sm "> Сменить тему</p>
                     </div>
                   </button>
-                  <button v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="bg-gray-100 dark:bg-gray-600 shadow-lg shadow-black/30 border border-gray-100/10 dark:border-white/20 rounded-lg transition-all duration-500 w-full h-full flex items-center">
-                    <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300">
+                  <button v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="bg-gray-100  shadow-lg shadow-black/30 border border-gray-100/10 dark:border-white/20 rounded-lg transition-all duration-500 w-full h-full flex items-center">
+                    <div class="flex items-center gap-2 text-gray-700 ">
                       <span class="px-2 mdi mdi-weather-night border-r border-gray-300"></span>
                       <p class="text-sm "> Ночной режим</p>
                     </div>
                   </button>
-                  <button v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'system'" class="bg-gray-100 dark:bg-gray-600 shadow-lg shadow-black/30 border border-gray-100/10 dark:border-white/20 rounded-lg transition-all duration-500 w-full h-full flex items-center">
-                    <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300">
+                  <button v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'system'" class="bg-gray-100  shadow-lg shadow-black/30 border border-gray-100/10 dark:border-white/20 rounded-lg transition-all duration-500 w-full h-full flex items-center">
+                    <div class="flex items-center gap-2 text-gray-700 ">
                       <span class="px-2 mdi mdi-white-balance-sunny border-r border-gray-300"></span>
                       <p class="text-sm "> Дневной режим</p>
                     </div>
@@ -88,31 +88,31 @@
                 </div>
 
                 <div class="">
-                  <nuxt-link :to="{name: 'lk-name', params: { name: data.username}}"  v-if="status === 'authenticated'" class=" bg-gray-100 dark:bg-gray-600 shadow-lg shadow-black/30 border border-gray-100/10 dark:border-white/20 rounded-lg transition-all duration-500 w-full h-full flex items-center">
-                    <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300 h-f3ll w-full">
+                  <nuxt-link :to="{name: 'lk-name', params: { name: data.username}}"  v-if="status === 'authenticated'" class=" bg-gray-100  shadow-lg shadow-black/30 border border-gray-100/10 dark:border-white/20 rounded-lg transition-all duration-500 w-full h-full flex items-center">
+                    <div class="flex items-center gap-2 text-gray-700 h-full w-full">
                       <span class="px-2 mdi mdi-account border-r border-gray-300"></span>
                       <p class="text-sm "> Личный кабинет</p>
                     </div>
                   </nuxt-link>
-                  <button  v-else @click="clientStore.registerModal = true" class=" bg-gray-100 dark:bg-gray-600 shadow-lg shadow-black/30 border border-gray-100/10 dark:border-white/20 rounded-lg transition-all duration-500 w-full h-full flex items-center">
-                    <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300 h-f3ll w-full">
+                  <button  v-else @click="clientStore.registerModal = true" class=" bg-gray-100 shadow-lg shadow-black/30 border border-gray-100/10 dark:border-white/20 rounded-lg transition-all duration-500 w-full h-full flex items-center">
+                    <div class="flex items-center gap-2 text-gray-700 h-full w-full">
                       <span class="px-2 mdi mdi-account border-r border-gray-300"></span>
                       <p class="text-sm "> Регистрация</p>
                     </div>
                   </button>
                 </div>
 
-                <div class="py-1 bg-gray-100 dark:bg-gray-600 shadow-lg shadow-black/30 border border-gray-100/10 dark:border-white/20 rounded-lg transition-all duration-500">
+                <div class="py-1 bg-gray-100 shadow-lg shadow-black/30 border border-gray-100/10 dark:border-white/20 rounded-lg transition-all duration-500">
                   
                   <button @click="clientStore.loginModal = true" v-if="status === 'unauthenticated'" class="w-full h-full">
-                    <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300">
+                    <div class="flex items-center gap-2 text-gray-700 ">
                       <span class="px-2 mdi mdi-login-variant border-r border-gray-300"></span>
                       <p class="text-sm "> Войти</p>
                     </div>
                   </button>
 
                   <button v-else @click="signOut()" class="w-full h-full">
-                    <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300">
+                    <div class="flex items-center gap-2 text-gray-700 ">
                       <span class="px-2 mdi mdi-login-variant border-r border-gray-300"></span>
                       <p class="text-sm "> Выйти</p>
                     </div>
@@ -133,7 +133,7 @@
                   </div>
 
                   <div v-if=" route.path !== '/cts'" class="py-2 absolute w-full left-0 z-40 invisible group-hover:visible ease-in-out transition-opacity duration-100 opacity-0 group-hover:opacity-100">
-                    <div class="bg-white/90 dark:bg-gray-700/90 border border-gray-100 dark:border-gray-700 backdrop-blur-md rounded-t-md rounded-b-2xl">
+                    <div class="bg-gray-300 dark:bg-gray-700 border border-gray-100 dark:border-gray-700 backdrop-blur-md rounded-t-sm rounded-b-md">
                       <div class="px-2 py-2">
                         <div class="grid grid-cols-4 gap-2">
                           <div v-for="ct in cts" :key="ct.id" class="break-inside-avoid-column">
@@ -161,17 +161,12 @@
                               </div>
                             </div>
                           </div>
+                        </div>
 
-                          <div class="">
-                            <div class="flex items-center justify-center w-full">
-                              <nuxt-link :to="{ name: 'cts' }" class=" w-full border border-gray-500 text-gray-100 bg-blue-600 hover:bg-blue-600 rounded-md  border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
-                                <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-md h-full w-full px-8 py-2">
-                                  <p class="text-center">Перейти в категории</p>
-                                </div>
-                              </nuxt-link>
-                            </div>
-                          </div>
-
+                        <div class="flex items-center justify-end px-6 pt-2">
+                          <nuxt-link :to="{ name: 'cts' }">
+                            <p class="text-xl">Перейти в категории</p>
+                          </nuxt-link>
                         </div>
 
                       </div>

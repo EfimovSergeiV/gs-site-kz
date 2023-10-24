@@ -12,7 +12,7 @@
       <div class="md:flex md:justify-between items-center py-2">
 
         <div class="">
-          <ul class="grid grid-cols-2 gap-x-6 gap-y-2 text-xs md:text-sm mt-3 sm:mt-0 md:order-last py-2 ">
+          <ul class="grid grid-cols-2 gap-x-2 gap-y-2 text-xs md:text-base mt-3 sm:mt-0 md:order-last py-2 ">
             <li>
               <div class="group">
                 <nuxt-link :to="{ name: 'about' }" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Производители</nuxt-link>
@@ -34,7 +34,7 @@
               <button @click="showAllert()" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Доставка</button>
             </li>
             <li>
-              <nuxt-link :to="{ name: 'policy'}" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 text-xs md:text-sm">Политика обработки данных</nuxt-link>
+              <nuxt-link :to="{ name: 'policy'}" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 text-xs md:text-base">Политика обработки данных</nuxt-link>
             </li>
           </ul>
         </div>
