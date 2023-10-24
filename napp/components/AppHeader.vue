@@ -189,17 +189,17 @@
               
 
               <div class="flex justify-end gap-6 uppercase font-semibold py-2">
-                <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 hover:text-white hover:before:bg-blue-600 transition-all duration-300 relative inline-block my-2">
-                  <nuxt-link :to="{ name: 'lk-name', params: { name: 'guest' } }" class="relative">Избранное</nuxt-link>
+                <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 hover:text-white hover:before:bg-blue-600 transition-all duration-0 relative inline-block my-2">
+                  <nuxt-link :to="{ name: 'lk-name', params: { name: 'guest' } }" class="relative text-sm md:text-base">Избранное</nuxt-link>
                 </div>
-                <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 hover:text-white hover:before:bg-blue-600 transition-all duration-700 relative inline-block my-2">
-                  <nuxt-link :to="{ name: 'compare' }" class="relative ">Товары в сравнении</nuxt-link>
+                <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 hover:text-white hover:before:bg-blue-600 transition-all duration-0 relative inline-block my-2">
+                  <nuxt-link :to="{ name: 'compare' }" class="relative text-sm md:text-base">Товары в сравнении</nuxt-link>
                 </div>
-                <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 hover:text-white hover:before:bg-blue-600 transition-all duration-300 relative inline-block my-2">
-                  <nuxt-link :to="{ name: 'cart' }" class="relative ">Корзина</nuxt-link>
+                <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 hover:text-white hover:before:bg-blue-600 transition-all duration-0 relative inline-block my-2">
+                  <nuxt-link :to="{ name: 'cart' }" class="relative text-sm md:text-base">Корзина</nuxt-link>
                 </div>
-                <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 hover:text-white hover:before:bg-blue-600 transition-all duration-300 relative inline-block my-2">
-                  <nuxt-link :to="{ name: 'about' }" class="relative ">О нас</nuxt-link>
+                <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 hover:text-white hover:before:bg-blue-600 transition-all duration-0 relative inline-block my-2">
+                  <nuxt-link :to="{ name: 'about' }" class="relative text-sm md:text-base">О нас</nuxt-link>
                 </div>
 
               </div>
