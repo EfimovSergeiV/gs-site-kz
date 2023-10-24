@@ -154,7 +154,7 @@
       </div>
 
       <div v-else class="flex justify-center bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 rounded-md">
-        <div class="py-8 ">
+        <div class="py-8 hidden">
           <div class="flex items-center gap-8">
             <div class="grid gap-2 grid-cols-1">
               <div class="mx-4 text-center">
@@ -170,6 +170,9 @@
             </div>          
           </div>          
         </div>
+        <div class="flex items-center justify-center min-h-[50vh]">
+              <p class="text-xl"> Ваша корзина пуста</p>
+            </div>
       </div>
 
 
