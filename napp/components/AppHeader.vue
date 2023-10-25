@@ -1,5 +1,6 @@
 <script setup>
   import cities from '~/cities.ts';
+  import debounce from "lodash.debounce";
 
   const config = useRuntimeConfig()
   const route = useRoute()
@@ -12,6 +13,27 @@
   const { signIn, signOut, token, data, status, lastRefreshedAt } = useAuth()
   const { data: cts } = await useFetch(`${ config.public.baseURL }c/ct/`)
 
+  const search = ref('')
+  const products = ref([])
+
+
+  const debouncedHandler = debounce(async query => {
+
+    const { data: prods }  = await useFetch(`${ config.public.baseURL }c/search/`, {
+      method: 'POST',
+      body: {
+        name: search
+      }
+    })
+    
+    products.value = ( await prods.value )    
+
+  }, 300);
+
+
+  watch(search, (searchRequest) => {
+    debouncedHandler()
+  })
   
   const searchProduct = ref('')
   const searchCity = ref('')
@@ -205,45 +227,13 @@
               </div>
 
 
-              <div class="hidden md: block">
-                <div class="grid grid-cols-1 gap-2 py-2">
-                  <div class="flex items-end justify-end gap-8">
-
-                    <div class="grid grid-cols-1 gap-0.5 justify-end items-end">
-                      <div class=" flex items-end justify-end bg-blue-400">
-                        <a :href="`tel:+77084238070`" class="text-center text-lg text-gray-600 dark:text-gray-200 hover:text-white transition-all"> +7 708 423 8070</a>
-                      </div>
-                      <div class=" flex items-start justify-end bg-blue-400">
-                        <a href="mailto:zakaz@glsvar.kz" target="_blank" class="text-center text-sm  text-gray-600 dark:text-gray-200 hover:text-white">zakaz@glsvar.kz</a>          
-                      </div>
-                    </div>
-
-                    <div class="">
-                      <div class="grid grid-cols-1 gap-0.5 justify-end items-end">
-                        <div class=" flex items-end justify-start bg-blue-400">
-                          <p class="text-gray-600 dark:text-gray-200 text-sm ">Главный сварщик. Казахстан,</p>
-                        </div>
-                        <div class=" flex items-start justify-start bg-blue-400">
-                          <p class="text-gray-600 dark:text-gray-200 text-lg "> ул. Топоркова 35, Рудный, 111500</p>
-                        </div>                        
-
-
-                      </div>
-
-                    </div>
-                    
-
-
-                  </div>
-                </div>
-              </div>
               <div class="w-full">
                 <TopSlider />
               </div>
               
 
               <div class="mt-2">
-                <div class="">
+                <div class="relative group">
                   <div class="bg-white border border-gray-300 rounded-md">
                     <div class="flex items-center gap-0.5">
                       <div class=" pl-4 mdi mdi-24px mdi-magnify text-gray-600"></div>
@@ -259,6 +249,34 @@
                       >                      
                     </div>
                   </div>
+                  
+                  <div v-if="search.length > 1" class="absolute z-50 w-full bg-white border-x border-b border-gray-300 rounded-b-md -mt-1 invisible group-hover:visible ease-in-out transition-opacity duration-100 opacity-0 group-hover:opacity-100">
+                    <div class="px-2 h-96 overflow-y-auto my-2">
+                      <div v-if="search.length > 3 && products.length === 0" class="text-gray-700">
+                        <p class="">Ничего не найдено</p>
+                      </div>
+                      <div v-if="search.length === 0" class="">
+                        <p class="">Введите запрос</p>
+                      </div>
+                      <transition-group name="fade">
+                        <div class="px-2 py-0.5 my-1 bg-gray-100 dark:bg-gray-800 border border-gray-200 hover:border-gray-300 dark:border-gray-500 hover:dark:border-gray-400 rounded-md transition-all" v-for="product in products" :key="product.id">
+                          <nuxt-link :to="{ name: 'product-id', params: { id: product.id }}" class="">
+                            <div class="flex gap-4">
+                              <div class="">
+                                <img class="bg-white w-20 p-1 rounded-md" :src="product.preview_image" />
+                              </div>
+                              <div class="">
+                                <p class="text-sm">{{ product.name }}</p>
+                                <p v-if="product.price > 0" class="">{{ product.price.toLocaleString() }} <span class="text-xs">тг</span></p>
+                                <p v-else class="text-xs">Стоимость по запросу</p>
+                              </div>
+                            </div>
+                          </nuxt-link>
+                        </div>
+                      </transition-group>
+                    </div>
+                  </div>
+
                 </div>
               </div>
 
