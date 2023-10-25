@@ -41,10 +41,13 @@
   <div class="">
 
     <div class="">
-      <div id="navbar" class="bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-300 border-b border-gray-700 fixed hidden w-full z-50">
+      <div id="navbar" class="bg-gray-300 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-b border-gray-200 dark:border-gray-900 fixed hidden w-full z-50">
         
         <div class="container mx-auto px-4 max-w-6xl lg:px-8">
-          <div class="flex justify-end gap-4 md:gap-6 uppercase font-semibold py-2">
+          <div class="flex justify-end gap-4 md:gap-4 uppercase font-semibold py-2">
+            <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
+              <nuxt-link :to="{ name: 'index' }" class="relative text-xs md:text-base">Главная</nuxt-link>
+            </div>
             <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
               <nuxt-link :to="{ name: 'lk-name', params: { name: 'guest' } }" class="relative text-xs md:text-base">Избранное</nuxt-link>
             </div>
