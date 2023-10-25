@@ -199,7 +199,7 @@
               </div>
 
               <div class="flex items-end justify-end">
-                <div class="">
+                <div class="text-gray-700 dark:text-gray-300">
                   <div class="flex gap-4 items-center">
                     <p class="mdi mdi-36px mdi-map-marker-outline"></p>
                     <div class="">
