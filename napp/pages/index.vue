@@ -19,7 +19,7 @@
     keywords: `Главный сварщик, сварочное оборудование, оборудование для сварки, купить электроды, купить проволоку, купить источник, купить сварочный инвертор`,
     ogLocale: 'ru_RU',
     ogTitle: `Интернет магазин Главный Сварщик`,
-    ogDescription: `${ descriptionData.value }`,
+    ogDescription: `${ descriptionData }`,
     ogImage: `https://api.glsvar.ru/files/og-image.png`,
     twitterCard: `https://api.glsvar.ru/files/og-image.png`,
   })

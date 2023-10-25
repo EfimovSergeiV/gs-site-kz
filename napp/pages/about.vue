@@ -25,11 +25,11 @@
 
   useSeoMeta({
     title: `Интернет магазин Главный Сварщик - О нас - Адреса магазинов`,
-    description: `${ descriptionData.value }`,
+    description: `${ descriptionData }`,
     keywords: `Главный сварщик, сварочное оборудование, оборудование для сварки, купить электроды, купить проволоку, купить источник, купить сварочный инвертор`,
     ogLocale: 'ru_RU',
     ogTitle: `Интернет магазин Главный Сварщик`,
-    ogDescription: `${ descriptionData.value }`,
+    ogDescription: `${ descriptionData }`,
     ogImage: `https://api.glsvar.ru/files/og-image.png`,
     twitterCard: `https://api.glsvar.ru/files/og-image.png`,
   })
@@ -120,7 +120,7 @@
         <div class="py-4">
 
           <div class="">
-            <div class="py-4">
+            <div class="py-2">
 
               <div class="py-1">
                 <p class="text-lg">{{ descriptionData }}</p>  
@@ -134,6 +134,11 @@
             </div>
 
           </div>
+
+          <div class="relative">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9607.746256144887!2d63.1143089!3d52.9855424!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43cd03eb0088f70d%3A0xfaaebd2d312ed8f7!2z0JPQu9Cw0LLQvdGL0Lkg0KHQstCw0YDRidC40Lo!5e0!3m2!1sru!2sru!4v1695649108350!5m2!1sru!2sru" width="100%" height="350" frameborder="0" loading="lazy" class="rounded-md"></iframe>
+          </div>
+
         </div>
 
 
