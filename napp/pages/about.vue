@@ -119,13 +119,13 @@
         
         <div class="py-4">
 
-          <div class="">
-            <div class="py-2">
+          <div class="flex items-center justify-center">
+            <div class="py-2 ">
               <div class="py-1">
                 <p class="text-xl">{{ descriptionData }}</p>  
               </div>
               <div class="py-1 max-w-3xl">
-                <p class="text-lg">
+                <p class="text-lg text-gray-600 dark:text-gray-400 text-center">
                   Наши магазины – это место, где профессионалы и энтузиасты приходят за лучшими решениями для сварочных работ. Сварка - это искусство, и мы знаем, как сделать его доступным и эффективным для каждого.
                 </p>
               </div>
@@ -137,7 +137,7 @@
 
             <div class="grid grid-cols-2 items-center">
               <div class="">
-                <div class="flex gap-2 items-center">
+                <div class="flex gap-4 items-center">
                   <p class="mdi mdi-36px mdi-map-marker-outline"></p>
                   <div class="">
                     <p class="text-xl">Казахстан</p>
@@ -150,7 +150,7 @@
               </div>
 
               <div class="py-4 ">
-                <p class="py-2">График работы:</p>
+                <p class="py-2 text-xl">График работы:</p>
 
                 <div class="flex gap-10">
                   <div class="">
@@ -200,34 +200,6 @@
           </div>
 
         </div>
-
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 hidden">
-            <div class="flex items-center py-4">
-              <div class="">
-                <p class="text-2xl text-center">Сертификаты</p>
-                <div class="">
-                  <p class="text-sm text-center">
-                    Мы являемся официальным дистрибьютором ведущих брендов сварочного оборудования, и всегда готовы предложить вам широкий выбор продуктов, которые обеспечат вашу эффективную и качественную работу. Наши специалисты всегда готовы проконсультировать вас и помочь выбрать именно то, что вам нужно.
-                  </p>
-                </div>                
-              </div>
-            </div>
-
-            <div class="flex items-center gap-4">
-              <div class="">
-                <img alt="cert-1" src="/esab-cert.jpg" class="rounded-md shadow-md shadow-black/50 cursor-zoom-in w-48" fluid/>
-              </div>
-              <div class="">
-                <img alt="cert-2" src="/cert-redius.jpg" class="rounded-md shadow-md shadow-black/50 cursor-zoom-in w-48" fluid />
-              </div>
-              <div class="">
-                <img alt="cert-3" src="/svarog.jpg" class="rounded-md shadow-md shadow-black/50 cursor-zoom-in w-48" fluid />
-              </div>                
-            </div>            
-          </div>
-
-
 
 
           <!-- <p class="text-xs">{{ clientStore.client.adress }}</p> -->
