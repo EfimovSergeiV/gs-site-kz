@@ -135,60 +135,84 @@
           <div class="py-4">
 
 
-            <div class="grid grid-cols-2 items-center">
-              <div class="">
-                <div class="flex gap-4 items-center">
-                  <p class="mdi mdi-36px mdi-map-marker-outline"></p>
-                  <div class="">
-                    <p class="text-xl">Казахстан</p>
-                    <p class="text-base">Рудный, ул. Топоркова 35, 111500</p>
-                  </div>
-                </div>
-                <div class="py-2">
-                  <a href="tel:+77084238070" class="text-4xl">+7 (708) 423-80-70</a>
-                </div>
-              </div>
+            <div class="grid grid-cols-2 items-end">
+
 
               <div class="py-4 ">
-                <p class="py-2 text-xl">График работы:</p>
+                <p class="py-2 text-xl text-gray-600 dark:text-gray-400">Мы открыты для посетителей:</p>
 
                 <div class="flex gap-10">
                   <div class="">
-                    <div class="grid grid-cols-2 gap-6">
-                      <p class="text-base">понедельник</p>
-                      <p class="text-base">08:30 – 17:30</p>
+                    <div class=" border-b border-gray-200 dark:border-gray-700">
+                      <div class="grid grid-cols-2 gap-6">
+                        <p class="text-base">понедельник</p>
+                        <p class="text-base">08:30 – 17:30</p>
+                      </div>                      
                     </div>
-                    <div class="grid grid-cols-2 gap-6">
-                      <p class="text-base">вторник</p>
-                      <p class="text-base">08:30 – 17:30</p>
+
+                    <div class=" border-b border-gray-200 dark:border-gray-700">
+                      <div class="grid grid-cols-2 gap-6">
+                        <p class="text-base">вторник</p>
+                        <p class="text-base">08:30 – 17:30</p>
+                      </div>                      
                     </div>
-                    <div class="grid grid-cols-2 gap-6">
-                      <p class="text-base">среда</p>
-                      <p class="text-base">08:30 – 17:30</p>
-                    </div>                    
+                    <div class=" border-b border-gray-200 dark:border-gray-700">
+                      <div class="grid grid-cols-2 gap-6">
+                        <p class="text-base">среда</p>
+                        <p class="text-base">08:30 – 17:30</p>
+                      </div>                          
+                    </div>
+
+
+                
                   </div>
                   <div class="">
-                    <div class="grid grid-cols-2 gap-6">
-                      <p class="text-base">четверг</p>
-                      <p class="text-base">08:30 – 17:30</p>
+                    <div class=" border-b border-gray-200 dark:border-gray-700">
+                      <div class="grid grid-cols-2 gap-6">
+                        <p class="text-base">четверг</p>
+                        <p class="text-base">08:30 – 17:30</p>
+                      </div>                      
                     </div>
-                    <div class="grid grid-cols-2 gap-6">
-                      <p class="text-base">пятница</p>
-                      <p class="text-base">08:30 – 17:30</p>
+                    <div class=" border-b border-gray-200 dark:border-gray-700">
+                      <div class="grid grid-cols-2 gap-6">
+                        <p class="text-base">пятница</p>
+                        <p class="text-base">08:30 – 17:30</p>
+                      </div>                      
                     </div>
-                    <div class="grid grid-cols-2 gap-6">
-                      <p class="text-base">суббота</p>
-                      <p class="text-base">09:00 – 15:00</p>
+                    <div class=" border-b border-gray-200 dark:border-gray-700">
+                      <div class="grid grid-cols-2 gap-6">
+                        <p class="text-base">суббота</p>
+                        <p class="text-base">09:00 – 15:00</p>
+                      </div>                      
                     </div>
-                    <div class="grid grid-cols-2 gap-6">
-                      <p class="text-base">воскресенье</p>
-                      <p class="text-base">Закрыто</p>
-                    </div>                    
+                    <div class=" border-b border-gray-200 dark:border-gray-700">
+                      <div class="grid grid-cols-2 gap-6">
+                        <p class="text-base">воскресенье</p>
+                        <p class="text-base">Закрыто</p>
+                      </div>                          
+                    </div>
+                
                   </div>
                 </div>
 
 
               </div>
+
+              <div class="flex items-end justify-end">
+                <div class="">
+                  <div class="flex gap-4 items-center">
+                    <p class="mdi mdi-36px mdi-map-marker-outline"></p>
+                    <div class="">
+                      <p class="text-xl">Казахстан</p>
+                      <p class="text-base">Рудный, ул. Топоркова 35, 111500</p>
+                    </div>
+                  </div>
+                  <div class="py-2">
+                    <a href="tel:+77084238070" class="text-4xl">+7 (708) 423-80-70</a>
+                  </div>
+                </div>                
+              </div>
+
 
             </div>
 

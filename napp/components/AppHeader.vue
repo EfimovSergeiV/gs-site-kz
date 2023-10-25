@@ -146,7 +146,7 @@
                                     </div>
                                     
                                     <div class="flex justify-center">
-                                      <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }" class=" text-gray-700 text-xl transition-all">{{ ct.name }}</nuxt-link>              
+                                      <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }" class=" text-gray-700 text-base md:text-xl transition-all">{{ ct.name }}</nuxt-link>              
                                     </div>
                                   </div>
 

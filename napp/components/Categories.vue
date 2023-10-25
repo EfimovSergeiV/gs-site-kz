@@ -28,7 +28,7 @@
             
             <div class="">
               
-              <div class="grid grid-cols-4 gap-2">
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
                 <div v-for="ct in cts" :key="ct.id" class="break-inside-avoid-column">
                   <div class="">
 
@@ -42,7 +42,7 @@
                           </div>
                           
                           <div class="flex justify-center">
-                            <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }" class=" text-gray-700 text-xl transition-all">{{ ct.name }}</nuxt-link>              
+                            <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }" class=" text-gray-700 text-base md:text-xl transition-all">{{ ct.name }}</nuxt-link>              
                           </div>
                         </div>
 
