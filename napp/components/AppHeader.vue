@@ -244,9 +244,9 @@
 
               <div class="mt-2">
                 <div class="">
-                  <div class="bg-white rounded-md">
-                    <div class="flex items-center px-4 gap-0.5">
-                      <div class="mdi mdi-24px mdi-magnify text-gray-600"></div>
+                  <div class="bg-white border border-gray-300 rounded-md">
+                    <div class="flex items-center gap-0.5">
+                      <div class=" pl-4 mdi mdi-24px mdi-magnify text-gray-600"></div>
                       <input 
                         v-model="search" 
                         type='search'
