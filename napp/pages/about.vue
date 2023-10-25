@@ -121,17 +121,77 @@
 
           <div class="">
             <div class="py-2">
-
               <div class="py-1">
-                <p class="text-lg">{{ descriptionData }}</p>  
+                <p class="text-xl">{{ descriptionData }}</p>  
               </div>
               <div class="py-1 max-w-3xl">
-                <p class="text-sm">
+                <p class="text-lg">
                   Наши магазины – это место, где профессионалы и энтузиасты приходят за лучшими решениями для сварочных работ. Сварка - это искусство, и мы знаем, как сделать его доступным и эффективным для каждого.
                 </p>
               </div>
+            </div>
+          </div>
+
+          <div class="py-4">
+
+
+            <div class="grid grid-cols-2 items-center">
+              <div class="">
+                <div class="flex gap-2 items-center">
+                  <p class="mdi mdi-36px mdi-map-marker-outline"></p>
+                  <div class="">
+                    <p class="text-xl">Казахстан</p>
+                    <p class="text-base">Рудный, ул. Топоркова 35, 111500</p>
+                  </div>
+                </div>
+                <div class="py-2">
+                  <a href="tel:+77084238070" class="text-4xl">+7 (708) 423-80-70</a>
+                </div>
+              </div>
+
+              <div class="py-4 ">
+                <p class="py-2">График работы:</p>
+
+                <div class="flex gap-10">
+                  <div class="">
+                    <div class="grid grid-cols-2 gap-6">
+                      <p class="text-base">понедельник</p>
+                      <p class="text-base">08:30 – 17:30</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6">
+                      <p class="text-base">вторник</p>
+                      <p class="text-base">08:30 – 17:30</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6">
+                      <p class="text-base">среда</p>
+                      <p class="text-base">08:30 – 17:30</p>
+                    </div>                    
+                  </div>
+                  <div class="">
+                    <div class="grid grid-cols-2 gap-6">
+                      <p class="text-base">четверг</p>
+                      <p class="text-base">08:30 – 17:30</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6">
+                      <p class="text-base">пятница</p>
+                      <p class="text-base">08:30 – 17:30</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6">
+                      <p class="text-base">суббота</p>
+                      <p class="text-base">09:00 – 15:00</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6">
+                      <p class="text-base">воскресенье</p>
+                      <p class="text-base">Закрыто</p>
+                    </div>                    
+                  </div>
+                </div>
+
+
+              </div>
 
             </div>
+
 
           </div>
 
@@ -174,7 +234,7 @@
 
           
           <!-- <div class="bg-white dark:bg-gray-700 rounded-md shadow-md shadow-black/50 flex items-center justify-center border border-gray-200 dark:border-gray-600 py-2 px-4">
-            <p class="text-sm">
+            <p class="text-base">
               Здесь вы найдете бренды известных производителей, таких как  EWM, ESAB, Fubag, Aurora, Grovers, Cebora и многих других. Поддайтесь очарованию нашего профессионального и широкого ассортимента изделий: от сварочных аппаратов для инверторных, MIG/MAG, TIG или плазменных процессов, до многочисленных дополнительных материалов и до кислородно-топливной технологии. Каждый гарантированно найдет то, что ищет. Главный сварщик предлагает вам сварочную технику как для новичков, так и профессиональное оборудование. Мы также уделяем первостепенное внимание области безопасности труда сварщиков: будь то защита тела, защита ног, защита рук, защита головы, защита глаз и лица, защита рабочего места или защитные шторы для сварки - просто выберите подходящее оборудование для ваших нужд и стань настоящим героем сварки!
             </p>
           </div> -->
