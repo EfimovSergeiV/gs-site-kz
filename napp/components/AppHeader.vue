@@ -243,15 +243,23 @@
               
 
               <div class="mt-2">
-                <input 
-                  v-model="search" 
-                  type='search'
-                  id="phone"
-                  placeholder="Поиск по каталогу"
-                  class="bg-gray-50 border border-gray-300 text-gray-700 font-semibold dark:text-gray-700 text-sm 
-                  uppercase rounded-md focus:ring-gray-300/0 focus:border-gray-300 block 
-                  w-full pl-12 p-2 dark:bg-white dark:border-gray-700 dark:placeholder-gray-500
-                  ring-0 dark:focus:ring-gray-600/0 dark:focus:border-gray-700" >
+                <div class="">
+                  <div class="bg-white rounded-md">
+                    <div class="flex items-center px-4 gap-0.5">
+                      <div class="mdi mdi-24px mdi-magnify text-gray-600"></div>
+                      <input 
+                        v-model="search" 
+                        type='search'
+                        id="search-form"
+                        placeholder="Поиск по каталогу"
+                        class="bg-white border border-white/0 text-gray-700 dark:text-gray-700 text-lg 
+                        rounded-md focus:ring-gray-300/0 focus:border-white/0 block 
+                        w-full dark:bg-white dark:border-white/0 dark:placeholder-gray-500
+                        ring-0 dark:focus:ring-gray-600/0 dark:focus:border-white/0" 
+                      >                      
+                    </div>
+                  </div>
+                </div>
               </div>
 
 
