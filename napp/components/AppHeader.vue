@@ -188,7 +188,7 @@
             <div class="grid grid-cols-1">
               
 
-              <div class="flex justify-end gap-6 uppercase font-semibold py-2">
+              <div class="flex justify-end gap-4 md:gap-6 uppercase font-semibold py-2">
                 <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
                   <nuxt-link :to="{ name: 'lk-name', params: { name: 'guest' } }" class="relative text-xs md:text-base">Избранное</nuxt-link>
                 </div>
