@@ -139,7 +139,7 @@
 
 
               <div class="py-4 ">
-                <p class="py-2 text-xl text-gray-600 dark:text-gray-400">Мы открыты для посетителей:</p>
+                <p class="py-4 text-xl text-gray-600 dark:text-gray-400">Мы открыты для посетителей:</p>
 
                 <div class="flex gap-10">
                   <div class="">
@@ -198,7 +198,7 @@
 
               </div>
 
-              <div class="flex items-end justify-end">
+              <div class="flex items-end justify-center">
                 <div class="text-gray-700 dark:text-gray-300">
                   <div class="flex gap-4 items-center">
                     <p class="mdi mdi-36px mdi-map-marker-outline"></p>
