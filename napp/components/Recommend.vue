@@ -36,7 +36,7 @@
             <ProductSmall :product="product" />
           </SwiperSlide>
 
-          <div class="absolute bottom-0 right-0 py-1 px-1 z-50">
+          <div class="absolute bottom-0 right-0 py-1 px-1 z-40">
             <SwiperControls class="bg-gray-100 rounded-full border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 dark:bg-gray-700 transition-all duration-500 px-1" />
           </div>
 

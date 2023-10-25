@@ -14,7 +14,7 @@
 
 <template>
 
-  <div class="fixed z-50 w-full h-full bg-gray-500/50 backdrop-blur-sm">
+  <div class="fixed z-40 w-full h-full bg-gray-500/50 backdrop-blur-sm">
     <div class="flex items-center justify-center h-full">
       <div class="h-full w-full flex items-center justify-center">
         
@@ -61,7 +61,7 @@
                         />             
                       </nuxt-link>
                     </SwiperSlide>
-                    <div v-if="productsStore.productImages.length > 1" class="absolute bottom-0 right-0 z-50 p-3">
+                    <div v-if="productsStore.productImages.length > 1" class="absolute bottom-0 right-0 z-40 p-3">
                       <SwiperControls />
                     </div>
                   </Swiper>

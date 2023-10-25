@@ -223,7 +223,6 @@
                 <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
                   <nuxt-link :to="{ name: 'about' }" class="relative text-xs md:text-base">О нас</nuxt-link>
                 </div>
-
               </div>
 
 
@@ -250,7 +249,7 @@
                     </div>
                   </div>
                   
-                  <div v-if="search.length > 1" class="absolute z-50 w-full bg-white border-x border-b border-gray-300 rounded-b-md -mt-1 invisible group-hover:visible ease-in-out transition-opacity duration-100 opacity-0 group-hover:opacity-100">
+                  <div v-if="search.length > 1" class="absolute z-40 w-full bg-white border-x border-b border-gray-300 rounded-b-md -mt-1 invisible group-hover:visible ease-in-out transition-opacity duration-100 opacity-0 group-hover:opacity-100">
                     <div class="px-2 h-96 overflow-y-auto my-2">
                       <div v-if="search.length > 3 && products.length === 0" class="text-gray-700">
                         <p class="">Ничего не найдено</p>

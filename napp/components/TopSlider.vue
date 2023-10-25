@@ -45,7 +45,7 @@
           />
 
           <nuxt-link v-if="slide.path" :to="slide.path">  
-            <div class="absolute top-0 right-0 z-50 w-full h-full">
+            <div class="absolute top-0 right-0 z-40 w-full h-full">
               <div class="flex justify-end">
                 <div class="relative mx-2 md:mx-4 md:my-2">
                   <span class="mdi mdi-16px mdi-link-variant text-whitw shadow-2xl"></span>
@@ -55,7 +55,7 @@
           </nuxt-link>
 
           <a :href="slide.link" target="blank" v-if="slide.link">  
-            <div class="absolute top-0 right-0 z-50 w-full h-full">
+            <div class="absolute top-0 right-0 z-40 w-full h-full">
               <div class="flex justify-end">
                 <div class="relative mx-2 md:mx-4 md:my-2">
                   <span class="mdi mdi-16px mdi-link-variant text-whitw shadow-2xl"></span>
@@ -68,7 +68,7 @@
         
       </SwiperSlide>
       
-      <div class="absolute bottom-0 right-0 z-50 p-3">
+      <div class="absolute bottom-0 right-0 z-40 p-3">
         <SwiperControls class="bg-gray-100/80 rounded-full border border-gray-200/50 hover:border-gray-300 dark:border-gray-600/50 dark:hover:border-gray-500 dark:bg-gray-700/80 transition-all duration-500 px-1" />
       </div>
       

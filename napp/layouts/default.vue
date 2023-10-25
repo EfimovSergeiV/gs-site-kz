@@ -40,6 +40,29 @@
 <template>
   <div class="">
 
+    <div class="">
+      <div id="navbar" class="bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-300 border-b border-gray-700 fixed hidden w-full z-50">
+        
+        <div class="container mx-auto px-4 max-w-6xl lg:px-8">
+          <div class="flex justify-end gap-4 md:gap-6 uppercase font-semibold py-2">
+            <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
+              <nuxt-link :to="{ name: 'lk-name', params: { name: 'guest' } }" class="relative text-xs md:text-base">Избранное</nuxt-link>
+            </div>
+            <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
+              <nuxt-link :to="{ name: 'compare' }" class="relative text-xs md:text-base">Товары в сравнении</nuxt-link>
+            </div>
+            <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 text-white before:bg-blue-600 transition-all duration-0 relative inline-block my-2 px-2">
+              <nuxt-link :to="{ name: 'cart' }" class="relative text-xs md:text-base">Корзина ( {{ productsStore.cart.length }} )</nuxt-link>
+            </div>
+            <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
+              <nuxt-link :to="{ name: 'about' }" class="relative text-xs md:text-base">О нас</nuxt-link>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
 
     <transition name="fade" mode="in-out">
       <CartModal v-if="productsStore.cartAlert" />
@@ -83,7 +106,7 @@
         <div class="">
           <div class="fixed z-40 bottom-60 md:bottom-54 right-20 hover:right-24 transition-all duration-500">
             <div class="relative">
-              <div class="absolute z-50">
+              <div class="absolute z-40">
                 <div class="-rotate-90 bg-blue-600 px-4 pb-12 group rounded-md w-44 cursor-pointer" @click="shopStore.showWriteUsModal">
                   <div class="flex items-center justify-center group-hover:text-gray-100 text-gray-300 font-bold transition-all duration-500">
                     <div class="">
