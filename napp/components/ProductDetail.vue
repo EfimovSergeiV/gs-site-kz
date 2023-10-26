@@ -15,7 +15,7 @@
       <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 p-2 mb-4">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div class="">
-            <div class="flex h-full bg-white rounded-md cursor-zoom-in" @click="productsStore.showProductImages(product.prod_img)">
+            <div class="flex h-full bg-white rounded-md cursor-zoom-in relative" @click="productsStore.showProductImages(product.prod_img)">
               <div class="flex gap-4">
 
 
@@ -32,6 +32,14 @@
                   <img :src="props.product.preview_image" :alt="props.product.name" />
                 </div>
               </div>
+
+              <div v-if="props.product.brand" class="absolute top-0 right-0">
+                <div class="px-4 py-2">
+                  <img :src="props.product.brand.image" class="h-24" />
+                </div>
+                
+              </div>
+
             </div>
           </div>
 

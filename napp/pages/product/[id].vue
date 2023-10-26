@@ -5,9 +5,13 @@
   const route = useRoute()
 
   const { data: product } = await useFetch(`${ config.public.baseURL }c/prod/${route.params.id}`)
-  // const { data: product } = await useFetch(`https://api.glsvar.ru/c/prod/${route.params.id}`)
+  const brand = ref('noname')
 
-  // product.value.keywords
+  onMounted( async () => {
+    if ( product.value.brand ) {
+      brand.value = product.value.brand.brand
+    }
+  })
 
   useHead({
     script: [{
@@ -24,7 +28,7 @@
             "mpn": product.value.vcode,
             "brand": {
               "@type": 'Brand',
-              "name": product.value.brand.brand,
+              "name": brand.value,
             },
             "aggregateRating": {
               '@type': 'AggregateRating',
@@ -33,8 +37,8 @@
             },
             "offers": {
               '@type': 'Offer',
-              "url": 'https://glsvar.ru/product/' + product.value.id,
-              "priceCurrency": 'RUB',
+              "url": 'https://glsvar.kz/product/' + product.value.id,
+              "priceCurrency": 'KZT',
               "price": product.value.price,
               "itemCondition": 'https://schema.org/UsedCondition',
               "availability": 'https://schema.org/InStock',
@@ -45,9 +49,9 @@
   })
 
   useSeoMeta({
-    title: `${ product.value.name } - ${ product.value.brand.brand }`,
+    title: `${ product.value.name } - ${ brand.value }`,
     description: `${ product.value.description.slice(0, 157) }`,
-    keywords: `${ product.value.name }, ${ product.value.brand.brand }, сварочное оборудование, оборудование для сварки, купить электроды, купить проволоку, купить источник, купить сварочный инвертор`,
+    keywords: `${ product.value.name }, ${ brand.value }, сварочное оборудование, оборудование для сварки, купить электроды, купить проволоку, купить источник, купить сварочный инвертор`,
     ogLocale: 'ru_RU',
     ogTitle: `${ product.value.name }`,
     ogDescription: `${ product.value.description.slice(0, 157) }`,
