@@ -439,11 +439,22 @@ class ProductFeedbackModel(AbsDateModel, AbsActivatedModel):
 class ProductImageModel(AbsDateModel):
     """Все изображения каталога"""
     name = models.CharField(verbose_name="Название", default="Изображение", null=True, blank=True, max_length=100)
-    image = ThumbnailerImageField(
-        verbose_name = '',
+    # image = ThumbnailerImageField(
+    #     verbose_name = '',
+    #     help_text="Список изображений товаров 640x480",
+    #     resize_source=dict(size=(640, 480)),
+    #     upload_to="img/c/prod/")
+    image = ResizedImageField(
+        size = [640, 480],
+        verbose_name="",
+        crop = ['middle', 'center'],
+        upload_to='img/c/prod/',
         help_text="Список изображений товаров 640x480",
-        resize_source=dict(size=(640, 480)),
-        upload_to="img/c/prod/")
+        quality=100,
+        default='img/c/preview/noimage.webp',
+        force_format='WEBP',
+    )
+
     product = models.ForeignKey(ProductModel, related_name="prod_img", verbose_name="Продукт", on_delete=models.CASCADE)
 
     class Meta:

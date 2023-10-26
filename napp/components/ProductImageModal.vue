@@ -52,17 +52,17 @@
                       }
                     }"
                   >
-                    <SwiperSlide v-for="slide in productsStore.productImages" :key="slide.id" class="">
-                      <nuxt-link :to="slide.link">
+                    <SwiperSlide v-for="slide in productsStore.productImages" :key="slide.id" class="bg-white">
+                      <div class="flex items-center justify-center h-full">
                         <img
 
                           :src="slide.image"
                           class="w-[34rem]"
                         />             
-                      </nuxt-link>
+                      </div>
                     </SwiperSlide>
                     <div v-if="productsStore.productImages.length > 1" class="absolute bottom-0 right-0 z-40 p-3">
-                      <SwiperControls />
+                      <SwiperControls class="bg-gray-100/80 rounded-full border border-gray-200/50 hover:border-gray-300 dark:border-gray-600/50 dark:hover:border-gray-500 dark:bg-gray-700/80 transition-all duration-500 px-1" />
                     </div>
                   </Swiper>
                 </div>
