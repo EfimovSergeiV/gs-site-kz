@@ -52,7 +52,7 @@
               <nuxt-link :to="{ name: 'lk-name', params: { name: 'guest' } }" class="relative text-xs md:text-base">Избранное</nuxt-link>
             </div>
             <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
-              <nuxt-link :to="{ name: 'compare' }" class="relative text-xs md:text-base">Товары в сравнении</nuxt-link>
+              <nuxt-link :to="{ name: 'compare' }" class="relative text-xs md:text-base">В сравнении</nuxt-link>
             </div>
             <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 text-white before:bg-blue-600 transition-all duration-0 relative inline-block my-2 px-2">
               <nuxt-link :to="{ name: 'cart' }" class="relative text-xs md:text-base">Корзина ( {{ productsStore.cart.length }} )</nuxt-link>
@@ -107,7 +107,7 @@
 
       <div  v-if=" route.path !== '/banner'" class="">
         <div class="">
-          <div class="fixed z-40 bottom-60 md:bottom-54 right-20 hover:right-24 transition-all duration-500">
+          <div class="fixed z-10 bottom-60 md:bottom-54 right-20 hover:right-24 transition-all duration-500">
             <div class="relative">
               <div class="absolute z-40">
                 <div class="-rotate-90 bg-blue-600 px-4 pb-12 group rounded-md w-44 cursor-pointer" @click="shopStore.showWriteUsModal">
@@ -127,7 +127,7 @@
 
 
         <div class="">
-          <div class="fixed z-40 bottom-16 -right-[126px] hover:right-0 focus:right-0 transition-all duration-500">
+          <div class="fixed z-10 bottom-16 -right-[126px] hover:right-0 focus:right-0 transition-all duration-500">
             <div class="relative">
               <div class="">
                 <div class=" bg-blue-600 group rounded-l-md cursor-pointer transition-all duration-500">

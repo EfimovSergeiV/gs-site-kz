@@ -74,7 +74,7 @@
 
 <template>
 
-  <div class="fixed z-40 w-full h-full bg-gray-500/50 backdrop-blur-sm">
+  <div class="fixed z-50 w-full h-full bg-gray-500/50 backdrop-blur-sm">
     <div class="flex items-center justify-center h-full">
       <div class="h-full w-full flex items-center justify-center">
         
