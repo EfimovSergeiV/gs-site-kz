@@ -4,7 +4,7 @@ export default defineNuxtPlugin(nuxtApp => {
         const scrollPosition = document.documentElement.scrollTop
         const navMenu = document.getElementById('navbar')
   
-        if (scrollPosition > 200) {
+        if (scrollPosition > 300) {
           navMenu.classList.remove('hidden',)
 
           // navMenu.classList.add('bg-white', 'fixed')

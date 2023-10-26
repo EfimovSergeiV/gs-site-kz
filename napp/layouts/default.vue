@@ -41,7 +41,7 @@
   <div class="">
 
     <div class="">
-      <div id="navbar" class="bg-gray-300 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-b border-gray-200 dark:border-gray-900 fixed hidden w-full z-50">
+      <div id="navbar" class="bg-gray-300 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-b border-gray-400 dark:border-gray-700 fixed hidden w-full z-50">
         
         <div class="container mx-auto px-4 max-w-6xl lg:px-8">
           <div class="flex justify-end gap-4 md:gap-4 uppercase font-semibold py-2">

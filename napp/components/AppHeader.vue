@@ -69,7 +69,7 @@
           <div class="h-full grid grid-cols-1 content-end between">
 
             <div class="flex items-center justify-center">
-              <div class="py-10 w-[345px]">
+              <div class="py-4 md:py-10 w-[345px]">
                 <nuxt-link :to="{ name: 'index' }">
                   <img src="/images/blue-svar.webp" class="max-h-[4rem]" />
                   <p class="text-2xl font-semibold italic text-end px-4 text-gray-700 dark:text-gray-300"><span class="text-xs ml-4">интернет магазин</span> GLSVAR.KZ</p>
