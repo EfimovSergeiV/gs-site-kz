@@ -3,7 +3,7 @@
   const route = useRoute()
 
 
-  const { data: article } = await useFetch(`${ config.public.baseURL }c/article/1/`)
+  // const { data: article } = await useFetch(`${ config.public.baseURL }c/article/1/`)
 
   const relateds = ref([
     { "name": "Ручная дуговая сварка", "link": 8 },

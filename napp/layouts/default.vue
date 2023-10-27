@@ -11,10 +11,10 @@
   // const notificationsStore = useNotificationsStore()
 
   const { signIn, signOut, token, data, status, lastRefreshedAt } = useAuth()
-  const { data: shops } = await useFetch(`${ config.public.baseURL }c/shops/`)
+  // const { data: shops } = await useFetch(`${ config.public.baseURL }c/shops/`)
 
 
-  shopStore.writeShops(shops)
+  // shopStore.writeShops(shops)
 
   onMounted(() => {
     if ("geolocation" in navigator) {
@@ -134,13 +134,13 @@
                   <div class="flex items-center justify-center">
                     <div class="grid grid-cols-4 items-center gap-4 px-1">
                       <p class="mdi mdi-24px mdi-cellphone-link text-gray-200 pl-0.5"></p>
-                      <a class="" title="WhatsApp" :href="shopStore.shop.whatsapp" target="_blank">
+                      <a class="" title="WhatsApp" href="shopStore.shop.whatsapp" target="_blank">
                         <img src="/WhatsApp-logo.webp" class="w-5" />
                       </a>
-                      <a class="" title="Telegramm" :href="shopStore.shop.telegram" target="_blank">
+                      <a class="" title="Telegramm" href="shopStore.shop.telegram" target="_blank">
                         <img src="/telegr-logo.webp" class="w-5" />
                       </a>
-                      <a class="" title="Viber" :href="shopStore.shop.viber" target="_blank">
+                      <a class="" title="Viber" href="shopStore.shop.viber" target="_blank">
                         <img src="/viber-logo.webp" class="w-5" />
                       </a>
                     </div>

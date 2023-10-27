@@ -149,7 +149,7 @@ class ProductModel(AbsProductModel):
         ("order", "под заказ"),
     )
 
-    price = models.PositiveIntegerField(verbose_name="Стоимость", default=0, null=True, blank=True)
+    price = models.PositiveIntegerField(verbose_name="Стоимость", null=True, blank=True)
     currency = models.CharField(verbose_name="Валюта", max_length=10, choices=CCY_VAL, default="KZT")
     status = models.CharField(verbose_name="Наличие на складе", max_length=100, choices=EXISTENCE, default="order")
 

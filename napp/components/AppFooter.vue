@@ -1,6 +1,6 @@
 <script setup>
-
-  const { data: brands } = await useFetch('https://api.glsvar.ru/c/brands/')
+  const config = useRuntimeConfig()
+  const { data: brands } = await useFetch(`${ config.public.baseURL }c/brands/`)
 
 </script>
 

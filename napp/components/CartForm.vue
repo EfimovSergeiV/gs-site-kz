@@ -5,7 +5,7 @@
   const productsStore = useProductsStore()
   const clientStore = useClientStore()  
   const notificationsStore = useNotificationsStore()
-  const props = defineProps(['shops'])
+
 
 
   const fields = [

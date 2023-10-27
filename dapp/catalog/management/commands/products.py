@@ -11,11 +11,11 @@ class Command(BaseCommand):
         pass
 
 count = 0
-prods_qs = ProductModel.objects.filter(activated=False)
+prods_qs = ProductModel.objects.filter(activated=True)
 
 for prod_qs in prods_qs:
     count += 1
 
     
     print(f'{ count }.\t{prod_qs.name}')
-    prod_qs.delete()
+    # prod_qs.delete()

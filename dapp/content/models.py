@@ -33,10 +33,15 @@ class MainBannerModel(AbsActivatedModel):
     name = models.CharField(verbose_name="Название", default="ГлавныйСварщик", max_length=100)
     link = models.JSONField(verbose_name="Внутренняя ссылка", max_length=100, null=True, blank=True, help_text="""Пример: {"name": "products", "query": {"brnd": 9, "page": 1}}""")
     outlink = models.URLField(verbose_name="Внешняя ссылка", null=True, blank=True, help_text="Пример: https://outlink.ru/files/file.pdf")
-    image = models.ImageField(
-        verbose_name="Изображение баннера", 
-        help_text="Разрешение: 960X540", 
-        upload_to="img/c/banner/")
+
+    image = ResizedImageField(
+        size = [960, 540],
+        crop = ['middle', 'center'],
+        upload_to='img/c/mainbaners/',
+        quality=100,
+        force_format='WEBP',
+    )
+    
     description = models.TextField(verbose_name="Описание", max_length=100, default="Интернет магазин сварочного оборудования и расходных материалов")
 
     class Meta:
