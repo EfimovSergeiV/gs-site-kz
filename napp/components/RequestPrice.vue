@@ -82,10 +82,10 @@
 
                       <div class="text-gray-800 dark:text-gray-200">
                         <div class="" v-if="productsStore.requestPrice.description.length > 300">
-                          <p class="text-sm">{{ productsStore.requestPrice.description.slice(0, 300) }}...</p>
+                          <div class="text-sm" v-html="productsStore.requestPrice.description.slice(0, 300) + '...'" ></div>
                         </div>
                         <div class="" v-else>
-                          <p class="text-sm">{{ productsStore.requestPrice.description }}</p> 
+                          <div class="text-sm" v-html="productsStore.requestPrice.description.slice(0, 300)" ></div> 
                         </div>                      
                       </div>
 
