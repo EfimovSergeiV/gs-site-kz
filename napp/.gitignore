@@ -1,4 +1,5 @@
 nuxt.config.ts
+*.config.ts
 napp/nuxt.config.ts
 
 # Nuxt dev/build outputs
