@@ -18,9 +18,9 @@
                 <nuxt-link :to="{ name: 'about' }" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Производители</nuxt-link>
                 <div class="absolute bottom-0 left-0 translate-y-0 group-hover:-translate-y-4 py-4 w-full transition invisible group-hover:visible opacity-0 group-hover:opacity-100 duration-500 ease-in-out group-hover:transform z-40">
                   <div class="bg-white border border-gray-500/50 rounded-md">
-                    <div class="grid grid-cols-4 gap-2 px-4 py-2">
-                      <div v-for="brand in brands" :key="brand.id" class="py-1">
-                        <nuxt-link class="text-gray-700 :hover:text-gray-900 text-xs" :to="{ name: 'prods', query: { brnd: brand.id, page: 1 }}">{{ brand.brand }}</nuxt-link>
+                    <div class=" columns-8 gap-6 px-4 py-6">
+                      <div v-for="brand in brands" :key="brand.id" class="py-4">
+                        <nuxt-link class="text-gray-700 :hover:text-gray-900 text-2xl font-semibold" :to="{ name: 'prods', query: { brnd: brand.id, page: 1 }}">{{ brand.brand }}</nuxt-link>
                       </div>                      
                     </div>
                   </div>
