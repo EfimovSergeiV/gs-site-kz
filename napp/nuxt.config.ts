@@ -1,3 +1,5 @@
+import cfg from "./conf"
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -59,7 +61,7 @@ export default defineNuxtConfig({
     transpile: ['jsonwebtoken']
   },
   auth: {
-    baseURL: 'https://api.glsvar.kz/',
+    baseURL: cfg.BASE_URL,
     provider: {
       type: 'local',
       // endpoints: {
@@ -105,7 +107,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      baseURL: process.env.BASE_URL || 'https://api.glsvar.kz/',  ///'https://api.glsvar.kz/' 'http://127.0.0.1:8000/',
+      baseURL: process.env.BASE_URL || cfg.BASE_URL,
     },
   },
 

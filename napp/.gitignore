@@ -1,6 +1,3 @@
-nuxt.config.ts
-*.config.ts
-napp/nuxt.config.ts
 conf.ts
 
 # Nuxt dev/build outputs
