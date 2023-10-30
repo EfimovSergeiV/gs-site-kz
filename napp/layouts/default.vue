@@ -45,7 +45,7 @@
         
         <div class="container mx-auto px-4 max-w-6xl lg:px-8">
           <div class="flex justify-end gap-4 md:gap-4 uppercase font-semibold py-2">
-            <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
+            <div class="hidden md:block before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative my-2">
               <nuxt-link :to="{ name: 'index' }" class="relative text-xs md:text-base">Главная</nuxt-link>
             </div>
             <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">

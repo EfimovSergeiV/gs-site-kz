@@ -211,24 +211,38 @@
           <div class="flex items-end h-full">
             <div class="grid grid-cols-1">
               
-
-              <div class="flex justify-end gap-4 md:gap-4 uppercase font-semibold py-2">
-                <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
-                  <nuxt-link :to="{ name: 'index' }" class="relative text-xs md:text-base">Главная</nuxt-link>
-                </div>
-                <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
-                  <nuxt-link :to="{ name: 'lk-name', params: { name: 'guest' } }" class="relative text-xs md:text-base">Избранное</nuxt-link>
-                </div>
-                <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
-                  <nuxt-link :to="{ name: 'compare' }" class="relative text-xs md:text-base">В сравнении</nuxt-link>
-                </div>
-                <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 text-white before:bg-blue-600 transition-all duration-0 relative inline-block my-2 px-2">
-                  <nuxt-link :to="{ name: 'cart' }" class="relative text-xs md:text-base">Корзина ( {{ productsStore.cart.length }} )</nuxt-link>
-                </div>
-                <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
-                  <nuxt-link :to="{ name: 'about' }" class="relative text-xs md:text-base">О нас</nuxt-link>
-                </div>
+              <div class="">
+                <div class="flex justify-end gap-4 md:gap-4 uppercase font-semibold py-2">
+                  <div class="hidden md:block before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative my-2">
+                    <nuxt-link :to="{ name: 'index' }" class="relative text-xs md:text-base">Главная</nuxt-link>
+                  </div>
+                  <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
+                    <nuxt-link :to="{ name: 'lk-name', params: { name: 'guest' } }" class="relative text-xs md:text-base">Избранное</nuxt-link>
+                  </div>
+                  <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
+                    <nuxt-link :to="{ name: 'compare' }" class="relative text-xs md:text-base">В сравнении</nuxt-link>
+                  </div>
+                  <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 text-white before:bg-blue-600 transition-all duration-0 relative inline-block my-2 px-2">
+                    <nuxt-link :to="{ name: 'cart' }" class="relative text-xs md:text-base">Корзина ( {{ productsStore.cart.length }} )</nuxt-link>
+                  </div>
+                  <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
+                    <nuxt-link :to="{ name: 'about' }" class="relative text-xs md:text-base">О нас</nuxt-link>
+                  </div>
+                </div>                
               </div>
+
+              <!-- <div class=" overflow-x-auto">
+                <div class="">
+                  <div class="flex gap-2">
+                    <div v-for="i in 15" :key="i" class="whitespace-nowrap">
+                      <p class="w-full">hallo welt</p>
+                    </div>
+                    
+                  </div>
+                  
+                </div>
+
+              </div> -->
 
 
               <div class="w-full">
