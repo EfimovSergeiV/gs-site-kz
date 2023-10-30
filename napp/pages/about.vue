@@ -115,11 +115,9 @@
 
 
 
-      <div class="bg-white dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-700 py-4 px-4 my-4">
-        
-        <div class="py-4">
-
-          <div class="flex items-center justify-center">
+      <div class="bg-white dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-700 my-2">
+        <div class="">
+          <div class="flex items-center justify-center px-4 py-4">
             <div class="py-2 ">
               <div class="py-1">
                 <p class="text-xl">{{ descriptionData }}</p>  
@@ -132,15 +130,10 @@
             </div>
           </div>
 
-          <div class="py-4">
-
-
+          <div class="py-4 px-4">
             <div class="grid grid-cols-2 items-end">
-
-
               <div class="py-4 ">
                 <p class="py-4 text-xl text-gray-600 dark:text-gray-400">Мы открыты для посетителей:</p>
-
                 <div class="flex gap-10">
                   <div class="">
                     <div class=" border-b border-gray-200 dark:border-gray-700">
@@ -149,7 +142,6 @@
                         <p class="text-base">08:30 – 17:30</p>
                       </div>                      
                     </div>
-
                     <div class=" border-b border-gray-200 dark:border-gray-700">
                       <div class="grid grid-cols-2 gap-6">
                         <p class="text-base">вторник</p>
@@ -162,9 +154,6 @@
                         <p class="text-base">08:30 – 17:30</p>
                       </div>                          
                     </div>
-
-
-                
                   </div>
                   <div class="">
                     <div class=" border-b border-gray-200 dark:border-gray-700">
@@ -191,13 +180,9 @@
                         <p class="text-base">Закрыто</p>
                       </div>                          
                     </div>
-                
                   </div>
                 </div>
-
-
               </div>
-
               <div class="flex items-end justify-center">
                 <div class="text-gray-700 dark:text-gray-300">
                   <div class="flex gap-4 items-center">
@@ -212,28 +197,12 @@
                   </div>
                 </div>                
               </div>
-
-
             </div>
-
-
           </div>
-
           <div class="relative">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9607.746256144887!2d63.1143089!3d52.9855424!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43cd03eb0088f70d%3A0xfaaebd2d312ed8f7!2z0JPQu9Cw0LLQvdGL0Lkg0KHQstCw0YDRidC40Lo!5e0!3m2!1sru!2sru!4v1695649108350!5m2!1sru!2sru" width="100%" height="350" frameborder="0" loading="lazy" class="rounded-md"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9607.746256144887!2d63.1143089!3d52.9855424!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43cd03eb0088f70d%3A0xfaaebd2d312ed8f7!2z0JPQu9Cw0LLQvdGL0Lkg0KHQstCw0YDRidC40Lo!5e0!3m2!1sru!2sru!4v1695649108350!5m2!1sru!2sru" width="100%" height="350" frameborder="0" loading="lazy" class="rounded-b-md"></iframe>
           </div>
-
         </div>
-
-
-          <!-- <p class="text-xs">{{ clientStore.client.adress }}</p> -->
-
-          
-          <!-- <div class="bg-white dark:bg-gray-700 rounded-md shadow-md shadow-black/50 flex items-center justify-center border border-gray-200 dark:border-gray-600 py-2 px-4">
-            <p class="text-base">
-              Здесь вы найдете бренды известных производителей, таких как  EWM, ESAB, Fubag, Aurora, Grovers, Cebora и многих других. Поддайтесь очарованию нашего профессионального и широкого ассортимента изделий: от сварочных аппаратов для инверторных, MIG/MAG, TIG или плазменных процессов, до многочисленных дополнительных материалов и до кислородно-топливной технологии. Каждый гарантированно найдет то, что ищет. Главный сварщик предлагает вам сварочную технику как для новичков, так и профессиональное оборудование. Мы также уделяем первостепенное внимание области безопасности труда сварщиков: будь то защита тела, защита ног, защита рук, защита головы, защита глаз и лица, защита рабочего места или защитные шторы для сварки - просто выберите подходящее оборудование для ваших нужд и стань настоящим героем сварки!
-            </p>
-          </div> -->
       </div>
 
 
