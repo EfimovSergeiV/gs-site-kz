@@ -55,16 +55,15 @@ MIG/MAG сварка
 +    Инверторный сварочный полуавтомат АВРОРА Динамика 2000
 
 TIG сварка
--    Индустриальный аппарат аргонодуговой сварки AuroraPRO IRONMAN 315 AC/DC PULSE (TIG+MMA)
--    Аппарат аргонодуговой сварки AuroraPRO INTER TIG 200 PULSE (TIG+MMA)
--    Аппарат аргонодуговой сварки Ресанта САИ 180 АД
--    Аппарат аргонодуговой сварки Ресанта САИ 230 АД
--    Источник Aristo 4004i Pulse 380-460 CE
--    Источник Aristo Mig 5000iw 400V CE WeldCloud
--    Источник Origo Tig 3001iw TA23
--    Источник Origo Tig 4300iw AC/DC
--    Источник Renegade ET 300i EU
--    Источник Renegade ET 300iP EU
++    Индустриальный аппарат аргонодуговой сварки AuroraPRO IRONMAN 315 AC/DC PULSE (TIG+MMA)
++    Аппарат аргонодуговой сварки AuroraPRO INTER TIG 200 PULSE (TIG+MMA)
++    Аппарат аргонодуговой сварки Ресанта САИ 180 АД
++    Аппарат аргонодуговой сварки Ресанта САИ 230 АД
++    Источник Aristo 4004i Pulse 380-460 CE
++    Источник Aristo Mig 5000iw 400V CE WeldCloud
++    Источник Origo Tig 3001iw TA23
++    Источник Origo Tig 4300iw AC/DC
++    Источник Renegade ET 300iP EU
 
 Воздушно-плазменная резка
 -    Аппарат воздушно плазменной резки Ресанта ИПР 40К

@@ -40,9 +40,9 @@
                       </div>
                     </div>
                     <div class="grid grid-cols-1 gap-2">
-                      <nuxt-link :to="{ name: 'prods', query: { 'ct': 8 }}" class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all">MMA сварка</nuxt-link>
-                      <nuxt-link :to="{ name: 'prods', query: { 'ct': 9 }}" class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all">MIG/MAG сварка</nuxt-link>
-                      <nuxt-link :to="{ name: 'prods', query: { 'ct': 11 }}" class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all">TIG сварка</nuxt-link>
+                      <nuxt-link :to="{ name: 'prods', query: { 'ct': 1 }}" class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all">MMA сварка</nuxt-link>
+                      <nuxt-link :to="{ name: 'prods', query: { 'ct': 2 }}" class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all">MIG/MAG сварка</nuxt-link>
+                      <nuxt-link :to="{ name: 'prods', query: { 'ct': 3 }}" class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all">TIG сварка</nuxt-link>
                     </div>
                   </div>
                 </div>                     
