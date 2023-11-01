@@ -12,27 +12,29 @@
       <div class="md:flex md:justify-between items-center py-2">
 
         <div class="">
-          <ul class="grid grid-cols-2 gap-x-2 gap-y-2 text-xs md:text-base mt-3 sm:mt-0 md:order-last py-2 ">
-            <li>
+          <ul class="grid grid-cols-1 gap-x-2 gap-y-2 text-xs md:text-base mt-3 sm:mt-0 md:order-last py-2 ">
+            <!-- <li>
               <div class="group">
                 <nuxt-link :to="{ name: 'about' }" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Производители</nuxt-link>
                 <div class="absolute bottom-0 left-0 translate-y-0 group-hover:-translate-y-4 py-4 w-full transition invisible group-hover:visible opacity-0 group-hover:opacity-100 duration-500 ease-in-out group-hover:transform z-40">
                   <div class="bg-white border border-gray-500/50 rounded-md">
-                    <div class=" columns-8 gap-6 px-4 py-6">
+                    <div class="flex flex-wrap gap-4 px-4 py-6">
                       <div v-for="brand in brands" :key="brand.id" class="py-4">
-                        <nuxt-link class="text-gray-700 :hover:text-gray-900 text-2xl font-semibold" :to="{ name: 'prods', query: { brnd: brand.id, page: 1 }}">{{ brand.brand }}</nuxt-link>
+                        <nuxt-link class="text-gray-700 :hover:text-gray-900 text-xl font-semibold" :to="{ name: 'prods', query: { brnd: brand.id, page: 1 }}">{{ brand.brand }}</nuxt-link>
                       </div>                      
                     </div>
                   </div>
                 </div>
               </div>
-            </li>
-            <li>
-              <button @click="showAllert()" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Способы оплаты</button>
-            </li>
+            </li> -->
             <li>
               <button @click="showAllert()" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Доставка</button>
             </li>
+            
+            <li>
+              <button @click="showAllert()" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Способы оплаты</button>
+            </li>
+
             <li>
               <nuxt-link :to="{ name: 'policy'}" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 text-xs md:text-base">Политика обработки данных</nuxt-link>
             </li>
