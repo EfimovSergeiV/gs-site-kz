@@ -1,9 +1,10 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 from mptt.admin import DraggableMPTTAdmin
+from mptt.admin import TreeRelatedFieldListFilter
+from mptt.forms import TreeNodeChoiceField
 from catalog.models import *
 from django import forms
-
 from ckeditor.widgets import CKEditorWidget
 
 # Генератор
@@ -132,15 +133,16 @@ class ProductKeywordsInline(admin.TabularInline):
 
 class ProductAdminForm(forms.ModelForm):
     description = forms.CharField(widget=CKEditorWidget(), label='')
-
+    category = TreeNodeChoiceField(queryset=CategoryModel.objects.all(), label= 'Категория')
     class Meta:
         model = ProductModel
         fields = '__all__'
 
+
 class ProductAdmin(admin.ModelAdmin):
 
     form = ProductAdminForm
-
+    
     def preview(self, obj):
         return mark_safe('<img style="margin-right:-10vh; background-color: white; padding: 15px; border-radius: 5px;" src="/files/%s" alt="Нет изображения" width="100" height="auto" />' % (obj.preview_image))
     preview.short_description = 'Изображение'
@@ -163,8 +165,8 @@ class ProductAdmin(admin.ModelAdmin):
         return mark_safe(f'')
 
 
-    get_property_ct.short_description = ''
-
+    get_property_ct.short_description = 'Свойства подтянуться из заданных, когда товар будет определён в категорию'
+    
     """
     def rec(self, obj):
         ERRORS:
@@ -179,7 +181,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ('id', 'vcode', 'name', 'activated', 'price', 'currency', 'status', ) #'recommend',
     list_display_links = ('id', )
     search_fields = ('id', 'vcode', 'name', 'UID',)
-    list_filter = ('brand', 'recommend', 'created_date', 'activated', 'category',)
+    list_filter = ('brand', 'recommend', 'created_date', 'activated', ('category', TreeRelatedFieldListFilter),)#'category'
     list_editable = ('price', 'activated', 'status')
     ordering = ('id',)
     inlines = (
