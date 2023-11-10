@@ -149,13 +149,16 @@
           <div class="md:w-[400px] bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2">
             <div class="">
               <p class="text-base">Документы:</p>
-              <div class="grid grid-cols-1 gap-2 py-2">
+              <div v-if="props.product.prod_doc.length > 0 || props.product.prod_link.length > 0" class="grid grid-cols-1 gap-2 py-2">
                 <div class="" v-for="file in props.product.prod_doc" :key="file.id">
                   <a class="text-sm mx-2" :href="file.doc" target="_blank">{{ file.name }}</a>
                 </div>
                 <div class="" v-for="doc in props.product.prod_link" :key="doc.id">
                   <a class="text-sm mx-2" :href="doc.url" target="_blank">{{ doc.name }}</a>
                 </div>
+              </div>
+              <div v-else class="flex items-center justify-center h-full py-6">
+                <p class=" text-sm text-gray-400 dark:text-gray-500">Ничего нет</p>
               </div>
             </div>
           </div>
@@ -177,7 +180,7 @@
 
         <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2 mt-4">
           <p class="text-base my-2">Описание:</p>
-          <div class="text-sm" v-html="props.product.description"></div> 
+          <div class="text-sm px-2 py-6" v-html="props.product.description"></div> 
         </div>        
 
       </div>
