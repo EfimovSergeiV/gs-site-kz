@@ -17,20 +17,21 @@
   // shopStore.writeShops(shops)
 
   onMounted(() => {
+    clientStore.getLocateFromIP()
     if ("geolocation" in navigator) {
-      /* местоположение доступно */
+      /* Определяем местоположение по координатам */
       navigator.geolocation.getCurrentPosition(position => {
         let location = {
-          "latitude": position.coords.latitude, 
-          "longitude": position.coords.longitude 
+          "lat": position.coords.latitude, 
+          "long": position.coords.longitude 
         }
 
-        shopStore.sendCoordinates(location)
+        clientStore.sendCoordinates(location)
 
         // this.sendCoordinates(location)
       });
     } else {
-      /* местоположение НЕ доступно */
+      /* Местоположение не доступно */
     }
 
   })

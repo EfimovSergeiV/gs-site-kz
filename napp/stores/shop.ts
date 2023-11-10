@@ -67,21 +67,6 @@ export const useShopStore = defineStore('ShopStore', {
     showWriteUsModal() {
       this.writeUsModal = !this.writeUsModal
     },
-    async sendCoordinates(coordinates: any) {
-      const config = useRuntimeConfig()
-      const { data }: any = await useFetch(`${ config.public.baseURL }coordinates/`, {
-        method: 'POST',
-        body: coordinates
-      });
-      if (data.value) {
-        this.city = data.value.at(-1)
-        this.shops.forEach((el: any) => {
-          if (el.city.toLowerCase() === this.city.toLowerCase()) {
-            this.shop = el
-          }
-        })
-      }
-    }
   },
 })
 
@@ -178,7 +163,6 @@ export const useProductsStore = defineStore('ProductsStore', {
     },
     showProductImages(images: any) {
       this.productImages = images
-      
     },
     clearProductImages() {
       this.productImages = null
@@ -200,7 +184,7 @@ export const useClientStore = defineStore('ClientStore', {
       delivery: false,
       adress: null,
 
-      city: 'Москва', /// Custom city
+      city: 'Рудный', /// Custom city
       contact: null,  /// Custom contact
     
       entity: false,
@@ -226,7 +210,21 @@ export const useClientStore = defineStore('ClientStore', {
       this.client = data
       this.client.comment = null
     },
-    
+    async sendCoordinates(coordinates: any) {
+      const config = useRuntimeConfig()
+      const { data }: any = await useFetch(`${ config.public.baseURL }coordinates/`, {
+        method: 'POST',
+        body: coordinates
+      });
+      if ( data.value ) {
+        this.client.city = data.value.at(0)
+      }
+    },
+    async getLocateFromIP() {
+      const config = useRuntimeConfig()
+      const city: any = await $fetch(`${ config.public.baseURL }location/`)
+      this.client.city = city
+    }
   },
 })
 
