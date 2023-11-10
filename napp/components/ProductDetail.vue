@@ -143,40 +143,43 @@
         </div>
       </div>
       <div class="">
-        <div class="">
-          <div class="grid grid-cols-1 md:flex gap-4 ">
-            <div class="md:w-[400px] bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2">
-              <div class="">
-                <p class="text-base">Документы:</p>
-                <div class="grid grid-cols-1 gap-2 py-2">
-                  <div class="" v-for="file in props.product.prod_doc" :key="file.id">
-                    <a class="text-sm mx-2" :href="file.doc" target="_blank">{{ file.name }}</a>
-                  </div>
-                  <div class="" v-for="doc in props.product.prod_link" :key="doc.id">
-                    <a class="text-sm mx-2" :href="doc.url" target="_blank">{{ doc.name }}</a>
-                  </div>
+
+
+        <div class="grid grid-cols-1 md:flex gap-4">
+          <div class="md:w-[400px] bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2">
+            <div class="">
+              <p class="text-base">Документы:</p>
+              <div class="grid grid-cols-1 gap-2 py-2">
+                <div class="" v-for="file in props.product.prod_doc" :key="file.id">
+                  <a class="text-sm mx-2" :href="file.doc" target="_blank">{{ file.name }}</a>
                 </div>
-              </div>
-            </div>
-            <div class="w-full">
-              <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2 mb-4">
-                <p class="text-base my-2">Характеристики:</p>
-                <div class="columns-1 gap-8">
-                  <div v-for="param in props.product.propstrmodel" :key="param.id" class="border-b border-gray-300 hover:border-gray-400 dark:border-gray-700 dark:hover:border-gray-600">
-                    <div class="flex justify-between">
-                      <div class=""><small>{{ param.name }} :</small></div>
-                      <div class="text-right"><small>{{ param.value }}</small></div>                
-                    </div>
-                  </div>
+                <div class="" v-for="doc in props.product.prod_link" :key="doc.id">
+                  <a class="text-sm mx-2" :href="doc.url" target="_blank">{{ doc.name }}</a>
                 </div>
-              </div>
-              <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2 mt-2">
-                <p class="text-base my-2">Описание:</p>
-                <div class="text-sm" v-html="props.product.description"></div> 
               </div>
             </div>
           </div>
+          <div class="w-full">
+            <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2 mb-4 h-full">
+              <p class="text-base my-2">Характеристики:</p>
+              <div class="columns-1 gap-8">
+                <div v-for="param in props.product.propstrmodel" :key="param.id" class="border-b border-gray-300 hover:border-gray-400 dark:border-gray-700 dark:hover:border-gray-600">
+                  <div class="flex justify-between">
+                    <div class=""><small>{{ param.name }} :</small></div>
+                    <div class="text-right"><small>{{ param.value }}</small></div>                
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
+
+        <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2 mt-4">
+          <p class="text-base my-2">Описание:</p>
+          <div class="text-sm" v-html="props.product.description"></div> 
+        </div>        
+
       </div>
     </div>
 
