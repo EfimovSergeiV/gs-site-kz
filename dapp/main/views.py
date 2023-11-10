@@ -270,34 +270,26 @@ class UserProfileView(APIView):
         return Response(resp)
 
 
-class ClientIpAdressView(APIView):
-    """ Return client IP adress """
-
-    def get(self, request):
-        client_ip = get_client_ip(request)[0]
-        # For testing
-        if client_ip == '127.0.0.1':
-            client_ip = '91.204.138.138'
-            
-        return Response(client_ip)
-
-
 class LocationFromIPView(APIView):
     """ Определение местоположения пользователя по IP """
-
+    
     def get(self, request):
         client_ip = get_client_ip(request)[0]
 
         with geoip2.database.Reader('main/geoip-db/GeoLite2-City.mmdb') as reader:
-
+            city = 'Рудный'
             try: 
                 response = reader.city(client_ip)
-                city = response.city.names['ru']
+                city = response.city.names.get('ru')
+
+                if city is None:
+                    city = response.city.names.get('en')
             
             except geoip2.errors.AddressNotFoundError:
-                city = 'Рудный'
+                pass
 
         return Response(city)
+
 
 
 from geopy.geocoders import Nominatim
