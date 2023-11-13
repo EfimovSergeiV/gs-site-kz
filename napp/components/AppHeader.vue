@@ -277,16 +277,16 @@
                         <p class="">Введите запрос</p>
                       </div>
                       <transition-group name="fade">
-                        <div class="px-2 py-0.5 my-1 bg-gray-100 dark:bg-gray-800 border border-gray-200 hover:border-gray-300 dark:border-gray-500 hover:dark:border-gray-400 rounded-md transition-all" v-for="product in products" :key="product.id">
+                        <div class="px-2 py-0.5 my-1 bg-gray-100  border border-gray-200 hover:border-gray-300   rounded-md transition-all" v-for="product in products" :key="product.id">
                           <nuxt-link :to="{ name: 'product-id', params: { id: product.id }}" class="">
                             <div class="flex gap-4">
                               <div class="">
                                 <img class="bg-white w-20 p-1 rounded-md" :src="product.preview_image" />
                               </div>
                               <div class="">
-                                <p class="text-sm">{{ product.name }}</p>
-                                <p v-if="product.price > 0" class="">{{ product.price.toLocaleString() }} <span class="text-xs">тг</span></p>
-                                <p v-else class="text-xs">Стоимость по запросу</p>
+                                <p class="text-sm text-gray-800">{{ product.name }}</p>
+                                <p v-if="product.price > 0" class="text-gray-700">{{ product.price.toLocaleString() }} <span class="text-xs">тг</span></p>
+                                <p v-else class="text-xs text-gray-700">Стоимость по запросу</p>
                               </div>
                             </div>
                           </nuxt-link>
