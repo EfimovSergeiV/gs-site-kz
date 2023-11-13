@@ -21,7 +21,7 @@
           </div>
 
 
-          <p class="py-2 text-sm">Наш график работы:</p>
+          <p class="py-1 mt-4 text-sm">Наш график работы:</p>
           <div class="flex gap-10">
             <div class="grid grid-cols-1">
               <div class=" border-b border-gray-200 dark:border-gray-700">
@@ -101,7 +101,7 @@
       <div class="">
         <div class="flex items-center justify-start">
 
-          <span class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 flex items-end justify-center md:justify-start py-2">© 2023 <p class="mx-1">Главный сварщик</p></span>
+          <span class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 flex items-end justify-center md:justify-start">© 2023 <p class="mx-1">Главный сварщик</p></span>
 
         </div>
       </div>
