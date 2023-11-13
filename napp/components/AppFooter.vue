@@ -12,7 +12,7 @@
       <div class="md:flex md:justify-between items-center py-2">
 
         <div class="md:order-2">
-          <div class="flex gap-2 items-end justify-end">
+          <div class="flex gap-2 items-end justify-end px-4">
             <p class="mdi mdi-36px mdi-map-marker-outline"></p>
             <div class="flex flex-col">
               <p class="text-sm text-end">Рудный, ул. Топоркова 35, 111500</p>
