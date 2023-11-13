@@ -157,7 +157,7 @@ class ListProductsSerializer(serializers.ModelSerializer):
             'propstrmodel', 
             )
 
-
+from django.utils.html import strip_tags
 class ProductSerializer(serializers.ModelSerializer):
     """Выбранный продукт"""
     # prod_price = PriceSerializer(many=True)
@@ -171,13 +171,16 @@ class ProductSerializer(serializers.ModelSerializer):
     prod_doc = DocumentSerializer(many=True)
     prod_link = ExternalLinkSerializer(many=True)
 
+    clean_desc = serializers.SerializerMethodField()
+
     class Meta:
         model = ProductModel
         fields = (
             'id', 
-            'vcode', 
-            'description',
+            'vcode',
             'name', 
+            'description',
+            'clean_desc',
             'preview_image', 
             'rating',
             'promo',
@@ -196,6 +199,13 @@ class ProductSerializer(serializers.ModelSerializer):
             'prod_doc',
             'prod_link'
             )
+        
+    def get_clean_desc(self, instance):
+        # Возвращает описание без тегов, для СЕО
+        data = strip_tags(instance.description.replace('\r', '').replace('\n', '').replace('&laquo', '').replace('&raquo', ''))
+        if len(data) > 160:
+            data = f'{data[0: 160]}...'
+        return data
 
 
 

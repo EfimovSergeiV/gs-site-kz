@@ -131,59 +131,59 @@
           </div>
 
           <div class="py-4 px-4">
-            <div class="grid grid-cols-2 items-end">
+            <div class="grid grid-cols-1 md:grid-cols-2 items-end gap-4">
               <div class="py-4 ">
                 <p class="py-4 text-xl text-gray-600 dark:text-gray-400">Мы открыты для посетителей:</p>
                 <div class="flex gap-10">
-                  <div class="">
+                  <div class="grid grid-cols-1 gap-2">
                     <div class=" border-b border-gray-200 dark:border-gray-700">
                       <div class="grid grid-cols-2 gap-6">
-                        <p class="text-base">понедельник</p>
-                        <p class="text-base">08:30 – 17:30</p>
+                        <p class="text-xs md:text-base">понедельник</p>
+                        <p class="text-xs md:text-base">08:30 – 17:30</p>
                       </div>                      
                     </div>
                     <div class=" border-b border-gray-200 dark:border-gray-700">
                       <div class="grid grid-cols-2 gap-6">
-                        <p class="text-base">вторник</p>
-                        <p class="text-base">08:30 – 17:30</p>
+                        <p class="text-xs md:text-base">вторник</p>
+                        <p class="text-xs md:text-base">08:30 – 17:30</p>
                       </div>                      
                     </div>
                     <div class=" border-b border-gray-200 dark:border-gray-700">
                       <div class="grid grid-cols-2 gap-6">
-                        <p class="text-base">среда</p>
-                        <p class="text-base">08:30 – 17:30</p>
+                        <p class="text-xs md:text-base">среда</p>
+                        <p class="text-xs md:text-base">08:30 – 17:30</p>
                       </div>                          
                     </div>
                   </div>
-                  <div class="">
+                  <div class="grid grid-cols-1 gap-2">
                     <div class=" border-b border-gray-200 dark:border-gray-700">
                       <div class="grid grid-cols-2 gap-6">
-                        <p class="text-base">четверг</p>
-                        <p class="text-base">08:30 – 17:30</p>
+                        <p class="text-xs md:text-base">четверг</p>
+                        <p class="text-xs md:text-base">08:30 – 17:30</p>
                       </div>                      
                     </div>
                     <div class=" border-b border-gray-200 dark:border-gray-700">
                       <div class="grid grid-cols-2 gap-6">
-                        <p class="text-base">пятница</p>
-                        <p class="text-base">08:30 – 17:30</p>
+                        <p class="text-xs md:text-base">пятница</p>
+                        <p class="text-xs md:text-base">08:30 – 17:30</p>
                       </div>                      
                     </div>
                     <div class=" border-b border-gray-200 dark:border-gray-700">
                       <div class="grid grid-cols-2 gap-6">
-                        <p class="text-base">суббота</p>
-                        <p class="text-base">09:00 – 15:00</p>
+                        <p class="text-xs md:text-base">суббота</p>
+                        <p class="text-xs md:text-base">09:00 – 15:00</p>
                       </div>                      
                     </div>
                     <div class=" border-b border-gray-200 dark:border-gray-700">
                       <div class="grid grid-cols-2 gap-6">
-                        <p class="text-base">воскресенье</p>
-                        <p class="text-base">Закрыто</p>
+                        <p class="text-xs md:text-base">воскресенье</p>
+                        <p class="text-xs md:text-base">Закрыто</p>
                       </div>                          
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="flex items-end justify-center">
+              <div class="flex items-end md:justify-center">
                 <div class="text-gray-700 dark:text-gray-300">
                   <div class="flex gap-4 items-center">
                     <p class="mdi mdi-36px mdi-map-marker-outline"></p>

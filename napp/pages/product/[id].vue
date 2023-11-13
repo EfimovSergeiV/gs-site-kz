@@ -1,6 +1,4 @@
 <script setup>
-
-
   const config = useRuntimeConfig()
   const route = useRoute()
 
@@ -24,7 +22,7 @@
             "id": product.value.vcode,
             "name": product.value.name,
             "image": product.value.preview_image,
-            "description": product.value.description,
+            "description": product.value.clean_desc,
             "mpn": product.value.vcode,
             "brand": {
               "@type": 'Brand',
@@ -50,11 +48,11 @@
 
   useSeoMeta({
     title: `${ product.value.name } - ${ brand.value }`,
-    description: `${ product.value.description.slice(0, 157) }`,
+    description: `${ product.value.clean_desc }`,
     keywords: `${ product.value.name }, ${ brand.value }, сварочное оборудование, оборудование для сварки, купить электроды, купить проволоку, купить источник, купить сварочный инвертор`,
     ogLocale: 'ru_RU',
     ogTitle: `${ product.value.name }`,
-    ogDescription: `${ product.value.description.slice(0, 157) }`,
+    ogDescription: `${ product.value.clean_desc }`,
     ogImage: `${ product.value.preview_image }`,
     twitterCard: `${ product.value.preview_image }`,
   })
