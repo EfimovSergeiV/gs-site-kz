@@ -30,8 +30,8 @@
     ogLocale: 'ru_RU',
     ogTitle: `Интернет магазин Главный Сварщик`,
     ogDescription: `${ descriptionData }`,
-    ogImage: `https://api.glsvar.ru/files/og-image.png`,
-    twitterCard: `https://api.glsvar.ru/files/og-image.png`,
+    ogImage: `/og-image.png`,
+    twitterCard: `/og-image.png`,
   })
 
 </script>
@@ -65,7 +65,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-4">
               <div class="flex items-center gap-2 bg-gray-100 dark:bg-gray-700 px-1 py-1 rounded-md border border-white/20 shadow-md shadow-black/50">
                 <img src="/bnr/arbeitsschutz-schweissen.webp" class=" rounded-full w-24 border border-white/20"/>
-                <nuxt-link :to="{ name: 'prods', query: { ct: 77 }}" class="">
+                <nuxt-link :to="{ name: 'prods', query: { ct: 6 }}" class="">
                   <p class="">Средства защиты головы, рук и лица</p>
                 </nuxt-link>
               </div>
@@ -89,7 +89,7 @@
               </div>
               <div class="flex items-center gap-2 bg-gray-100 dark:bg-gray-700 px-1 py-1 rounded-md border border-white/20 shadow-md shadow-black/50">
                 <img src="/bnr/schweisszusatzwerkstoffe.webp" class=" rounded-full w-24 border border-white/20"/>
-                <nuxt-link :to="{ name: 'prods', query: { ct: 4 }}" class="">
+                <nuxt-link :to="{ name: 'prods', query: { ct: 5 }}" class="">
                   <p class="">Сварочные электроды, проволока и присадочные материалы</p>
                 </nuxt-link>
               </div>

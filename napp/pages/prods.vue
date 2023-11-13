@@ -19,8 +19,8 @@
     ogLocale: 'ru_RU',
     ogTitle: `${ products.value.meta.title }`,
     ogDescription: `${ products.value.meta.title }, большой выбор, купить по низким ценам. Гарантия качества, доставка по всей России.`,
-    ogImage: `https://api.glsvar.ru/files/og-image.png`,
-    twitterCard: `https://api.glsvar.ru/files/og-image.png`,
+    ogImage: `/og-image.png`,
+    twitterCard: `/og-image.png`,
   })
 
   /// Корзина кнопки, лайки, сравнение

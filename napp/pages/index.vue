@@ -20,8 +20,8 @@
     ogLocale: 'ru_RU',
     ogTitle: `Интернет магазин Главный Сварщик`,
     ogDescription: `${ descriptionData }`,
-    ogImage: `https://api.glsvar.ru/files/og-image.png`,
-    twitterCard: `https://api.glsvar.ru/files/og-image.png`,
+    ogImage: `/og-image.png`,
+    twitterCard: `/og-image.png`,
   })
 
 </script>
