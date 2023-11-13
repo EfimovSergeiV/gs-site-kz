@@ -269,7 +269,7 @@
                   </div>
                   
                   <div v-if="search.length > 1" class="absolute z-40 w-full bg-white border-x border-b border-gray-300 rounded-b-md -mt-1 invisible group-hover:visible ease-in-out transition-opacity duration-100 opacity-0 group-hover:opacity-100">
-                    <div class="px-2 h-96 overflow-y-auto my-2">
+                    <div class="px-2 h-96 overflow-y-auto border-t border-gray-300 py-1 my-1">
                       <div v-if="search.length > 3 && products.length === 0" class="text-gray-700">
                         <p class="">Ничего не найдено</p>
                       </div>
@@ -277,7 +277,7 @@
                         <p class="">Введите запрос</p>
                       </div>
                       <transition-group name="fade">
-                        <div class="px-2 py-0.5 my-1 bg-gray-100  border border-gray-200 hover:border-gray-300   rounded-md transition-all" v-for="product in products" :key="product.id">
+                        <div class="px-2 py-0.5 my-1 bg-gray-100  border border-gray-200 hover:border-gray-300 rounded-md transition-all" v-for="product in products" :key="product.id">
                           <nuxt-link :to="{ name: 'product-id', params: { id: product.id }}" class="">
                             <div class="flex gap-4">
                               <div class="">
