@@ -103,21 +103,28 @@
                     <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                       <p class="text-gray-700 dark:text-gray-400 mdi mdi-map-marker-radius"></p>
                     </div>
-                    <input v-model="searchTerm" type="search" id="search-city" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-600 dark:border-gray-700 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Москва">
+                    <input v-model="searchTerm" type="search" id="search-city" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-600 dark:border-gray-700 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Например - Алматы">
                   </div> 
                 </div>
 
 
+                <div class="mt-2">
+                  <p class="text-xs text-gray-500">Папулярные населённые пункты:</p>
+                </div>
                 
                 <div class="flex flex-wrap gap-2 py-2">
                   <button 
-                    v-for="(city, pk) in ['Москва','Санкт-Петербург','Псков','Смоленск','Петрозаводск','Великие луки',]" :key="pk"
-                    @click="selectedCity = city"
+                    v-for="(city, pk) in ['Рудный','Алматы','Астана','Шымкент','Актобе','Караганда','Тараз','Усть-Каменогорск', 'Павлодар', 'Атырау', 'Семей', 'Кызылорда', 'Актау', 'Костанай', 'Уральск', 'Туркестан', 'Петропавловск', 'Кокшетау', 'Темиртау', 'Талдыкорган', 'Экибастуз',]" :key="pk"
+                    @click="selectedCity = city" :title="`Выбрать ${ city }`"
                     class="bg-white dark:bg-gray-800 rounded-xl border hover:border-gray-300 dark:border-gray-700 border-gray-200 hover:dark:border-gray-700 transition-all shadow-md">
                     <div class="flex items-center justify-center py-1 px-4">
                       <p  class="text-[10px] md:text-xs text-gray-700 dark:text-gray-300">{{ city }}</p>
                     </div>
                   </button>
+                </div>
+
+                <div class="mt-2">
+                  <p class="text-xs text-gray-500">Найдено по запросу {{ searchCountries.length }}:</p>
                 </div>
 
 
@@ -126,7 +133,7 @@
                     <transition-group name="fade" mode="out-in">
                       <button 
                         v-for="(city, pk) in searchCountries" :key="pk"
-                        @click="selectedCity = city; searchTerm = city"
+                        @click="selectedCity = city; searchTerm = city" :title="`Выбрать ${ city }`"
                         class="bg-white dark:bg-gray-800 rounded-full border hover:border-gray-300 dark:border-gray-700 border-gray-200 hover:dark:border-gray-700 transition-all shadow-md">
                         <div class="flex items-center justify-center py-1.5 px-6">
                           <p  class="text-[10px] md:text-xs text-gray-700 dark:text-gray-300">{{ city }}</p>

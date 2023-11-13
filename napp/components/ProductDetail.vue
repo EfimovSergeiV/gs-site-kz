@@ -15,7 +15,7 @@
       <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 p-2 mb-4">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div class="">
-            <div class="flex h-full bg-white rounded-md cursor-zoom-in relative" @click="productsStore.showProductImages(product.prod_img)">
+            <div class="flex h-full min-h-[340px] bg-white rounded-md cursor-zoom-in relative" @click="productsStore.showProductImages(product.prod_img)">
               <div class="flex gap-4">
 
 
