@@ -155,21 +155,26 @@
                   </div>
 
                   <div v-if=" route.path !== '/cts'" class="py-2 absolute w-full left-0 z-40 invisible group-hover:visible ease-in-out transition-opacity duration-100 opacity-0 group-hover:opacity-100">
-                    <div class="bg-gray-300 dark:bg-gray-700 border border-gray-100 dark:border-gray-700 backdrop-blur-md rounded-t-sm rounded-b-md">
+                    <div class="bg-white border border-gray-400 shadow-md shadow-black/30 backdrop-blur-md rounded-t-sm rounded-b-md">
                       <div class="px-2 py-2">
                         <div class="grid grid-cols-2 lg:grid-cols-4 gap-2">
                           <div v-for="ct in cts" :key="ct.id" class="break-inside-avoid-column">
                             <div class="">
                               <div class="">
-                                <div class="bg-white border border-gray-200 dark:border-gray-700 rounded-md py-2 px-2">
+                                <div class="bg-white border border-gray-200 rounded-md py-2 px-2">
                                   <div class="grid grid-cols-1 gap-4">
-                                    <div class="flex justify-center">
-                                      <img v-if="ct.icon" :src="`/${ct.icon}`" class="h-16" />
-                                    </div>
                                     
-                                    <div class="flex justify-center">
-                                      <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }" class=" text-gray-700 text-base md:text-xl transition-all">{{ ct.name }}</nuxt-link>              
-                                    </div>
+                                    <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }">
+                                      <div class="flex justify-center">
+                                        <img v-if="ct.icon" :src="`/${ct.icon}`" class="h-16" />
+                                      </div>
+                                      
+                                      <div class="flex justify-center">
+                                        <p class=" text-gray-700 text-base transition-all">{{ ct.name }}</p>              
+                                      </div>                                    
+                                    </nuxt-link>
+
+
                                   </div>
                                 <!-- 
                                   <div>
@@ -189,7 +194,7 @@
 
                         <div class="flex items-center justify-end px-6 pt-2">
                           <nuxt-link :to="{ name: 'cts' }">
-                            <p class="text-xl">Перейти в категории</p>
+                            <p class="text-base text-gray-700">Перейти в категории</p>
                           </nuxt-link>
                         </div>
 
