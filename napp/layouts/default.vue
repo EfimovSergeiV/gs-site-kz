@@ -3,6 +3,7 @@
 
   const config = useRuntimeConfig()
   const route = useRoute()
+  const tmp_id = useCookie('tmp_id')
   // const colorMode = useColorMode()
 
   const shopStore = useShopStore()
@@ -16,7 +17,24 @@
 
   // shopStore.writeShops(shops)
 
-  onMounted(() => {
+  onMounted( async () => {
+
+    if ( tmp_id.value ) {
+      /// Проверяем, если устарел (нет в базе), получаем новый
+      const watcher = await $fetch(`${ config.public.baseURL }u/uwatch/`, {
+        method: 'POST', body: { "tmp_id": tmp_id.value }
+      }).catch((error) => error.data)
+      if ( watcher ) {
+        console.log(watcher, 'IF WATCHER')
+        tmp_id.value = watcher
+      }
+      console.log(watcher)
+    } else {
+      /// Если tmp_id не найден, получаем новый
+      const watcher = await $fetch(`${ config.public.baseURL }u/uwatch/`, { method: 'POST' }).catch((error) => error.data)
+      tmp_id.value = watcher
+    }
+
     clientStore.getLocateFromIP()
     if ("geolocation" in navigator) {
       /* Определяем местоположение по координатам */

@@ -17,7 +17,6 @@
   onMounted( async () => {
     if ( review.value.link.params ) {
       const prod = await $fetch(`${ config.public.baseURL }c/prod/${ review.value.link.params.id }/`).catch((error) => error.data)
-      console.log(prod)
       product.value = ( await prod ) 
     }
   })

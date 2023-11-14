@@ -161,3 +161,22 @@ class FeedbackView(APIView):
             resp = { "danger": "Что то пошло не так( Попробуте позже." }
 
         return Response(resp)
+    
+
+class UserWatcherView(APIView):
+    """ Поведение пользователей на сайте """
+    
+    def post(self, request):
+        if request.data.get('tmp_id'):
+            tmp_exist = UserWatcherModel.objects.filter(tmp_id=request.data.get('tmp_id')).exists()
+            if tmp_exist == False:
+                print('Обновляем ИД')
+                new_tmp_id = UserWatcherModel.objects.create()
+                return Response(f'{new_tmp_id}')
+            else:
+                print('ИД актуальный')
+                return Response(status=status.HTTP_200_OK)
+        else:
+            print('Получаем новый ИД')
+            tmp_id = UserWatcherModel.objects.create()
+            return Response(f'{tmp_id}')

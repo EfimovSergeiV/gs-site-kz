@@ -155,7 +155,7 @@
                   </div>
 
                   <div v-if=" route.path !== '/cts'" class="py-2 absolute w-full left-0 z-40 invisible group-hover:visible ease-in-out transition-opacity duration-100 opacity-0 group-hover:opacity-100">
-                    <div class="bg-white border border-gray-400 shadow-md shadow-black/30 backdrop-blur-md rounded-t-sm rounded-b-md">
+                    <div class="bg-white border border-gray-100 shadow-md shadow-black/30 backdrop-blur-md rounded-t-sm rounded-b-md">
                       <div class="px-2 py-2">
                         <div class="grid grid-cols-2 lg:grid-cols-4 gap-2">
                           <div v-for="ct in cts" :key="ct.id" class="break-inside-avoid-column">

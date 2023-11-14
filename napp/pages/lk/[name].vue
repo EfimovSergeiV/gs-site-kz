@@ -22,8 +22,50 @@
           </div>
         </div>
 
-        <div v-else class="flex items-center justify-center min-h-[50vh]">
-          <p class="text-base">Нет товаров в избранном</p>
+        <div v-else class="min-h-[50vh]">
+          
+          <div class="flex px-4 py-4">
+            <div class="grid grid-cols-1 w-[240px] gap-2">
+
+              <div class="text-sm text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
+                <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
+                  <p class="text-white text-sm w-full text-center py-1.5">Профиль</p>
+                </div>
+              </div>
+              <div class="text-sm text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
+                <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
+                  <p class="text-white text-sm w-full text-center py-1.5">Корзина</p>
+                </div>
+              </div>
+              <div class="text-sm text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
+                <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
+                  <p class="text-white text-sm w-full text-center py-1.5">Товары в избранном</p>
+                </div>
+              </div>
+              <div class="text-sm text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
+                <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
+                  <p class="text-white text-sm w-full text-center py-1.5">Товары в сравнении</p>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="">
+
+            </div>
+          </div>
+
+
+          <div class="px-4">
+            <p> Вы недавно смотрели</p>
+
+            <div class="">
+              
+            </div>
+
+          </div>
+
+
         </div>
       </div>
     </div>

@@ -1,12 +1,26 @@
-import email
-from pyexpat import model
-from statistics import mode
-from tabnanny import verbose
+
 from django.db import models
 from django.forms import model_to_dict
 from catalog.models import ProductModel
 from django.contrib.auth.models import User
 import uuid
+from django.utils import timezone
+
+class UserWatcherModel(models.Model):
+    """ Смотрим за поведением пользователей """
+
+    tmp_id = models.UUIDField(verbose_name="Идентификатор сессии", unique_for_month=timezone.now(), default=uuid.uuid4, editable=False)
+    # tmp_id = models.CharField(verbose_name="Идентификатор сессии", max_length=80)
+    # viewed_prods = models.JSONField(verbose_name="Просмотренные товары", null=True, blank=True)
+
+    class Meta:
+        verbose_name = "Сессия пользователя"
+        verbose_name_plural = "Сессии пользователей"
+
+    def __str__(self):
+        return f'{ self.tmp_id }'
+
+
 
 class ProfileModel(models.Model):
     """ Дополнительная информация о пользователе """
@@ -14,6 +28,8 @@ class ProfileModel(models.Model):
     user = models.OneToOneField(User, related_name="user_profile", on_delete=models.CASCADE)
     adress = models.CharField(verbose_name="Адрес", null=True, blank=True, max_length=200)
     phone = models.CharField(verbose_name="Телефон", null=True, blank=True, max_length=30)
+
+    # tmp_id
 
     class Meta:
         verbose_name = "Профиль"
