@@ -164,19 +164,16 @@ class FeedbackView(APIView):
     
 
 class UserWatcherView(APIView):
-    """ Поведение пользователей на сайте """
+    """ Присвоение пользователю временного идентификатора """
     
     def post(self, request):
         if request.data.get('tmp_id'):
             tmp_exist = UserWatcherModel.objects.filter(tmp_id=request.data.get('tmp_id')).exists()
             if tmp_exist == False:
-                print('Обновляем ИД')
-                new_tmp_id = UserWatcherModel.objects.create()
-                return Response(f'{new_tmp_id}')
+                qs = UserWatcherModel.objects.create()
+                return Response({ "tmp_id": qs.tmp_id })
             else:
-                print('ИД актуальный')
                 return Response(status=status.HTTP_200_OK)
         else:
-            print('Получаем новый ИД')
-            tmp_id = UserWatcherModel.objects.create()
-            return Response(f'{tmp_id}')
+            qs = UserWatcherModel.objects.create()
+            return Response({ 'tmp_id': qs.tmp_id })

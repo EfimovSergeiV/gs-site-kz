@@ -24,15 +24,15 @@
       const watcher = await $fetch(`${ config.public.baseURL }u/uwatch/`, {
         method: 'POST', body: { "tmp_id": tmp_id.value }
       }).catch((error) => error.data)
-      if ( watcher ) {
+      if ( watcher.tmp_id ) {
         console.log(watcher, 'IF WATCHER')
-        tmp_id.value = watcher
+        tmp_id.value = watcher.tmp_id
       }
       console.log(watcher)
     } else {
       /// Если tmp_id не найден, получаем новый
       const watcher = await $fetch(`${ config.public.baseURL }u/uwatch/`, { method: 'POST' }).catch((error) => error.data)
-      tmp_id.value = watcher
+      tmp_id.value = watcher.tmp_id
     }
 
     clientStore.getLocateFromIP()
