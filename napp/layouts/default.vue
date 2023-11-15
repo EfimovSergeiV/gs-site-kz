@@ -19,10 +19,11 @@
 
   onMounted( async () => {
 
+    /// Присваиваем клиенту временыый идентификатор
     if ( tmp_id.value ) {
       /// Проверяем, если устарел (нет в базе), получаем новый
       const watcher = await $fetch(`${ config.public.baseURL }u/uwatch/`, {
-        method: 'POST', body: { "tmp_id": tmp_id.value }
+        method: 'PUT', body: { "tmp_id": tmp_id.value }
       }).catch((error) => error.data)
       if ( watcher.tmp_id ) {
         console.log(watcher, 'IF WATCHER')
@@ -31,9 +32,18 @@
       console.log(watcher)
     } else {
       /// Если tmp_id не найден, получаем новый
-      const watcher = await $fetch(`${ config.public.baseURL }u/uwatch/`, { method: 'POST' }).catch((error) => error.data)
+      const watcher = await $fetch(`${ config.public.baseURL }u/uwatch/`, { method: 'PUT' }).catch((error) => error.data)
       tmp_id.value = watcher.tmp_id
     }
+
+    /// Получаем данные о просмотренных товарах
+    const tmp_data = await $fetch(`${ config.public.baseURL }u/uwatch/`, {
+      headers: {
+        "Authorization": tmp_id.value,
+      }
+    }).catch((error) => error.data)
+    console.log(tmp_data)
+
 
     clientStore.getLocateFromIP()
     if ("geolocation" in navigator) {

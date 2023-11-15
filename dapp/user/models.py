@@ -6,16 +6,19 @@ from django.contrib.auth.models import User
 import uuid
 from django.utils import timezone
 
+
+def get_structure():
+    return dict( comp = [], like= [], viewed=[] )
+
 class UserWatcherModel(models.Model):
     """ Смотрим за поведением пользователей """
 
     tmp_id = models.UUIDField(verbose_name="Идентификатор сессии", unique_for_month=timezone.now(), default=uuid.uuid4, editable=False)
-    # tmp_id = models.CharField(verbose_name="Идентификатор сессии", max_length=80)
-    # viewed_prods = models.JSONField(verbose_name="Просмотренные товары", null=True, blank=True)
+    prods = models.JSONField(verbose_name="Просмотренные товары", default=get_structure, null=True, blank=True)
 
     class Meta:
         verbose_name = "Сессия пользователя"
-        verbose_name_plural = "Сессии пользователей"
+        verbose_name_plural = "Сессии пользователей (статистика)"
 
     def __str__(self):
         return f'{ self.tmp_id }'

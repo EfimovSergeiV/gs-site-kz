@@ -1,8 +1,15 @@
 <script setup>
   const config = useRuntimeConfig()
   const route = useRoute()
+  const tmp_id = useCookie('tmp_id')
 
   const { data: product } = await useFetch(`${ config.public.baseURL }c/prod/${route.params.id}`)
+  const { data: viewed } = await useFetch(`${ config.public.baseURL }u/uwatch/`, {
+    method: 'POST',
+    headers: { "Authorization": tmp_id.value, },
+    body: { "viewed": product.value.id }
+  })
+
   const brand = ref('noname')
 
   onMounted( async () => {
