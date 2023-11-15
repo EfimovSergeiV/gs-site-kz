@@ -177,6 +177,7 @@ class UserWatcherView(APIView):
         else:
             return Response(status=status.HTTP_404_NOT_FOUND)
     
+
     def post(self, request):
         """ Обновляем информацию о просмотренных товарах """
 
@@ -188,14 +189,8 @@ class UserWatcherView(APIView):
                 current_data[key] = [request.data.get(key),] + current_data[key][0:7] if request.data.get(key) not in current_data[key] else current_data[key]
                 qs.update(prods=current_data)
 
-                # now_data = qs[0].prods
-                # data = qs[0].prods.get(key)
-                # if request.data.get(key) not in data:
-                #     data = [request.data.get(key),] + data[0: 7]
-                # now_data[key] = data
-                # qs.update(prods=now_data)
-
         return Response(status=status.HTTP_201_CREATED)
+
 
     def put(self, request):
         """ Получаем новый или обновляем временнный идентификатор """
