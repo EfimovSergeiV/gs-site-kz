@@ -69,7 +69,7 @@ class UserWatcherAdmin(admin.ModelAdmin):
     list_display_links = ('id', 'tmp_id' )
     readonly_fields = ('prods', 'parse_prods',)
     fieldsets = (
-        ("Активность сессии", {'fields': ( ('prods'), ('parse_prods'),)}),
+        ("Активность сессии", {'fields': (('parse_prods'),)}),
         )
 
 
