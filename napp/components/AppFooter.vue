@@ -25,19 +25,19 @@
           <div class="flex items-end justify-between gap-12">
             <div class="grid grid-cols-1 gap-1">
               <div class=" border-b border-gray-200 dark:border-gray-700">
-                <div class="grid grid-cols-2 gap-10 md:gap-12">
+                <div class="grid grid-cols-2 gap-8 md:gap-12">
                   <p class="text-xs">понедельник</p>
                   <p class="text-xs">08:30 – 17:30</p>
                 </div>                      
               </div>
               <div class=" border-b border-gray-200 dark:border-gray-700">
-                <div class="grid grid-cols-2 gap-10 md:gap-12">
+                <div class="grid grid-cols-2 gap-8 md:gap-12">
                   <p class="text-xs">вторник</p>
                   <p class="text-xs">08:30 – 17:30</p>
                 </div>                      
               </div>
               <div class=" border-b border-gray-200 dark:border-gray-700">
-                <div class="grid grid-cols-2 gap-10 md:gap-12">
+                <div class="grid grid-cols-2 gap-8 md:gap-12">
                   <p class="text-xs">среда</p>
                   <p class="text-xs">08:30 – 17:30</p>
                 </div>                          
@@ -45,25 +45,25 @@
             </div>
             <div class="grid grid-cols-1 gap-1">
               <div class=" border-b border-gray-200 dark:border-gray-700">
-                <div class="grid grid-cols-2 gap-10 md:gap-12">
+                <div class="grid grid-cols-2 gap-8 md:gap-12">
                   <p class="text-xs">четверг</p>
                   <p class="text-xs">08:30 – 17:30</p>
                 </div>                      
               </div>
               <div class=" border-b border-gray-200 dark:border-gray-700">
-                <div class="grid grid-cols-2 gap-10 md:gap-12">
+                <div class="grid grid-cols-2 gap-8 md:gap-12">
                   <p class="text-xs">пятница</p>
                   <p class="text-xs">08:30 – 17:30</p>
                 </div>                      
               </div>
               <div class=" border-b border-gray-200 dark:border-gray-700">
-                <div class="grid grid-cols-2 gap-10 md:gap-12">
+                <div class="grid grid-cols-2 gap-8 md:gap-12">
                   <p class="text-xs">суббота</p>
                   <p class="text-xs">09:00 – 15:00</p>
                 </div>                      
               </div>
               <div class=" border-b border-gray-200 dark:border-gray-700">
-                <div class="grid grid-cols-2 gap-10 md:gap-12">
+                <div class="grid grid-cols-2 gap-8 md:gap-12">
                   <p class="text-xs">воскресенье</p>
                   <p class="text-xs">Закрыто</p>
                 </div>                          
