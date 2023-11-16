@@ -21,9 +21,9 @@
           </div>
 
 
-          <p class="py-1 mt-4 text-sm">Наш график работы:</p>
-          <div class="flex justify-between gap-2">
-            <div class="grid grid-cols-1">
+          <p class="mt-2 text-sm">Наш график работы:</p>
+          <div class="flex items-end justify-between gap-8">
+            <div class="grid grid-cols-1 gap-1">
               <div class=" border-b border-gray-200 dark:border-gray-700">
                 <div class="grid grid-cols-2 gap-6">
                   <p class="text-xs">понедельник</p>
@@ -43,7 +43,7 @@
                 </div>                          
               </div>
             </div>
-            <div class="grid grid-cols-1">
+            <div class="grid grid-cols-1 gap-1">
               <div class=" border-b border-gray-200 dark:border-gray-700">
                 <div class="grid grid-cols-2 gap-6">
                   <p class="text-xs">четверг</p>

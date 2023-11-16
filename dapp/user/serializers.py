@@ -47,3 +47,17 @@ class FeedBackSerializer(serializers.ModelSerializer):
     class Meta:
         model = FeedBackModel
         fields = '__all__'
+
+
+
+
+from catalog.serializers import ProductSerializer
+
+class UserWatcherSerializer(serializers.Serializer):
+    """ Отслеживаемые пользователем товары """
+   
+    viewed = ProductSerializer(many=True)
+    like = ProductSerializer(many=True)
+    comp = ProductSerializer(many=True)
+
+

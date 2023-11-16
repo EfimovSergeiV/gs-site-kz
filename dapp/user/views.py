@@ -162,7 +162,21 @@ class FeedbackView(APIView):
 
         return Response(resp)
     
+from user.serializers import UserWatcherSerializer
 
+"""
+    def preserved(self, prods):
+        return Case(*[When(pk=pk, then=pos) for pos, pk in enumerate(prods)])
+
+    def parse_prods(self, instance):
+        products = instance.prods
+        qs_prods = ProductModel.objects.filter(id__in = products["viewed"] + products["like"] + products["comp"])
+        
+        data = render_to_string('admin_prods.html', {
+            "viewed": qs_prods.filter(id__in = products["viewed"]).order_by(self.preserved(products["viewed"])),
+            "like": qs_prods.filter(id__in = products["like"]).order_by(self.preserved(products["like"])),
+            "comp": qs_prods.filter(id__in = products["comp"]).order_by(self.preserved(products["comp"])),
+"""
 class UserWatcherView(APIView):
     """ Пользовательская статистика """
 
@@ -170,10 +184,20 @@ class UserWatcherView(APIView):
         """ Возвращаем историю последних просмотров товаров """
 
         if request.headers.get('Authorization'):
-            print('GET REQUEST ', request.headers)
+            tmp_qs = UserWatcherModel.objects.filter(tmp_id=request.headers.get('Authorization'))[0]
+            tmp_data = tmp_qs.prods
+            prods_qs = ProductModel.objects.filter(id__in = tmp_data["viewed"] + tmp_data["like"] + tmp_data["comp"])
 
-            qs = UserWatcherModel.objects.filter(tmp_id=request.headers.get('Authorization'))[0]
-            return Response(qs.prods)
+            sr = UserWatcherSerializer(
+                {
+                    "viewed": prods_qs.filter(id__in = tmp_data["viewed"]) , 
+                    "like": prods_qs.filter(id__in = tmp_data["like"]), 
+                    "comp": prods_qs.filter(id__in = tmp_data["comp"])
+                },
+                context = { 'request':request }
+            )
+
+            return Response(sr.data)
         else:
             return Response(status=status.HTTP_404_NOT_FOUND)
     
@@ -190,6 +214,20 @@ class UserWatcherView(APIView):
                 qs.update(prods=current_data)
 
         return Response(status=status.HTTP_201_CREATED)
+    
+
+    def delete(self, request):
+        if request.headers.get('Authorization'):
+            qs = UserWatcherModel.objects.filter(tmp_id=request.headers.get('Authorization'))
+            for key in request.data.keys():
+                current_data = qs[0].prods
+                try:
+                    current_data[key].remove(request.data.get(key))
+                    qs.update(prods=current_data)
+                except ValueError:
+                    pass
+
+        return Response(status=status.HTTP_200_OK)
 
 
     def put(self, request):
