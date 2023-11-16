@@ -1,0 +1,19 @@
+<p>Просмотренные:</p>
+
+{% for prod in viewed %}
+    <p>{{ prod }}</p>
+{% endfor %}
+
+
+<p>В избранном:</p>
+
+{% for prod in like %}
+    <p>{{ prod }}</p>
+{% endfor %}
+
+
+<p>В сравнении:</p>
+
+{% for prod in comp %}
+    <p>{{ prod }}</p>
+{% endfor %}

@@ -1,6 +1,7 @@
 from re import search
-from warnings import filters
 from django.contrib import admin
+from django.utils.safestring import mark_safe
+from django.template.loader import render_to_string
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
 
@@ -41,10 +42,26 @@ class FeedBackAdmin(admin.ModelAdmin):
     readonly_fields = ('person', 'theme', 'contact', 'text',)
 
 
+class UserWatcherAdmin(admin.ModelAdmin):
+
+    def parse_prods(self, instance):
+        products = instance.prods
+        data = render_to_string('admin_prods.html', {"viewed": products["viewed"], "comp": products["comp"], "like": products["like"], })
+        return data
+    
+    parse_prods.short_description = 'Товары'
+
+
+    list_display = ('id', )
+    list_display_links = ('id', )
+    readonly_fields = ('prods', 'parse_prods',)
+
+
+
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
 admin.site.register(SubscriberModel)
 admin.site.register(FeedBackModel, FeedBackAdmin)
 admin.site.register(LikeProdModel, LikeProdAdmin)
 admin.site.register(ProductReviewModel, ProductReviewAdmin)
-admin.site.register(UserWatcherModel,)
+admin.site.register(UserWatcherModel, UserWatcherAdmin)
