@@ -42,19 +42,35 @@ class FeedBackAdmin(admin.ModelAdmin):
     readonly_fields = ('person', 'theme', 'contact', 'text',)
 
 
+
+from catalog.models import ProductModel
+from django.db.models import Case, When
 class UserWatcherAdmin(admin.ModelAdmin):
+
+    def preserved(self, prods):
+        return Case(*[When(pk=pk, then=pos) for pos, pk in enumerate(prods)])
 
     def parse_prods(self, instance):
         products = instance.prods
-        data = render_to_string('admin_prods.html', {"viewed": products["viewed"], "comp": products["comp"], "like": products["like"], })
+        qs_prods = ProductModel.objects.filter(id__in = products["viewed"] + products["like"] + products["comp"])
+        
+        data = render_to_string('admin_prods.html', {
+            "viewed": qs_prods.filter(id__in = products["viewed"]).order_by(self.preserved(products["viewed"])),
+            "like": qs_prods.filter(id__in = products["like"]).order_by(self.preserved(products["like"])),
+            "comp": qs_prods.filter(id__in = products["comp"]).order_by(self.preserved(products["comp"])),
+            
+        })
         return data
     
-    parse_prods.short_description = 'Товары'
+    parse_prods.short_description = 'Товары в сессии'
 
 
-    list_display = ('id', )
-    list_display_links = ('id', )
+    list_display = ('id', 'tmp_id' )
+    list_display_links = ('id', 'tmp_id' )
     readonly_fields = ('prods', 'parse_prods',)
+    fieldsets = (
+        ("Активность сессии", {'fields': ( ('prods'), ('parse_prods'),)}),
+        )
 
 
 
