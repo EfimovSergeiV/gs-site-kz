@@ -76,6 +76,7 @@ export const useProductsStore = defineStore('ProductsStore', {
     cart: [] as Product[],  /// Товары в корзине
     comp: [] as Product[],  /// Товары в сравнении
     like: [] as Product[],  /// Товары в избраннном
+    viewed: [] as Product[],  /// Ранее просмотренные товары
     requestPrice: null as Product | null, /// Модальное на запрос стоимости товара
     cartAlert: false, /// Уведомление о добавленном товаре (модальное окно)
     cartAlertBlock: false,  /// Уведомление о добавленном товаре (модальное окно)
@@ -99,6 +100,14 @@ export const useProductsStore = defineStore('ProductsStore', {
   },
   actions: {
     /// Добавление или удаление товаров
+
+    restoreState( data:any ) {
+      /// Восстановление состояния сессии пользователя
+      this.comp = data.comp
+      this.like = data.like
+      this.viewed = data.viewed
+    },
+
     addProduct(target: string, payload: Product) {
       console.log('addProd')
       const product: Product = { ...payload}

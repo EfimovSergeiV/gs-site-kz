@@ -42,7 +42,7 @@
         "Authorization": tmp_id.value,
       }
     }).catch((error) => error.data)
-    console.log(tmp_data)
+    productsStore.restoreState(tmp_data)
 
 
     clientStore.getLocateFromIP()
