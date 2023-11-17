@@ -22,7 +22,7 @@
 
 
           <p class="mt-2 text-sm">Наш график работы:</p>
-          <div class="flex items-end justify-between gap-12">
+          <div class="flex items-end justify-between md:gap-12">
             <div class="grid grid-cols-1 gap-1">
               <div class=" border-b border-gray-200 dark:border-gray-700">
                 <div class="grid grid-cols-2 gap-6 md:gap-12">
@@ -34,7 +34,7 @@
                 <div class="grid grid-cols-2 gap-6 md:gap-12">
                   <p class="text-xs">вторник</p>
                   <p class="text-xs">08:30 – 17:30</p>
-                </div>                      
+                </div>
               </div>
               <div class=" border-b border-gray-200 dark:border-gray-700">
                 <div class="grid grid-cols-2 gap-6 md:gap-12">
