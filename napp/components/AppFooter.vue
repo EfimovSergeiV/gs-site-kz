@@ -1,5 +1,6 @@
 <script setup>
   const config = useRuntimeConfig()
+  
   const { data: brands } = await useFetch(`${ config.public.baseURL }c/brands/`)
 
 </script>

@@ -14,4 +14,5 @@ urlpatterns = [
     # path('product/vcode<int:vcode>', ProductView.as_view()),
     
     path('uwatch/', UserWatcherView.as_view()),
+    path('session/', UserSessionView.as_view()),
 ]

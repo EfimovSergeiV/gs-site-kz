@@ -243,3 +243,29 @@ class UserWatcherView(APIView):
         else:
             qs = UserWatcherModel.objects.create()
             return Response({ 'tmp_id': qs.tmp_id })
+        
+
+from rest_framework.permissions import IsAuthenticated
+class UserSessionView(APIView):
+    """ При авторизации пользователя возвращает данные сессии или привязывает к текущей """
+    
+    permission_classes = [IsAuthenticated,]
+    
+    def post(self, request):
+        user = request.user
+        print(request.data.get('tmp_id'))
+        profile = User.objects.get(username=user)
+        
+        print(profile.user_profile.latest_session)
+        
+        if profile.user_profile.latest_session == None:
+            profile = ProfileModel.objects.filter(user=profile).update(latest_session = request.data.get('tmp_id'))
+
+        """
+        
+        Продумать логику ещё раз
+        
+        """
+
+
+        return Response(status=status.HTTP_200_OK)

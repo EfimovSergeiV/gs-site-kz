@@ -1,9 +1,20 @@
 <script setup>
   const config = useRuntimeConfig()
+  const tmp_id = useCookie('tmp_id')
   const productsStore = useProductsStore()  
   const { signIn, token, data, status, lastRefreshedAt } = useAuth()
 
   // const { data: userdata } = await useFetch(`${ config.public.baseURL }u/profile/`)
+
+  const sessiondata = await $fetch(`${ config.public.baseURL }u/session/`, {
+    method: 'POST',    
+    headers: {
+      "Authorization": token.value,
+    },
+    body: {
+      "tmp_id": tmp_id.value
+    }
+  }).catch((error) => error.data)
 
 </script>
 
