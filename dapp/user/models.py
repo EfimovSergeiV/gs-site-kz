@@ -32,7 +32,8 @@ class ProfileModel(models.Model):
     adress = models.CharField(verbose_name="Адрес", null=True, blank=True, max_length=200)
     phone = models.CharField(verbose_name="Телефон", null=True, blank=True, max_length=30)
 
-    # tmp_id
+    latest_session = models.UUIDField(verbose_name="Последняя сессия", null=True, blank=True)
+    orders = models.JSONField(verbose_name="История заказов", null=True, blank=True)
 
     class Meta:
         verbose_name = "Профиль"
