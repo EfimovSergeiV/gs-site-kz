@@ -11,8 +11,8 @@
 
       <div class="md:flex md:justify-between items-center py-2">
 
-        <div class="md:order-2">
-          <div class="flex gap-2 items-end justify-end px-4">
+        <div class="md:order-2 py-2">
+          <div class="flex gap-2 items-end justify-end px-4 py-2">
             <p class="mdi mdi-36px mdi-map-marker-outline"></p>
             <div class="flex flex-col">
               <p class="text-sm text-end">Рудный, ул. Топоркова 35, 111500</p>
@@ -74,7 +74,7 @@
 
         <div class="w-full h-full md:w-1/2 md:order-1">
           
-          <p class="text-[10px] md:text-xs my-3 select-none text-gray-700 dark:text-gray-300">
+          <p class="text-[10px] md:text-xs py-6 select-none text-gray-700 dark:text-gray-300">
             Все цены и материаллы, указанные на сайте www.glsvar.kz, приведены как справочная информация и не являются публичной офертой и могут быть изменены в любое время без предупреждения. 
             Для получения подробной информации о стоимости, сроках и условиях поставки просьба обращаться по указанным на сайте телефонам.
           </p>  

@@ -19,13 +19,7 @@
         <div v-if="status === 'authenticated'" class="min-h-[50vh]">
           
           <div class="grid grid-cols-1 lg:flex gap-4 px-4 py-4">
-            <div class="flex lg:flex-col gap-4 lg:w-[220px]">
-
-            <!-- 
-              <div class="py-4">
-                <p class="">Ваш профиль</p>
-              </div> 
-            -->
+            <div class="flex lg:flex-col gap-4 lg:w-[220px] lg:py-8">
               
               <nuxt-link :to="{ name: 'cts' }" class="">Каталог</nuxt-link>
               <nuxt-link :to="{ name: 'cart' }" class="">Корзина</nuxt-link>
@@ -35,30 +29,30 @@
             </div>
 
             <div class="grid grid-cols-1 md:flex gap-4 w-full">
-              <div class="border border-gray-300 dark:border-gray-700 p-2 rounded-md md:w-[520px]">
-                <p class="">Данные профиля</p>
-                <div class="py-2">
-                  <div class="grid grid-cols-2 gap-4">
+              <div class="bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 p-2 rounded-md md:w-[520px] shadow-md shadow-black/20">
+                <p class="border-b border-gray-600 px-0.5">Данные профиля</p>
+                <div class="py-6">
+                  <div class="grid grid-cols-2 items-center gap-4">
                     <p class="text-sm">Логин:</p>
                     <p class="">{{ data.username }}</p>                    
                   </div>
-                  <div class="grid grid-cols-2 gap-4">
+                  <div class="grid grid-cols-2 items-center gap-4">
                     <p class="text-sm">Имя</p>
                     <p class="">{{ data.first_name }}</p>                    
                   </div>
-                  <div class="grid grid-cols-2 gap-4">
+                  <div class="grid grid-cols-2 items-center gap-4">
                     <p class="text-sm">Фамилия</p>
                     <p class="">{{ data.last_name }}</p>                    
                   </div>
-                  <div class="grid grid-cols-2 gap-4">
+                  <div class="grid grid-cols-2 items-center gap-4">
                     <p class="text-sm">Электронная почта</p>
                     <p class="">{{ data.email }}</p>                    
                   </div>
-                  <div class="grid grid-cols-2 gap-4">
+                  <div class="grid grid-cols-2 items-center gap-4">
                     <p class="text-sm">Номер телефона</p>
                     <p class="">{{ data.phone }}</p>                    
                   </div>
-                  <div class="grid grid-cols-2 gap-4">
+                  <div class="grid grid-cols-2 items-center gap-4">
                     <p class="text-sm">Город/адрес</p>
                     <p class="">{{ data.adress }}</p>                    
                   </div>
@@ -66,14 +60,14 @@
               </div>
 
               <div class="grid grid-cols-1 h-[420px] gap-4 w-full">
-                <div class="border border-gray-300 dark:border-gray-700 rounded-md p-2">
-                  <p class="">История заказов</p>
+                <div class="bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-md shadow-black/20 p-2">
+                  <p class="border-b border-gray-600 px-0.5">История заказов</p>
                   <div class="flex items-center justify-center h-full w-full">
                     <p class="text-sm">Заказы не найдены</p>
                   </div>
                 </div>
-                <div class="border border-gray-300 dark:border-gray-700 rounded-md p-2">
-                  <p class="">Акции и скидки</p>
+                <div class="bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-md shadow-black/20 p-2">
+                  <p class="border-b border-gray-600 px-0.5">Акции и скидки</p>
                   <div class="flex items-center justify-center h-full w-full">
                     <p class="text-sm">Акции и скидки не найдены</p>
                   </div>
@@ -86,7 +80,7 @@
           </div>
 
 
-          <div class="px-4 py-2">
+          <div v-if="productsStore.viewed.length > 0" class="px-4 py-2">
             <p class="py-4"> Вы недавно смотрели</p>
 
             <div class="">
