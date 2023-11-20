@@ -47,9 +47,9 @@
       </div>
 
 
-      <div class="flex items-end justify-between gap-2">
+      <div class="grid grid-cols-1 lg:flex items-end justify-between gap-2">
 
-        <div class="flex md:grid md:grid-cols-1 gap-2">
+        <div class="flex lg:grid lg:grid-cols-1 gap-2">
           <div class="flex items-center gap-2">
             <CompBtn cls="px-3 py-1.5" :product="props.product" />
             <p class="text-xs">Сравнить</p>
@@ -60,8 +60,7 @@
           </div>
         </div>
 
-        <div class="flex gap-4 items-end">
-
+        <div class="flex gap-4 items-end justify-end">
           <CartBtnSmall v-if="props.product.price" :product="props.product" />
           <button v-else @click="productsStore.addRequestPrice(props.product)" class="">
             <div class=" text-sm text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
@@ -70,7 +69,6 @@
               </div>
             </div>
           </button>
-          
         </div>
 
       </div>
