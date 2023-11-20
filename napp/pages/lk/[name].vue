@@ -24,35 +24,33 @@
 
         <div v-else class="min-h-[50vh]">
           
-          <div class="flex px-4 py-4">
-            <div class="grid grid-cols-1 w-[240px] gap-2">
+          <div class="grid grid-cols-1 lg:flex gap-4 px-4 py-4">
+            <div class="flex lg:flex-col gap-4 lg:w-[220px]">
 
-              <div class="text-sm text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
-                <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
-                  <p class="text-white text-sm w-full text-center py-1.5">Профиль</p>
-                </div>
+              <p class="">Профиль</p>
+              <p class="">Корзина</p>
+              <p class="">Избранное</p>
+              <p class="">В сравнении</p>
+             
+            </div>
+
+            <div class="grid grid-cols-1 md:flex gap-4 w-full">
+              <div class="border border-gray-700 p-2 rounded-md md:w-[520px]">
+                <p class="">Данные профиля</p>
               </div>
-              <div class="text-sm text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
-                <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
-                  <p class="text-white text-sm w-full text-center py-1.5">Корзина</p>
+
+              <div class="grid grid-cols-1 h-[420px] gap-4 w-full">
+                <div class="border border-gray-700 rounded-md p-2">
+                  <p class="">История заказов</p>
                 </div>
-              </div>
-              <div class="text-sm text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
-                <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
-                  <p class="text-white text-sm w-full text-center py-1.5">Избранное</p>
+                <div class="border border-gray-700 rounded-md p-2">
+                  <p class="">Акции и скидки</p>
                 </div>
-              </div>
-              <div class="text-sm text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
-                <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
-                  <p class="text-white text-sm w-full text-center py-1.5">В сравнении</p>
-                </div>
-              </div>
+              </div>              
             </div>
 
 
-            <div class="">
 
-            </div>
           </div>
 
 
