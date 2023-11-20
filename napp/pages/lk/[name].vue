@@ -27,10 +27,16 @@
           <div class="grid grid-cols-1 lg:flex gap-4 px-4 py-4">
             <div class="flex lg:flex-col gap-4 lg:w-[220px]">
 
-              <p class="">Профиль</p>
-              <p class="">Корзина</p>
-              <p class="">Избранное</p>
-              <p class="">В сравнении</p>
+            <!-- 
+              <div class="py-4">
+                <p class="">Ваш профиль</p>
+              </div> 
+            -->
+              
+              <nuxt-link to="#" class="">Каталог</nuxt-link>
+              <nuxt-link to="#" class="">Корзина</nuxt-link>
+              <nuxt-link to="#" class="">Избранное</nuxt-link>
+              <nuxt-link to="#" class="">В сравнении</nuxt-link>
              
             </div>
 
