@@ -1,7 +1,9 @@
 <script setup>
+  const config = useRuntimeConfig()
+  const productsStore = useProductsStore()  
   const { signIn, token, data, status, lastRefreshedAt } = useAuth()
 
-  const productsStore = useProductsStore()
+  // const { data: userdata } = await useFetch(`${ config.public.baseURL }u/profile/`)
 
 </script>
 
@@ -12,17 +14,9 @@
 
     <div class="container mx-auto max-w-6xl px-4 py-2 lg:px-8">
       <div class="bg-white dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-700">
-        <div v-if="productsStore.like.length > 0" class=" min-h-[50vh]">
-          <div class="px-4 py-2">
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
-              <div v-for="product in productsStore.like" :key="product.id">
-                <ProductCard :product="product" />
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div v-else class="min-h-[50vh]">
+
+        <div v-if="status === 'authenticated'" class="min-h-[50vh]">
           
           <div class="grid grid-cols-1 lg:flex gap-4 px-4 py-4">
             <div class="flex lg:flex-col gap-4 lg:w-[220px]">
@@ -33,24 +27,56 @@
               </div> 
             -->
               
-              <nuxt-link to="#" class="">Каталог</nuxt-link>
-              <nuxt-link to="#" class="">Корзина</nuxt-link>
-              <nuxt-link to="#" class="">Избранное</nuxt-link>
-              <nuxt-link to="#" class="">В сравнении</nuxt-link>
+              <nuxt-link :to="{ name: 'cts' }" class="">Каталог</nuxt-link>
+              <nuxt-link :to="{ name: 'cart' }" class="">Корзина</nuxt-link>
+              <nuxt-link :to="{ name: 'lk-name', params: { name: 'guest' } }" class="">Избранное</nuxt-link>
+              <nuxt-link :to="{ name: 'compare' }" class="">В сравнении</nuxt-link>
              
             </div>
 
             <div class="grid grid-cols-1 md:flex gap-4 w-full">
-              <div class="border border-gray-700 p-2 rounded-md md:w-[520px]">
+              <div class="border border-gray-300 dark:border-gray-700 p-2 rounded-md md:w-[520px]">
                 <p class="">Данные профиля</p>
+                <div class="py-2">
+                  <div class="grid grid-cols-2 gap-4">
+                    <p class="text-sm">Логин:</p>
+                    <p class="">{{ data.username }}</p>                    
+                  </div>
+                  <div class="grid grid-cols-2 gap-4">
+                    <p class="text-sm">Имя</p>
+                    <p class="">{{ data.first_name }}</p>                    
+                  </div>
+                  <div class="grid grid-cols-2 gap-4">
+                    <p class="text-sm">Фамилия</p>
+                    <p class="">{{ data.last_name }}</p>                    
+                  </div>
+                  <div class="grid grid-cols-2 gap-4">
+                    <p class="text-sm">Электронная почта</p>
+                    <p class="">{{ data.email }}</p>                    
+                  </div>
+                  <div class="grid grid-cols-2 gap-4">
+                    <p class="text-sm">Номер телефона</p>
+                    <p class="">{{ data.phone }}</p>                    
+                  </div>
+                  <div class="grid grid-cols-2 gap-4">
+                    <p class="text-sm">Город/адрес</p>
+                    <p class="">{{ data.adress }}</p>                    
+                  </div>
+                </div>
               </div>
 
               <div class="grid grid-cols-1 h-[420px] gap-4 w-full">
-                <div class="border border-gray-700 rounded-md p-2">
+                <div class="border border-gray-300 dark:border-gray-700 rounded-md p-2">
                   <p class="">История заказов</p>
+                  <div class="flex items-center justify-center h-full w-full">
+                    <p class="text-sm">Заказы не найдены</p>
+                  </div>
                 </div>
-                <div class="border border-gray-700 rounded-md p-2">
+                <div class="border border-gray-300 dark:border-gray-700 rounded-md p-2">
                   <p class="">Акции и скидки</p>
+                  <div class="flex items-center justify-center h-full w-full">
+                    <p class="text-sm">Акции и скидки не найдены</p>
+                  </div>
                 </div>
               </div>              
             </div>
@@ -88,6 +114,15 @@
 
 
         </div>
+
+        <div v-else class=" min-h-[50vh]">
+          <div class="px-4 py-2">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
+              <p class="">Вы не авторизованны</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 

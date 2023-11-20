@@ -64,12 +64,8 @@ export default defineNuxtConfig({
     baseURL: cfg.BASE_URL,
     provider: {
       type: 'local',
-      // endpoints: {
-      //   getSession: { path: '/user' }
-      // },
       
       endpoints: {
-        
         signIn: { path: 'auth/', method: 'post' },
         signOut: { path: 'logout/', method: 'post' },
         signUp: { path: 'register/', method: 'post' },
@@ -89,7 +85,7 @@ export default defineNuxtConfig({
       enableRefreshOnWindowFocus: true,
 
       // Whether to refresh the session every `X` milliseconds. Set this to `false` to turn it off. The session will only be refreshed if a session already exists.
-      enableRefreshPeriodically: 5000
+      enableRefreshPeriodically: false  ///5000
     },
     globalAppMiddleware: {
       isEnabled: false
