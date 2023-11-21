@@ -4,9 +4,7 @@
   const productsStore = useProductsStore()  
   const { signIn, token, data, status, lastRefreshedAt } = useAuth()
 
-  // const { data: userdata } = await useFetch(`${ config.public.baseURL }u/profile/`)
-
-  const sessiondata = await $fetch(`${ config.public.baseURL }u/session/`, {
+  const { data: session } = await useFetch(`${ config.public.baseURL }u/session/`, {
     method: 'POST',    
     headers: {
       "Authorization": token.value,
@@ -15,6 +13,15 @@
       "tmp_id": tmp_id.value
     }
   }).catch((error) => error.data)
+
+    /// Получаем данные о просмотренных товарах
+    const { data: tmp_data } = await useFetch(`${ config.public.baseURL }u/uwatch/`, {
+      headers: {
+        "Authorization": session.value.tmp_id,
+      }
+    }).catch((error) => error.data)
+    productsStore.restoreState(tmp_data.value)
+
 
 </script>
 
