@@ -177,6 +177,7 @@ from user.serializers import UserWatcherSerializer
             "like": qs_prods.filter(id__in = products["like"]).order_by(self.preserved(products["like"])),
             "comp": qs_prods.filter(id__in = products["comp"]).order_by(self.preserved(products["comp"])),
 """
+from user.serializers import UserWatcherUUIDSerializer
 class UserWatcherView(APIView):
     """ Пользовательская статистика """
 
@@ -184,7 +185,23 @@ class UserWatcherView(APIView):
         """ Возвращаем историю последних просмотров товаров """
 
         if request.headers.get('Authorization'):
-            tmp_qs = UserWatcherModel.objects.filter(tmp_id=request.headers.get('Authorization'))[0]
+            print(request.headers.get('Authorization'))
+
+            userwatcher_qs = UserWatcherModel.objects.filter(tmp_id=request.headers.get('Authorization'))
+            print(f'USERWATCHER {userwatcher_qs}')
+
+
+            if userwatcher_qs.exists() == False:
+                data={ "tmp_id": request.headers.get('Authorization')}
+                sr = UserWatcherUUIDSerializer(data=data)
+                
+                if sr.is_valid():
+                    sr.save()
+                else:
+                    return Response(status=status.HTTP_400_BAD_REQUEST)
+                
+
+            tmp_qs = userwatcher_qs[0]
             tmp_data = tmp_qs.prods
             prods_qs = ProductModel.objects.filter(id__in = tmp_data["viewed"] + tmp_data["like"] + tmp_data["comp"])
 
@@ -243,7 +260,7 @@ class UserWatcherView(APIView):
         else:
             qs = UserWatcherModel.objects.create()
             return Response({ 'tmp_id': qs.tmp_id })
-        
+
 
 
 class UserSessionView(APIView):
@@ -253,12 +270,20 @@ class UserSessionView(APIView):
     
     def post(self, request):
         user = request.user
-        profile = User.objects.get(username=user)
-        
-        if profile.user_profile.latest_session == None:
-            profile = ProfileModel.objects.filter(user=profile).update(latest_session = request.data.get('tmp_id'))
+        user_qs = User.objects.get(username=user)
+        profile_qs = ProfileModel.objects.filter(user=user_qs)
 
+        if profile_qs.exists():
+            if profile_qs[0].latest_session == None:
+                profile_qs.update(latest_session = request.data.get('tmp_id'))
+            
+            if UserWatcherModel.objects.filter(tmp_id = user_qs.user_profile.latest_session).exists() == False:
+                profile_qs.update(latest_session = request.data.get('tmp_id'))
+                
+                return Response({ "tmp_id": request.data.get('tmp_id') })
 
-        return Response({ "tmp_id": profile.user_profile.latest_session })
+        else:
+            ProfileModel.objects.create(user=user_qs, latest_session = request.data.get('tmp_id'))
 
+        return Response({ "tmp_id": user_qs.user_profile.latest_session })
 

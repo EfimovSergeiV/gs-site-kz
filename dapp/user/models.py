@@ -13,7 +13,7 @@ def get_structure():
 class UserWatcherModel(models.Model):
     """ Смотрим за поведением пользователей """
 
-    tmp_id = models.UUIDField(verbose_name="Идентификатор сессии", unique_for_month=timezone.now(), default=uuid.uuid4, editable=False)
+    tmp_id = models.UUIDField(verbose_name="Идентификатор сессии", default=uuid.uuid4, unique=True) # unique_for_month=timezone.now() 
     prods = models.JSONField(verbose_name="Просмотренные товары", default=get_structure, null=True, blank=True)
 
     class Meta:

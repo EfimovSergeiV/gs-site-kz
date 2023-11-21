@@ -50,9 +50,15 @@ class FeedBackSerializer(serializers.ModelSerializer):
 
 
 
+class UserWatcherUUIDSerializer(serializers.ModelSerializer):
+    """  """
+
+    class Meta:
+        model = UserWatcherModel
+        fields = '__all__'
+
 
 from catalog.serializers import ProductSerializer
-
 class UserWatcherSerializer(serializers.Serializer):
     """ Отслеживаемые пользователем товары """
    

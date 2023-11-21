@@ -209,7 +209,6 @@ class OrderViews(APIView):
     def post(self, request, format=None):
         """ Извлечение данных и структурирование заказа """
         data=request.data
-        print(data)
         region_code = 'KZ'
         
         prods_id = [product['id'] for product in data['client_product']]
@@ -235,8 +234,6 @@ class OrderViews(APIView):
         data['client_product'] = products
 
         serializer = self.serializer_class(data=data)
-
-        print(f'serializer: {serializer.is_valid()}')
 
         if serializer.is_valid():
             serializer.save()
