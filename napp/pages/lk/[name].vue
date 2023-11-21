@@ -15,15 +15,19 @@
   }).catch((error) => error.data)
 
     /// Получаем данные о просмотренных товарах
+  if (session.value) {
     const { data: tmp_data } = await useFetch(`${ config.public.baseURL }u/uwatch/`, {
       headers: {
         "Authorization": session.value.tmp_id,
       }
     }).catch((error) => error.data)
     productsStore.restoreState(tmp_data.value)
+  }
+
 
 
 </script>
+
 
 <template>
   <div class="">
