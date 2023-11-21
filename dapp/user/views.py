@@ -185,11 +185,7 @@ class UserWatcherView(APIView):
         """ Возвращаем историю последних просмотров товаров """
 
         if request.headers.get('Authorization'):
-            print(request.headers.get('Authorization'))
-
             userwatcher_qs = UserWatcherModel.objects.filter(tmp_id=request.headers.get('Authorization'))
-            print(f'USERWATCHER {userwatcher_qs}')
-
 
             if userwatcher_qs.exists() == False:
                 data={ "tmp_id": request.headers.get('Authorization')}
@@ -199,7 +195,7 @@ class UserWatcherView(APIView):
                     sr.save()
                 else:
                     return Response(status=status.HTTP_400_BAD_REQUEST)
-                
+
 
             tmp_qs = userwatcher_qs[0]
             tmp_data = tmp_qs.prods
@@ -207,9 +203,9 @@ class UserWatcherView(APIView):
 
             sr = UserWatcherSerializer(
                 {
-                    "viewed": prods_qs.filter(id__in = tmp_data["viewed"]) , 
-                    "like": prods_qs.filter(id__in = tmp_data["like"]), 
-                    "comp": prods_qs.filter(id__in = tmp_data["comp"])
+                    "viewed":   prods_qs.filter(id__in = tmp_data["viewed"]) , 
+                    "like":     prods_qs.filter(id__in = tmp_data["like"]), 
+                    "comp":     prods_qs.filter(id__in = tmp_data["comp"])
                 },
                 context = { 'request':request }
             )
