@@ -77,7 +77,7 @@ export default defineNuxtConfig({
       // },
       token: {
         // signInResponseTokenPointer: '/token/accessToken'
-        maxAgeInSeconds: 60 * 60 * 24,
+        maxAgeInSeconds: 60 * 60 * 24 * 14,
       },
       sessionDataType: { id: 'string', email: 'string', name: 'string', role: 'admin | guest | account', subscriptions: "{ id: number, status: 'ACTIVE' | 'INACTIVE' }[]" }
     },

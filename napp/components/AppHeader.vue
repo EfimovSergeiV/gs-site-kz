@@ -110,7 +110,7 @@
                 </div>
 
                 <div class="">
-                  <nuxt-link :to="{name: 'lk-name', params: { name: data.username}}"  v-if="status === 'authenticated'" class=" bg-gray-100  shadow-lg shadow-black/30 border border-gray-100/10 dark:border-white/20 rounded-lg transition-all duration-500 w-full h-full flex items-center">
+                  <nuxt-link :to="{ name: 'lk'}"  v-if="status === 'authenticated'" class=" bg-gray-100  shadow-lg shadow-black/30 border border-gray-100/10 dark:border-white/20 rounded-lg transition-all duration-500 w-full h-full flex items-center">
                     <div class="flex items-center gap-2 text-gray-700 h-full w-full">
                       <span class="px-2 mdi mdi-account border-r border-gray-300"></span>
                       <p class="text-sm "> Личный кабинет</p>
@@ -133,7 +133,7 @@
                     </div>
                   </button>
 
-                  <button v-else @click="signOut()" class="w-full h-full">
+                  <button v-else @click="signOut({ callbackUrl: '/' }, { redirect: true })" class="w-full h-full">
                     <div class="flex items-center gap-2 text-gray-700 ">
                       <span class="px-2 mdi mdi-login-variant border-r border-gray-300"></span>
                       <p class="text-sm "> Выйти</p>
@@ -222,7 +222,7 @@
                     <nuxt-link :to="{ name: 'index' }" class="relative text-xs md:text-base">Главная</nuxt-link>
                   </div>
                   <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
-                    <nuxt-link :to="{ name: 'lk-name', params: { name: 'guest' } }" class="relative text-xs md:text-base">Избранное</nuxt-link>
+                    <nuxt-link :to="{ name: 'lk' }" class="relative text-xs md:text-base">Избранное</nuxt-link>
                   </div>
                   <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
                     <nuxt-link :to="{ name: 'compare' }" class="relative text-xs md:text-base">В сравнении</nuxt-link>

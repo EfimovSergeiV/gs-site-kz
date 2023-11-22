@@ -45,7 +45,7 @@
               
               <nuxt-link :to="{ name: 'cts' }" class="">Каталог</nuxt-link>
               <nuxt-link :to="{ name: 'cart' }" class="">Корзина</nuxt-link>
-              <nuxt-link :to="{ name: 'lk-name', params: { name: 'guest' } }" class="">Избранное</nuxt-link>
+              <nuxt-link :to="{ name: 'lk' }" class="">Избранное</nuxt-link>
               <nuxt-link :to="{ name: 'compare' }" class="">В сравнении</nuxt-link>
              
             </div>
