@@ -266,22 +266,8 @@ class UserSessionView(APIView):
         if profile_qs[0].latest_session == None:
             profile_qs.update(latest_session = request.data.get('tmp_id'))
         
-
-
-            """
-            userwatcher_qs = UserWatcherModel.objects.filter(tmp_id=request.headers.get('Authorization'))
-
-            # WTF?!
-            if userwatcher_qs.exists() == False:
-                data = { "tmp_id": request.headers.get('Authorization')}
-                sr = UserWatcherUUIDSerializer(data=data)
-                
-                if sr.is_valid():
-                    sr.save()
-            """
         # Если последняя сессия удалена из архива сессий, создаём её снова
         elif UserWatcherModel.objects.filter(tmp_id = user_qs.user_profile.latest_session).exists() == False:
-            print(f'Write new tmp_id { request.data.get("tmp_id") }')
             profile_qs = ProfileModel.objects.get(user=user_qs)
             data = { "tmp_id": profile_qs.latest_session}
             sr = UserWatcherUUIDSerializer(data=data)
@@ -289,11 +275,7 @@ class UserSessionView(APIView):
             if sr.is_valid():
                 sr.save()
 
-            print(f"Return: {request.data.get('tmp_id')}")
             return Response({ "tmp_id": request.data.get('tmp_id') })
-
-
-        print(f"Return: {user_qs.user_profile.latest_session}")
 
         return Response({ "tmp_id": user_qs.user_profile.latest_session })
 
