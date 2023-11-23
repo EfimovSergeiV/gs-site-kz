@@ -13,7 +13,7 @@
       "tmp_id": tmp_id.value
     }
   }).catch((error) => error.data)
-  
+
   /// Обновляем сессию на полученную из профиля
   tmp_id.value = session.value.tmp_id
 
@@ -40,7 +40,6 @@
     <div class="container mx-auto max-w-6xl px-4 py-2 lg:px-8">
       <div class="bg-white dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-700">
 
-
         <div v-if="status === 'authenticated'" class="min-h-[50vh]">
           
           <div class="grid grid-cols-1 lg:flex gap-4 px-4 py-4">
@@ -50,53 +49,122 @@
               <nuxt-link :to="{ name: 'cart' }" class="">Корзина</nuxt-link>
               <nuxt-link :to="{ name: 'lk' }" class="">Избранное</nuxt-link>
               <nuxt-link :to="{ name: 'compare' }" class="">В сравнении</nuxt-link>
+              <nuxt-link :to="{ name: 'compare' }" class="">Обратная связь</nuxt-link>
              
             </div>
 
             <div class="grid grid-cols-1 md:flex gap-4 w-full">
               <div class="bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 p-2 rounded-md md:w-[520px] shadow-md shadow-black/20">
-                <p class="border-b border-gray-600 px-0.5">Данные профиля</p>
-                <div class="py-6">
-                  <div class="grid grid-cols-2 items-center gap-4">
-                    <p class="text-sm">Логин:</p>
-                    <p class="">{{ data.username }}</p>                    
+                <p class="border-b border-gray-300 dark:border-gray-600 px-0.5">Данные профиля</p>
+                <div class="">
+
+
+
+                  <div class="py-2">
+                    <p class="text-sm">Вы:</p>
+                    <div class="flex gap-2 items-center justify-center">
+                      <p class="">{{ data.first_name }}</p>
+                      <p class="">{{ data.last_name }}</p>
+                    </div>
                   </div>
-                  <div class="grid grid-cols-2 items-center gap-4">
-                    <p class="text-sm">Имя</p>
-                    <p class="">{{ data.first_name }}</p>                    
+
+                  <div class="py-2">
+                    <p class="text-sm">Город/адрес:</p>
+                    <div class="flex gap-2 items-center justify-center">
+                      <p class="">{{ data.adress }}</p>  
+                    </div>
                   </div>
-                  <div class="grid grid-cols-2 items-center gap-4">
-                    <p class="text-sm">Фамилия</p>
-                    <p class="">{{ data.last_name }}</p>                    
+
+                  <div class="py-2">
+                    <p class="text-sm">Данные для входа:</p>
+                    <div class="grid grid-cols-1 my-4 border-l-2 border-gray-300 dark:border-gray-600">
+                      <p class=""><span class="text-sm px-4">Логин:</span>{{ data.username  }}</p>
+                      <p class="text-xs py-2 px-4">сменить пароль</p>
+                    </div>
                   </div>
-                  <div class="grid grid-cols-2 items-center gap-4">
-                    <p class="text-sm">Электронная почта</p>
-                    <p class="">{{ data.email }}</p>                    
+
+
+
+                  <div class="py-2">
+                    <p class="text-sm">Ваши контакты:</p>
+                    <div class="grid grid-cols-1 my-4 border-l-2 border-gray-300 dark:border-gray-600">
+                      <p class=""><span class="text-sm px-4">тел:</span>{{ data.phone }}</p>
+                      <p class=""><span class="text-sm px-4">email:</span>{{ data.email }}</p>
+                    </div>
                   </div>
-                  <div class="grid grid-cols-2 items-center gap-4">
-                    <p class="text-sm">Номер телефона</p>
-                    <p class="">{{ data.phone }}</p>                    
-                  </div>
-                  <div class="grid grid-cols-2 items-center gap-4">
-                    <p class="text-sm">Город/адрес</p>
-                    <p class="">{{ data.adress }}</p>                    
-                  </div>
+
                 </div>
               </div>
 
-              <div class="grid grid-cols-1 h-[420px] gap-4 w-full">
+              <div class="grid grid-cols-1 gap-4 w-full">
                 <div class="bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-md shadow-black/20 p-2">
-                  <p class="border-b border-gray-600 px-0.5">История заказов</p>
-                  <div class="flex items-center justify-center h-full w-full">
+                  <p class="border-b border-gray-300 dark:border-gray-600 px-0.5">История заказов</p>
+                  <div class="flex items-center justify-center h-[160px] w-full">
                     <p class="text-sm">Заказы не найдены</p>
                   </div>
                 </div>
+
                 <div class="bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-md shadow-black/20 p-2">
-                  <p class="border-b border-gray-600 px-0.5">Акции и скидки</p>
-                  <div class="flex items-center justify-center h-full w-full">
-                    <p class="text-sm">Акции и скидки не найдены</p>
+                  <div class="">
+                    <p class="py-2 px-0.5">Избранные товары</p>
+                    <div v-if="productsStore.like.length > 0" class="">
+                      <Swiper
+                        class=""
+                        :modules="[]"
+                        :slidesPerView="'auto'"
+                        :loop="true"
+                        :spaceBetween="10"
+                      >
+                      
+                        <SwiperSlide  v-for="product in productsStore.like" :key="product.id" class="">
+                          <ProductSmall :product="product" />
+                        </SwiperSlide>
+
+                        <div class="absolute bottom-0 right-0 py-1 px-1 z-40">
+                          <SwiperControls class="bg-gray-100 rounded-full border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 dark:bg-gray-700 transition-all duration-500 px-1" />
+                        </div>
+
+                      </Swiper>                  
+                    </div>
+                    <div v-else class="">
+                      <div class="h-full w-full flex items-center justify-center">
+                        <p class="text-sm">Нет товаров</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
+
+
+
+
+                <!-- <div class="relative bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-md shadow-black/20 p-2">
+                  <p class=" px-0.5">Избранные товары</p>
+                  <div class="mt-4">
+
+                    <div v-if="productsStore.like.length > 0" class="">
+                      <Swiper
+                        class=""
+                        :modules="[]"
+                        :slidesPerView="'auto'"
+                        :loop="true"
+                        :spaceBetween="10"
+                      >
+                      
+                        <SwiperSlide  v-for="product in productsStore.like" :key="product.id" class="">
+                          <ProductSmall :product="product" />
+                        </SwiperSlide>
+
+                        <div class="absolute bottom-0 right-0 py-1 px-1 z-40">
+                          <SwiperControls class="bg-gray-100 rounded-full border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 dark:bg-gray-700 transition-all duration-500 px-1" />
+                        </div>
+
+                      </Swiper>
+                    </div>
+
+                    <p v-else class="text-sm">Нет товаров</p>
+
+                  </div>
+                </div> -->
               </div>              
             </div>
 

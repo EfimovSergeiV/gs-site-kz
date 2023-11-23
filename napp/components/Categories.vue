@@ -37,13 +37,15 @@
                       
                       <div class="bg-white border border-gray-200 dark:border-gray-700 rounded-md py-2 px-2">
                         <div class="grid grid-cols-1 gap-4">
-                          <div class="flex justify-center">
-                            <img v-if="ct.icon" :src="`/${ct.icon}`" class="h-16" />
-                          </div>
-                          
-                          <div class="flex justify-center">
-                            <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }" class=" text-gray-700 text-base md:text-xl transition-all">{{ ct.name }}</nuxt-link>              
-                          </div>
+                          <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }">
+                            <div class="flex justify-center">
+                              <img v-if="ct.icon" :src="`/${ct.icon}`" class="h-16" />
+                            </div>
+                            
+                            <div class="flex justify-center mt-4">
+                              <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }" class=" text-gray-700 text-base md:text-xl transition-all">{{ ct.name }}</nuxt-link>              
+                            </div>                          
+                          </nuxt-link>
                         </div>
                       <!-- 
                         <div>

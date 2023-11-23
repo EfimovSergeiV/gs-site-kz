@@ -16,6 +16,9 @@ class UserWatcherModel(models.Model):
     tmp_id = models.UUIDField(verbose_name="Идентификатор сессии", default=uuid.uuid4, unique=True) # unique_for_month=timezone.now() 
     prods = models.JSONField(verbose_name="Просмотренные товары", default=get_structure, null=True, blank=True)
 
+    createdAt = models.DateTimeField(verbose_name="Дата создания", default=timezone.now)
+    updatedAt = models.DateTimeField(verbose_name="Дата обновления", auto_now=True)
+
     class Meta:
         verbose_name = "Сессия пользователя"
         verbose_name_plural = "Сессии пользователей (статистика)"

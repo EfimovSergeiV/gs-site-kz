@@ -30,7 +30,7 @@
       <div class="h-full w-full flex items-center justify-center">
         
 
-        <div class="container mx-auto px-4 lg:max-w-4xl lg:px-8">
+        <div class="container mx-auto px-4 max-w-lg lg:px-8">
           <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
             <div class="">
 

@@ -169,7 +169,7 @@
                                         <img v-if="ct.icon" :src="`/${ct.icon}`" class="h-16" />
                                       </div>
                                       
-                                      <div class="flex justify-center">
+                                      <div class="flex justify-center mt-4">
                                         <p class=" text-gray-700 text-base transition-all">{{ ct.name }}</p>              
                                       </div>                                    
                                     </nuxt-link>

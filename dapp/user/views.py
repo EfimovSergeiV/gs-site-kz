@@ -212,7 +212,7 @@ class UserWatcherView(APIView):
             
             for key in request.data.keys():
                 current_data = qs[0].prods
-                current_data[key] = [request.data.get(key),] + current_data[key][0:7] if request.data.get(key) not in current_data[key] else current_data[key]
+                current_data[key] = [request.data.get(key),] + current_data[key][0:11] if request.data.get(key) not in current_data[key] else current_data[key]
                 qs.update(prods=current_data)
 
         return Response(status=status.HTTP_201_CREATED)
