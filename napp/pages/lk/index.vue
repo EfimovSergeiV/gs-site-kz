@@ -105,7 +105,7 @@
                 <div class="bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-md shadow-black/20 p-2">
                   <p class="border-b border-gray-300 dark:border-gray-600 px-0.5">История заказов</p>
 
-                  <div id="" v-if="extra.userdata.orders.length > 0" class="">
+                  <div id="" v-if="extra.userdata.orders.length > 0" class=" h-[160px] w-full">
                     <div class="flex flex-wrap gap-2 justify-start py-4">
                       <div v-for="order in extra.userdata.orders" :key="order.id" class="">
                         <div class="bg-white dark:bg-gray-800 rounded-xl border hover:border-gray-300 dark:border-gray-700 border-gray-200 hover:dark:border-gray-700 transition-all shadow-md">
