@@ -67,3 +67,10 @@ class UserWatcherSerializer(serializers.Serializer):
     comp = ProductSerializer(many=True)
 
 
+
+class DataUserOrdersSerializer(serializers.Serializer):
+    """ История заказов пользователя """
+
+    userdata = serializers.JSONField()
+
+

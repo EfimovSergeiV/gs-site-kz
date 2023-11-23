@@ -15,4 +15,5 @@ urlpatterns = [
     
     path('uwatch/', UserWatcherView.as_view()),
     path('session/', UserSessionView.as_view()),
+    path('user-data/', DataUserOrdersView.as_view()),
 ]

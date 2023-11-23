@@ -14,6 +14,13 @@
     }
   }).catch((error) => error.data)
 
+
+  const { data: extra } = await useFetch(`${ config.public.baseURL }u/user-data/`, {
+    method: 'GET',    
+    headers: {
+      "Authorization": token.value,
+    },}).catch((error) => error.data)
+
   /// Обновляем сессию на полученную из профиля
   tmp_id.value = session.value.tmp_id
 
@@ -26,8 +33,6 @@
     }).catch((error) => error.data)
     productsStore.restoreState(tmp_data.value)
   }
-
-
 
 </script>
 
@@ -99,7 +104,22 @@
               <div class="grid grid-cols-1 gap-4 w-full">
                 <div class="bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-md shadow-black/20 p-2">
                   <p class="border-b border-gray-300 dark:border-gray-600 px-0.5">История заказов</p>
-                  <div class="flex items-center justify-center h-[160px] w-full">
+
+                  <div id="" v-if="extra.userdata.orders.length > 0" class="">
+                    <div class="flex flex-wrap gap-2 justify-start py-4">
+                      <div v-for="order in extra.userdata.orders" :key="order.id" class="">
+                        <div class="bg-white dark:bg-gray-800 rounded-xl border hover:border-gray-300 dark:border-gray-700 border-gray-200 hover:dark:border-gray-700 transition-all shadow-md">
+                          
+                          <div class="flex items-center justify-center py-1 px-4">
+                            <nuxt-link to="#" class="text-[10px] md:text-xs">{{ order.region_code }}</nuxt-link>
+                          </div>
+                        
+                        </div>
+                      </div>          
+                    </div>
+                  </div>
+
+                  <div v-else class="flex items-center justify-center h-[160px] w-full">
                     <p class="text-sm">Заказы не найдены</p>
                   </div>
                 </div>
@@ -128,7 +148,7 @@
                     </div>
                     <div v-else class="">
                       <div class="h-full w-full flex items-center justify-center">
-                        <p class="text-sm">Нет товаров</p>
+                        <p class="text-sm py-4">Нет товаров</p>
                       </div>
                     </div>
                   </div>

@@ -10,11 +10,14 @@ from django.utils import timezone
 def get_structure():
     return dict( comp = [], like= [], viewed=[] )
 
+def user_extra_structure():
+    return dict( orders = [], )
+
 class UserWatcherModel(models.Model):
     """ Смотрим за поведением пользователей """
 
     tmp_id = models.UUIDField(verbose_name="Идентификатор сессии", default=uuid.uuid4, unique=True) # unique_for_month=timezone.now() 
-    prods = models.JSONField(verbose_name="Просмотренные товары", default=get_structure, null=True, blank=True)
+    prods = models.JSONField(verbose_name="Просмотренные товары", default=get_structure)
 
     createdAt = models.DateTimeField(verbose_name="Дата создания", default=timezone.now)
     updatedAt = models.DateTimeField(verbose_name="Дата обновления", auto_now=True)
@@ -36,7 +39,7 @@ class ProfileModel(models.Model):
     phone = models.CharField(verbose_name="Телефон", null=True, blank=True, max_length=30)
 
     latest_session = models.UUIDField(verbose_name="Последняя сессия", null=True, blank=True)
-    orders = models.JSONField(verbose_name="История заказов", null=True, blank=True)
+    userdata = models.JSONField(verbose_name="История заказов", default=user_extra_structure, null=True, blank=True)
 
     class Meta:
         verbose_name = "Профиль"

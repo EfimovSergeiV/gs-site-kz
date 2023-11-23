@@ -1,3 +1,4 @@
+from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.views import APIView
 # from rest_framework.generics import ListAPIView
 # from rest_framework.pagination import PageNumberPagination, LimitOffsetPagination
@@ -254,8 +255,7 @@ class UserSessionView(APIView):
     permission_classes = [ permissions.IsAuthenticated, ]
     
     def post(self, request):
-        user = request.user
-        user_qs = User.objects.get(username=user)
+        user_qs = User.objects.get(username=request.user)
         profile_qs = ProfileModel.objects.filter(user=user_qs)
 
         # Проверяем, есть ли у пользователя профайл, нет? Создаём.        
@@ -279,3 +279,17 @@ class UserSessionView(APIView):
 
         return Response({ "tmp_id": user_qs.user_profile.latest_session })
 
+# "GET /c/prod/lk HTTP/1.1" 404 7632 Err при входе, повторно норм
+from user.serializers import DataUserOrdersSerializer
+class DataUserOrdersView(APIView):
+    """ Дополнительная информация о пользователе """
+    
+    def get(self, request):
+        try:
+            user_qs = User.objects.get(username=request.user)
+            profile_qs = ProfileModel.objects.get(user=user_qs)
+            sr = DataUserOrdersSerializer(profile_qs, context={'request':request})
+
+            return Response(sr.data)
+        except ObjectDoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
