@@ -13,8 +13,11 @@
       "tmp_id": tmp_id.value
     }
   }).catch((error) => error.data)
+  
+  /// Обновляем сессию на полученную из профиля
+  tmp_id.value = session.value.tmp_id
 
-    /// Получаем данные о просмотренных товарах
+  /// Получаем данные о просмотренных товарах
   if (session.value) {
     const { data: tmp_data } = await useFetch(`${ config.public.baseURL }u/uwatch/`, {
       headers: {

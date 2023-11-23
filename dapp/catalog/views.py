@@ -294,7 +294,7 @@ class OneRandomProductView(APIView):
         try:
             cts = dict(self.request.query_params)
             prods = []
-            print(cts['ct'], len(cts['ct']))
+
             for ct in cts['ct']:
                 all_categories = []
                 category_qs = self.cat_qs.get(id=ct)

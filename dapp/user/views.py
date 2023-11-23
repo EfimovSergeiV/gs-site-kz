@@ -161,22 +161,10 @@ class FeedbackView(APIView):
             resp = { "danger": "Что то пошло не так( Попробуте позже." }
 
         return Response(resp)
-    
+
+
+
 from user.serializers import UserWatcherSerializer
-
-"""
-    def preserved(self, prods):
-        return Case(*[When(pk=pk, then=pos) for pos, pk in enumerate(prods)])
-
-    def parse_prods(self, instance):
-        products = instance.prods
-        qs_prods = ProductModel.objects.filter(id__in = products["viewed"] + products["like"] + products["comp"])
-        
-        data = render_to_string('admin_prods.html', {
-            "viewed": qs_prods.filter(id__in = products["viewed"]).order_by(self.preserved(products["viewed"])),
-            "like": qs_prods.filter(id__in = products["like"]).order_by(self.preserved(products["like"])),
-            "comp": qs_prods.filter(id__in = products["comp"]).order_by(self.preserved(products["comp"])),
-"""
 from user.serializers import UserWatcherUUIDSerializer
 class UserWatcherView(APIView):
     """ Пользовательская статистика """
@@ -187,8 +175,9 @@ class UserWatcherView(APIView):
         if request.headers.get('Authorization'):
             userwatcher_qs = UserWatcherModel.objects.filter(tmp_id=request.headers.get('Authorization'))
 
+            # WTF?!
             if userwatcher_qs.exists() == False:
-                data={ "tmp_id": request.headers.get('Authorization')}
+                data = { "tmp_id": request.headers.get('Authorization')}
                 sr = UserWatcherUUIDSerializer(data=data)
                 
                 if sr.is_valid():
@@ -269,17 +258,42 @@ class UserSessionView(APIView):
         user_qs = User.objects.get(username=user)
         profile_qs = ProfileModel.objects.filter(user=user_qs)
 
-        if profile_qs.exists():
-            if profile_qs[0].latest_session == None:
-                profile_qs.update(latest_session = request.data.get('tmp_id'))
-            
-            if UserWatcherModel.objects.filter(tmp_id = user_qs.user_profile.latest_session).exists() == False:
-                profile_qs.update(latest_session = request.data.get('tmp_id'))
-                
-                return Response({ "tmp_id": request.data.get('tmp_id') })
-
-        else:
+        # Проверяем, есть ли у пользователя профайл, нет? Создаём.        
+        if profile_qs.exists() == False:
             ProfileModel.objects.create(user=user_qs, latest_session = request.data.get('tmp_id'))
+
+        # Если нет последней сессии, то делаем текущую последней
+        if profile_qs[0].latest_session == None:
+            profile_qs.update(latest_session = request.data.get('tmp_id'))
+        
+
+
+            """
+            userwatcher_qs = UserWatcherModel.objects.filter(tmp_id=request.headers.get('Authorization'))
+
+            # WTF?!
+            if userwatcher_qs.exists() == False:
+                data = { "tmp_id": request.headers.get('Authorization')}
+                sr = UserWatcherUUIDSerializer(data=data)
+                
+                if sr.is_valid():
+                    sr.save()
+            """
+        # Если последняя сессия удалена из архива сессий, создаём её снова
+        elif UserWatcherModel.objects.filter(tmp_id = user_qs.user_profile.latest_session).exists() == False:
+            print(f'Write new tmp_id { request.data.get("tmp_id") }')
+            profile_qs = ProfileModel.objects.get(user=user_qs)
+            data = { "tmp_id": profile_qs.latest_session}
+            sr = UserWatcherUUIDSerializer(data=data)
+                
+            if sr.is_valid():
+                sr.save()
+
+            print(f"Return: {request.data.get('tmp_id')}")
+            return Response({ "tmp_id": request.data.get('tmp_id') })
+
+
+        print(f"Return: {user_qs.user_profile.latest_session}")
 
         return Response({ "tmp_id": user_qs.user_profile.latest_session })
 
