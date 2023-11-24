@@ -74,7 +74,7 @@ class OrderedProductModel(models.Model):
     vcode = models.CharField(verbose_name="Артикул", max_length=100)
     name = models.CharField(verbose_name="Наименование", max_length=300)
     # rating
-    price = models.CharField(verbose_name="Стоимость (RUB)", max_length=150)
+    price = models.CharField(verbose_name="Стоимость", max_length=150)
     preview_image = models.URLField(verbose_name="Изображение", null=True, blank=True, default="https://glsvar.ru/img/c/preview/notpreviewimg.png")
     quantity = models.PositiveIntegerField(verbose_name="Количество")
     
