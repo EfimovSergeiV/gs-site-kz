@@ -164,14 +164,17 @@
           </div>
           <div class="w-full">
             <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2 mb-4 h-full">
-              <p class="text-base my-2">Характеристики:</p>
-              <div class="columns-1 gap-8">
+              <p class="text-base">Характеристики:</p>
+              <div v-if="props.product.propstrmodel.length > 0" class="columns-1 gap-8 py-2">
                 <div v-for="param in props.product.propstrmodel" :key="param.id" class="border-b border-gray-300 hover:border-gray-400 dark:border-gray-700 dark:hover:border-gray-600">
                   <div class="flex justify-between">
                     <div class=""><small>{{ param.name }} :</small></div>
                     <div class="text-right"><small>{{ param.value }}</small></div>                
                   </div>
                 </div>
+              </div>
+              <div v-else class="flex items-center justify-center py-6">
+                <p class=" text-sm text-gray-400 dark:text-gray-500">Ничего нет</p>
               </div>
             </div>
           </div>

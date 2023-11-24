@@ -279,6 +279,7 @@ class UserSessionView(APIView):
 
         return Response({ "tmp_id": user_qs.user_profile.latest_session })
 
+
 # "GET /c/prod/lk HTTP/1.1" 404 7632 Err при входе, повторно норм
 from user.serializers import DataUserOrdersSerializer
 class DataUserOrdersView(APIView):

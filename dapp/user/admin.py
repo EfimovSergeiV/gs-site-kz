@@ -12,7 +12,10 @@ class ProfileModelInline(admin.StackedInline):
     model = ProfileModel
     can_delete = False
     verbose_name_plural = 'Профиль пользователя'
-
+    readonly_fields = ('adress', 'phone', 'latest_session', 'userdata',)
+    fieldsets = (
+        ("", {'fields': (( 'adress', 'phone', ), ('latest_session',), ( 'userdata'),)}),
+    )
 
 class UserAdmin(BaseUserAdmin):
     inlines = (ProfileModelInline,)
