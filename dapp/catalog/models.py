@@ -123,7 +123,7 @@ class ProductModel(AbsProductModel):
 
     keywords = models.CharField(
         verbose_name="Ключевые слова", max_length=200, null=True, blank=True,
-        help_text="Ключевые слова для поиска, через запятую."
+        help_text="Дополнительные ключевые слова для поиска, через запятую."
     )
     related = models.ManyToManyField(CategoryModel, blank=True, verbose_name="Категории", related_name="related_ct")
 
