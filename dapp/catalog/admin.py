@@ -183,7 +183,7 @@ class ProductAdmin(admin.ModelAdmin):
     search_fields = ('id', 'vcode', 'name', 'UID',)
     list_filter = ('brand', 'recommend', 'created_date', 'activated', ('category', TreeRelatedFieldListFilter),)#'category'
     list_editable = ('price', 'activated', 'status')
-    ordering = ('id',)
+    ordering = ('vcode', 'id',)
     inlines = (
         # ProductKeywordsInline,
         # AvailableInline, 
