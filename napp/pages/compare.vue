@@ -1,7 +1,18 @@
 <script setup>
 
+  const config = useRuntimeConfig()
+  const tmp_id = useCookie('tmp_id')
   const productsStore = useProductsStore()
+  const notificationsStore = useNotificationsStore()
 
+  const delCompProd = (id) => {
+    console.log('ID ', id)
+    $fetch(`${ config.public.baseURL }u/uwatch/`, {
+      method: 'DELETE',
+      headers: { "Authorization": tmp_id.value, },
+      body: { "comp": id }
+    })
+  }
 
   const getPropValue = (props, name) => {
     let value = null
@@ -12,6 +23,7 @@
     })
     return value
   }
+
 
 
 </script>
@@ -29,12 +41,14 @@
 
             <div class="">
 
-
               <transition-group tag="div" name="left-emergence" class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <div v-for="product in productsStore.comp.slice(-4)" :key="product.id" class="">
 
-                
-                <div v-for="product in productsStore.comp.slice(0, 4)" :key="product.id" class="">
                   <ProductSmall :product="product" />
+                  <div class="flex items-center justify-end mt-2">
+                    <button @click="productsStore.addProduct('comp', product); notificationsStore.pushToast({id: product.id, type: 'success', text: 'Товар удалён из сравнения'}); delCompProd(product.id)" class="text-sm">Удалить из сравнения</button>
+                  </div>
+
                 </div>
               </transition-group>
             </div>
