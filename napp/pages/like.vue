@@ -9,7 +9,7 @@
     $fetch(`${ config.public.baseURL }u/uwatch/`, {
       method: 'DELETE',
       headers: { "Authorization": tmp_id.value, },
-      body: { "comp": id }
+      body: { "like": id }
     })
   }
 
@@ -24,11 +24,20 @@
 
     <div class="container mx-auto max-w-6xl px-4 lg:px-8 py-2">
 
+      <div v-if="productsStore.like.length > 0" class="">
+        <div class="grid grid-cols-1 gap-y-4 gap-x-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
+          <transition-group name="fade">
+            <div class="" v-for="product in productsStore.like" :key="product.id">
+              <ProductCard :product="product" />
+            </div>            
+          </transition-group>
+        </div>
+      </div>
 
-      <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md">
-        <div class="p-4 min-h-screen">
+      <div v-else class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md">
+        <div class="flex items-center justify-center min-h-[50vh]">
 
-          <p class="text-xs">{{ productsStore.like }}</p>
+          <p class="">Нет товаров в избранном</p>
 
         </div>
       </div>
