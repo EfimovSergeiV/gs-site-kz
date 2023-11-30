@@ -33,7 +33,7 @@ class AbsActivatedModel(models.Model):
     class Meta:
         abstract = True
         
-        
+# WTF: на удаление    
 class AbsProductModel(AbsDateModel, AbsActivatedModel):
     vcode = models.CharField(verbose_name="Артикул", max_length=100)    
     name = models.CharField(max_length=250, verbose_name="Название")

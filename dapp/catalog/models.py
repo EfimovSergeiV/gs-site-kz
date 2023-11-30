@@ -95,8 +95,14 @@ class BrandProductModel(models.Model):
         return self.brand
 
 
-class ProductModel(AbsProductModel):
-    """ Товары """   
+class ProductModel(AbsDateModel):
+    """ Товары """
+
+    activated = models.BooleanField(default=False, verbose_name="Активирован")
+    vcode = models.CharField(verbose_name="Артикул", max_length=100)    
+    name = models.CharField(max_length=250, verbose_name="Название")
+    description = models.TextField(max_length=5500, help_text="max lenght 5500", default="Нет описания", verbose_name="Описание")
+
     category = models.ForeignKey(CategoryModel, related_name='product_category', verbose_name="Категория" , null=True, blank=True, on_delete=models.SET_NULL)
     brand = models.ForeignKey(BrandProductModel, related_name="brand_product", verbose_name="Бренд", null=True, blank=True, on_delete=models.SET_NULL)
 

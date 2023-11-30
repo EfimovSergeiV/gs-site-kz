@@ -182,8 +182,8 @@
         </div>
 
         <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2 mt-4">
-          <p class="text-base my-2">Описание:</p>
-          <div class="text-sm px-2 py-6" v-html="props.product.description"></div> 
+          <p class="text-base my-2 px-2">Описание:</p>
+          <div class="text-sm px-2" v-html="props.product.description"></div> 
         </div>        
 
       </div>

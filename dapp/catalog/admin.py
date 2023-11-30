@@ -132,8 +132,9 @@ class ProductKeywordsInline(admin.TabularInline):
 ##### ОСНОВНЫЕ НАСТРОЙКИ ТОВАРОВ
 
 class ProductAdminForm(forms.ModelForm):
-    description = forms.CharField(widget=CKEditorWidget(), label='')
+    description = forms.CharField(widget=CKEditorWidget(), label='Описание')
     category = TreeNodeChoiceField(queryset=CategoryModel.objects.all(), label= 'Категория')
+    
     class Meta:
         model = ProductModel
         fields = '__all__'
