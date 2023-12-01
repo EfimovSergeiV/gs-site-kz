@@ -33,7 +33,10 @@
     <AppNavbar />
     <MainSection :latest="latest" :banners="banners" />
     <MainWelder />
-    <Reviews :reviews="randomreviews" />
+
+    <!-- <Reviews :reviews="randomreviews" /> -->
+    
+    <UserData />
     <ESAB />
     <Recommend :recommends="recommends" />
     <CorouselBrands />

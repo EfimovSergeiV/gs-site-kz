@@ -23,6 +23,10 @@
         </blockquote>
       </div>
 
+      <div class="mb-1">
+        <p class="">Рекомендуем:</p>
+      </div>
+
       <div class="">
         <Swiper
           class=""
