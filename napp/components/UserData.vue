@@ -55,7 +55,7 @@
       <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md">
         
         <div class="px-2 mt-2">
-          <div class="flex gap-2">
+          <div class="flex flex-row flex-wrap gap-2">
             
             
             <div v-for="button in buttons" :key="button.key" class="">
