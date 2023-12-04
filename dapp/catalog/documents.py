@@ -12,7 +12,7 @@ class ProductDocument(Document):
     """ Elastic """
 
     class Index:
-        name = 'products'
+        name = 'productskz'
         settings = {
             'number_of_shards': 1,
             'number_of_replicas': 0,
