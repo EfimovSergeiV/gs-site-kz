@@ -144,9 +144,9 @@ export default defineNuxtConfig({
     ],
   },
 
-  // gtag: {
-  //   id: 'G-XXXXXXXXXX'
-  // },
+  gtag: {
+    id: cfg.gtmId
+  },
 
   yandexMetrika: {
     id: cfg.yandexMetrika,
