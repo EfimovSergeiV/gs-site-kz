@@ -54,9 +54,9 @@
   })
 
   useSeoMeta({
-    title: `${ product.value.name } - ${ brand.value }`,
+    title: `${ product.value.name } - Главный Сварщик`,
     description: `${ product.value.clean_desc }`,
-    keywords: `${ product.value.name }, ${ brand.value }, сварочное оборудование, оборудование для сварки, купить электроды, купить проволоку, купить источник, купить сварочный инвертор`,
+    keywords: `${ product.value.name }, Главный Сварщик - сварочное оборудование, оборудование для сварки, купить электроды, купить проволоку, купить источник, купить сварочный инвертор`,
     ogLocale: 'ru_RU',
     ogTitle: `${ product.value.name }`,
     ogDescription: `${ product.value.clean_desc }`,
