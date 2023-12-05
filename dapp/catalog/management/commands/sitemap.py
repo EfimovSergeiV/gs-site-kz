@@ -15,13 +15,6 @@ class Command(BaseCommand):
     args = ''
     help = ''
 
-    queryset = ProductModel.objects.all()
-
-
-class Command(BaseCommand):
-    args = ''
-    help = ''
-
     def handle(self, *args, **options):
         pass
 
