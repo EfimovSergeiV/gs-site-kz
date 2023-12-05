@@ -1,5 +1,5 @@
 conf.ts
-napp/public/prods/
+public/prods/
 sitemap.xml
 
 # Nuxt dev/build outputs
