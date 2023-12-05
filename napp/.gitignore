@@ -1,4 +1,5 @@
 conf.ts
+napp/public/prods/*
 
 # Nuxt dev/build outputs
 .output
