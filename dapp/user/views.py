@@ -165,6 +165,12 @@ class FeedbackView(APIView):
 
 
 
+from django.db.models import Case, When
+
+def preserved(prods):
+    return Case(*[When(pk=pk, then=pos) for pos, pk in enumerate(prods)])
+
+
 from user.serializers import UserWatcherSerializer
 from user.serializers import UserWatcherUUIDSerializer
 class UserWatcherView(APIView):
@@ -193,11 +199,11 @@ class UserWatcherView(APIView):
 
             sr = UserWatcherSerializer(
                 {
-                    "viewed":   prods_qs.filter(id__in = tmp_data["viewed"]) , 
-                    "like":     prods_qs.filter(id__in = tmp_data["like"]), 
-                    "comp":     prods_qs.filter(id__in = tmp_data["comp"])
+                    "viewed": prods_qs.filter(id__in = tmp_data["viewed"]).order_by(preserved(tmp_data["viewed"])),
+                    "like": prods_qs.filter(id__in = tmp_data["like"]).order_by(preserved(tmp_data["like"])),
+                    "comp": prods_qs.filter(id__in = tmp_data["comp"]).order_by(preserved(tmp_data["comp"])),
                 },
-                context = { 'request':request }
+                context = { 'request': request }
             )
 
             return Response(sr.data)
