@@ -29,8 +29,8 @@
 <template>
 
   <div class="">
-    <AppHeader />
-    <AppNavbar />
+    <!-- <AppHeader /> -->
+    <!-- <AppNavbar /> -->
     <!-- <MainSection :latest="latest" :banners="banners" /> -->
     <!-- <MainWelder /> -->
 
