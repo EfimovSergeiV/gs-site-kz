@@ -12,10 +12,10 @@
   // const notificationsStore = useNotificationsStore()
 
   const { signIn, signOut, token, data, status, lastRefreshedAt } = useAuth()
-  const { data: shops } = await useFetch(`${ config.public.baseURL }c/shops/`)
+  // const { data: shops } = await useFetch(`${ config.public.baseURL }c/shops/`)
 
 
-  shopStore.writeShops(shops)
+  // shopStore.writeShops(shops)
 
   onMounted( async () => {
 
