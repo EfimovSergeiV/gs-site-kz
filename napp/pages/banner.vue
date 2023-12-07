@@ -1,7 +1,7 @@
 <template>
   <div class="h-screen">
 
-    <div class="flex items-center justify-center h-full">
+    <!-- <div class="flex items-center justify-center h-full">
 
       <blockquote class="text-6xl font-semibold italic text-center text-gray-700 dark:text-gray-300">
               
@@ -14,7 +14,7 @@
         
       </blockquote>
 
-    </div>
+    </div> -->
 
   </div>
 </template>

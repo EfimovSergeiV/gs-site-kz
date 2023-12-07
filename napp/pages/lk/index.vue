@@ -39,7 +39,7 @@
 
 <template>
   <div class="">
-    <AppHeader />
+    <!-- <AppHeader />
     <AppNavbar />
 
     <div class="container mx-auto max-w-6xl px-4 py-2 lg:px-8">
@@ -154,37 +154,6 @@
                   </div>
                 </div>
 
-
-
-
-                <!-- <div class="relative bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-md shadow-black/20 p-2">
-                  <p class=" px-0.5">Избранные товары</p>
-                  <div class="mt-4">
-
-                    <div v-if="productsStore.like.length > 0" class="">
-                      <Swiper
-                        class=""
-                        :modules="[]"
-                        :slidesPerView="'auto'"
-                        :loop="true"
-                        :spaceBetween="10"
-                      >
-                      
-                        <SwiperSlide  v-for="product in productsStore.like" :key="product.id" class="">
-                          <ProductSmall :product="product" />
-                        </SwiperSlide>
-
-                        <div class="absolute bottom-0 right-0 py-1 px-1 z-40">
-                          <SwiperControls class="bg-gray-100 rounded-full border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 dark:bg-gray-700 transition-all duration-500 px-1" />
-                        </div>
-
-                      </Swiper>
-                    </div>
-
-                    <p v-else class="text-sm">Нет товаров</p>
-
-                  </div>
-                </div> -->
               </div>              
             </div>
 
@@ -233,7 +202,7 @@
       </div>
     </div>
 
-    <AppFooter />
+    <AppFooter /> -->
 
   </div>
 </template>

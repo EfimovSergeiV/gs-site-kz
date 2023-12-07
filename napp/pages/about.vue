@@ -29,7 +29,7 @@
 
 <template>
   <div class="">
-    <AppHeader />
+    <!-- <AppHeader />
     <AppNavbar />
 
     <div class="container mx-auto px-4 max-w-6xl lg:px-8 min-h-[40rem]">
@@ -199,7 +199,7 @@
 
     </div>
 
-    <AppFooter />
+    <AppFooter /> -->
     
   </div>
 </template>

@@ -34,7 +34,7 @@
 <template>
 
   <div class="">
-    <AppHeader />
+    <!-- <AppHeader />
     <AppNavbar />
 
 
@@ -75,7 +75,7 @@
 
     </div>
     
-    <AppFooter />
+    <AppFooter /> -->
 
 
   </div>

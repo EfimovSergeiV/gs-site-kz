@@ -55,7 +55,7 @@
 <template>
   <div>
 
-    <AppHeader />
+    <!-- <AppHeader />
     <AppNavbar />
     <BreadCrumbs id="breadcrumbs" :breadcrumbs="breadcrumbs" />
 
@@ -141,7 +141,7 @@
       </div>
     </div>
 
-    <AppFooter />
+    <AppFooter /> -->
 
   </div>
 </template>

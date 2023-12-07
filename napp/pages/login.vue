@@ -21,7 +21,7 @@ definePageMeta({
 
 
 
-    <div class="grid grid-cols-2 gap-4">
+    <!-- <div class="grid grid-cols-2 gap-4">
       <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 py-12 px-8 rounded-md">
 
         <div class="flex items-center justify-start">
@@ -72,7 +72,7 @@ definePageMeta({
     <pre>Status: {{ status }}</pre>
     <pre>Data: {{ data || 'no session data present, are you logged in?' }}</pre>
     <pre>Last refreshed at: {{ lastRefreshedAt || 'no refresh happened' }}</pre>
-    <pre>JWT token: {{ token || 'no token present, are you logged in?' }}</pre>
+    <pre>JWT token: {{ token || 'no token present, are you logged in?' }}</pre> -->
 
   </div>
 </template>

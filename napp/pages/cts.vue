@@ -21,11 +21,11 @@
 <template>
 
   <div class="">
-    <AppHeader />
+    <!-- <AppHeader />
     <AppNavbar />
     <Categories />
     <Recommend />
     <CorouselBrands />
-    <AppFooter />
+    <AppFooter /> -->
   </div>
 </template>
