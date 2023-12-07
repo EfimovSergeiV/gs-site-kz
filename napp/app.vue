@@ -1,11 +1,10 @@
 
 <template>
 
-  <div>Главный сварщик</div>
-  <!-- <NuxtLayout>
+  <NuxtLayout>
     <NuxtLoadingIndicator :color="'repeating-linear-gradient(to right,#38bdf8 0% ,#0369a1 100%)'" :height="1" />
     <NuxtPage />
-  </NuxtLayout> -->
+  </NuxtLayout>
 </template>
 
 <style lang="postcss">
