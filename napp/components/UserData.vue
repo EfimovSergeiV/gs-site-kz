@@ -21,7 +21,6 @@
 
   /// Получаем данные о просмотренных товарах
   if (tmp_id.value) {
-    console.log('UPDATE SESSION')
     const { data: tmp_data } = await useFetch(`${ config.public.baseURL }u/uwatch/`, {
       headers: {
         "Authorization": tmp_id.value,

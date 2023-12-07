@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'MainWelderKZ',
-      port: '3002',
+      port: '3000',
       exec_mode: 'cluster',
       instances: 'max',
       script: './.output/server/index.mjs'

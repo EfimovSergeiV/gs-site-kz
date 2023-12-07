@@ -111,7 +111,7 @@
                         <div class="bg-white dark:bg-gray-800 rounded-xl border hover:border-gray-300 dark:border-gray-700 border-gray-200 hover:dark:border-gray-700 transition-all shadow-md">
                           
                           <div class="flex items-center justify-center py-1 px-4">
-                            <nuxt-link to="#" class="text-[10px] md:text-xs">{{ order.region_code }}</nuxt-link>
+                            <nuxt-link :to="{ name: 'order', hash: `#${ order.region_code }` }" class="text-[10px] md:text-xs">{{ order.region_code }}</nuxt-link>
                           </div>
                         
                         </div>

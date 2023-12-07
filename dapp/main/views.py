@@ -275,11 +275,14 @@ class LocationFromIPView(APIView):
     
     def get(self, request):
         client_ip = get_client_ip(request)[0]
+        client_ip = '5.35.80.77'
+        print(client_ip)
 
         with geoip2.database.Reader('main/geoip-db/GeoLite2-City.mmdb') as reader:
             city = 'Рудный'
             try: 
                 response = reader.city(client_ip)
+                print(response)
                 city = response.city.names.get('ru')
 
                 if city is None:

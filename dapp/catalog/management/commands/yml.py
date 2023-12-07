@@ -14,5 +14,8 @@ class Command(BaseCommand):
         pass
 
 
-response = requests.get('https://api.webmaster.yandex.net/v4/user', headers={ 'Authorization': '' })
+# response = requests.get('https://api.webmaster.yandex.net/v4/user', headers={ 'Authorization': '' })
+
+response = requests.get('https://api.webmaster.yandex.net/v4/user/0841001aff5742cfaec72026ef6d4697/hosts')
+
 print(response.text)
