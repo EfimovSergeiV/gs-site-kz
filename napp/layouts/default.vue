@@ -12,57 +12,57 @@
   // const notificationsStore = useNotificationsStore()
 
   const { signIn, signOut, token, data, status, lastRefreshedAt } = useAuth()
-  // const { data: shops } = await useFetch(`${ config.public.baseURL }c/shops/`)
+  const { data: shops } = await useFetch(`${ config.public.baseURL }c/shops/`)
 
 
-  // shopStore.writeShops(shops)
+  shopStore.writeShops(shops)
 
-  // onMounted( async () => {
+  onMounted( async () => {
 
-  //   /// Присваиваем клиенту временыый идентификатор
-  //   if ( tmp_id.value ) {
-  //     /// Проверяем, если устарел (нет в базе), получаем новый
-  //     const watcher = await $fetch(`${ config.public.baseURL }u/uwatch/`, {
-  //       method: 'PUT', body: { "tmp_id": tmp_id.value }
-  //     }).catch((error) => error.data)
-  //     if ( watcher.tmp_id ) {
-  //       console.log(watcher, 'IF WATCHER')
-  //       tmp_id.value = watcher.tmp_id
-  //     }
-  //     console.log(watcher)
-  //   } else {
-  //     /// Если tmp_id не найден, получаем новый
-  //     const watcher = await $fetch(`${ config.public.baseURL }u/uwatch/`, { method: 'PUT' }).catch((error) => error.data)
-  //     tmp_id.value = watcher.tmp_id
-  //   }
+    /// Присваиваем клиенту временыый идентификатор
+    if ( tmp_id.value ) {
+      /// Проверяем, если устарел (нет в базе), получаем новый
+      const watcher = await $fetch(`${ config.public.baseURL }u/uwatch/`, {
+        method: 'PUT', body: { "tmp_id": tmp_id.value }
+      }).catch((error) => error.data)
+      if ( watcher.tmp_id ) {
+        console.log(watcher, 'IF WATCHER')
+        tmp_id.value = watcher.tmp_id
+      }
+      console.log(watcher)
+    } else {
+      /// Если tmp_id не найден, получаем новый
+      const watcher = await $fetch(`${ config.public.baseURL }u/uwatch/`, { method: 'PUT' }).catch((error) => error.data)
+      tmp_id.value = watcher.tmp_id
+    }
 
-  //   /// Получаем данные о просмотренных товарах
-  //   const tmp_data = await $fetch(`${ config.public.baseURL }u/uwatch/`, {
-  //     headers: {
-  //       "Authorization": tmp_id.value,
-  //     }
-  //   }).catch((error) => error.data)
-  //   productsStore.restoreState(tmp_data)
+    /// Получаем данные о просмотренных товарах
+    const tmp_data = await $fetch(`${ config.public.baseURL }u/uwatch/`, {
+      headers: {
+        "Authorization": tmp_id.value,
+      }
+    }).catch((error) => error.data)
+    productsStore.restoreState(tmp_data)
 
 
-  //   clientStore.getLocateFromIP()
-  //   if ("geolocation" in navigator) {
-  //     /* Определяем местоположение по координатам */
-  //     navigator.geolocation.getCurrentPosition(position => {
-  //       let location = {
-  //         "lat": position.coords.latitude, 
-  //         "long": position.coords.longitude 
-  //       }
+    clientStore.getLocateFromIP()
+    if ("geolocation" in navigator) {
+      /* Определяем местоположение по координатам */
+      navigator.geolocation.getCurrentPosition(position => {
+        let location = {
+          "lat": position.coords.latitude, 
+          "long": position.coords.longitude 
+        }
 
-  //       clientStore.sendCoordinates(location)
+        clientStore.sendCoordinates(location)
 
-  //       // this.sendCoordinates(location)
-  //     });
-  //   } else {
-  //     /* Местоположение не доступно */
-  //   }
+        // this.sendCoordinates(location)
+      });
+    } else {
+      /* Местоположение не доступно */
+    }
 
-  // })
+  })
 
 </script>
 
