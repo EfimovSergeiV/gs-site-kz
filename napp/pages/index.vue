@@ -31,13 +31,13 @@
   <div class="">
     <!-- <AppHeader /> -->
     <!-- <AppNavbar /> -->
-    <MainSection :latest="latest" :banners="banners" />
+    <!-- <MainSection :latest="latest" :banners="banners" /> -->
     <!-- <MainWelder /> -->
 
     <!-- <Reviews :reviews="randomreviews" /> -->
     
     <!-- <UserData /> -->
-    <ESAB />
+    <!-- <ESAB /> -->
     <!-- <Recommend :recommends="recommends" /> -->
     <!-- <CorouselBrands /> -->
     <!-- <ShopMaps /> -->
