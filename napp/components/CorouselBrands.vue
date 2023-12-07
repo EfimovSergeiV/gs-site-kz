@@ -4,16 +4,16 @@
 
   const { data: brands } = await useFetch(`${ config.public.baseURL }c/brands/`)
 
-  const filteredCarouselBrands = (brands) => {
-    const truebrand = []
-    brands.forEach((element) => {
-      if (element.carousel === true) {
-        truebrand.push(element)
-      }
-    })
-    return truebrand
+  // const filteredCarouselBrands = (brands) => {
+  //   const truebrand = []
+  //   brands.forEach((element) => {
+  //     if (element.carousel === true) {
+  //       truebrand.push(element)
+  //     }
+  //   })
+  //   return truebrand
 
-  }
+  // }
 
 </script>
 
@@ -29,7 +29,7 @@
     -->
 
     <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-sm px-2">
-      <Swiper
+      <!-- <Swiper
         class=""
         :modules="[SwiperAutoplay]"
         :slides-per-view="5"
@@ -56,7 +56,7 @@
           </nuxt-link>
         </SwiperSlide>
 
-      </Swiper>
+      </Swiper> -->
     </div>
 
   </div>
