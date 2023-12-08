@@ -418,7 +418,6 @@ class SearchView(APIView):
         serializer = self.serializer_class(qs, many=True, context={'request':request})
         return Response(serializer.data)
 
-
 class BrandProductView(APIView):
     """ Список брендов """
 

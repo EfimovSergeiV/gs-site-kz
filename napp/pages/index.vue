@@ -39,8 +39,8 @@
     <UserData />
     <ESAB />
     <Recommend :recommends="recommends" />
-    <!-- <CorouselBrands /> -->
-    <!-- <ShopMaps /> -->
+    <CorouselBrands />
+    <ShopMaps />
     <AppFooter />
   </div>
 </template>
