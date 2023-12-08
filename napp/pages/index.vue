@@ -37,8 +37,8 @@
     <Reviews :reviews="randomreviews" />
     
     <UserData />
-    <!-- <ESAB /> -->
-    <!-- <Recommend :recommends="recommends" /> -->
+    <ESAB />
+    <Recommend :recommends="recommends" />
     <!-- <CorouselBrands /> -->
     <!-- <ShopMaps /> -->
     <AppFooter />
