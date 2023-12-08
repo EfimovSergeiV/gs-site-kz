@@ -31,9 +31,8 @@
   <div class="">
 
     <AppHeader />
-    <!-- <AppNavbar /> -->
-    <!-- <MainSection :latest="latest" :banners="banners" /> -->
-    <!-- <MainWelder /> -->
+    <MainSection :latest="latest" :banners="banners" />
+    <MainWelder />
 
     <!-- <Reviews :reviews="randomreviews" /> -->
     
