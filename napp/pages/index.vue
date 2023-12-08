@@ -34,9 +34,9 @@
     <MainSection :latest="latest" :banners="banners" />
     <MainWelder />
 
-    <!-- <Reviews :reviews="randomreviews" /> -->
+    <Reviews :reviews="randomreviews" />
     
-    <!-- <UserData /> -->
+    <UserData />
     <!-- <ESAB /> -->
     <!-- <Recommend :recommends="recommends" /> -->
     <!-- <CorouselBrands /> -->
