@@ -17,7 +17,6 @@
 <template>
   <div id="">
     <AppHeader />
-    <AppNavbar />
 
     <div class="mx-auto px-4 max-w-6xl lg:px-8">
 

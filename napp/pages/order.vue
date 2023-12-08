@@ -3,40 +3,39 @@
   const route = useRoute()
 
   const { data: orderinfo, pending: pendingorder, error: errorder } = await useFetch(`${ config.public.baseURL }o/orderinfo/${ route.hash.slice(1,) }`)
-// const sendRequest = async () => {
-//     if ( (clientStore.client.city) && (clientStore.client.contact) ) {
-//       const { data: response } = await useFetch(`${ config.public.baseURL }o/request-price/`, {
-//         method: 'POST',
-//         body: {
-//           city: clientStore.client.city,
-//           contact: clientStore.client.contact,
-//           product: `id: ${ productsStore.requestPrice.id } vc: ${ productsStore.requestPrice.vcode } name: ${ productsStore.requestPrice.name }`,
-//         }
-        
-//       });
+  
+  // const sendRequest = async () => {
+  //     if ( (clientStore.client.city) && (clientStore.client.contact) ) {
+  //       const { data: response } = await useFetch(`${ config.public.baseURL }o/request-price/`, {
+  //         method: 'POST',
+  //         body: {
+  //           city: clientStore.client.city,
+  //           contact: clientStore.client.contact,
+  //           product: `id: ${ productsStore.requestPrice.id } vc: ${ productsStore.requestPrice.vcode } name: ${ productsStore.requestPrice.name }`,
+  //         }
+          
+  //       });
 
-//       notificationsStore.pushToast({ id: 1, type: 'success', text: 'Запрос на стоимость товара успешно отправлен!' })
-//       productsStore.clearRequestPrice()
+  //       notificationsStore.pushToast({ id: 1, type: 'success', text: 'Запрос на стоимость товара успешно отправлен!' })
+  //       productsStore.clearRequestPrice()
 
-//       // order.value = await response.value
-//       // productsStore.clearCartProducts() 
-//       // clientStore.saveClientData(clientData)
+  //       // order.value = await response.value
+  //       // productsStore.clearCartProducts() 
+  //       // clientStore.saveClientData(clientData)
 
-//          o/orderinfo/PSK1156363/
+  //         o/orderinfo/PSK1156363/
 
-//     } else {
-//       errorMsg.value = 'Для отправки запроса заполните все поля.'
-//     }
-//   }
+  //     } else {
+  //       errorMsg.value = 'Для отправки запроса заполните все поля.'
+  //     }
+  //   }
 </script>
 
 
 <template>
 
   <div class="">
-    <!-- <AppHeader />
-    <AppNavbar />
-
+    <AppHeader />
 
     <div class="container mx-auto px-4 py-2 max-w-6xl lg:px-8">
       
@@ -75,7 +74,7 @@
 
     </div>
     
-    <AppFooter /> -->
+    <AppFooter />
 
 
   </div>

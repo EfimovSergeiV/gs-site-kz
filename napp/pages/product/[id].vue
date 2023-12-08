@@ -83,12 +83,11 @@
 <template>
   <div class="">
 
-    <!-- <AppHeader />
-    <AppNavbar />
+    <AppHeader />
     <BreadCrumbs :breadcrumbs="breadcrumbs" />
     <ProductDetail :product="product" :related="related" :analogue="analogue.slice(0, 2)" />
     <Recommend :recommends="recommends" />
-    <AppFooter /> -->
+    <AppFooter />
     
   </div>
 </template>

@@ -9,11 +9,10 @@ useHead({
 
 <template>
   <div class="">
-    <!-- <AppHeader />
-    <AppNavbar />
+    <AppHeader />
     
     <CartForm />
 
-    <AppFooter /> -->
+    <AppFooter />
   </div>
 </template>

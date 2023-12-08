@@ -23,8 +23,7 @@
 
 <template>
   <div>
-    <!-- <AppHeader />
-    <AppNavbar />
+    <AppHeader />
 
     <div class="container mx-auto px-4 py-2 max-w-6xl lg:px-8">
 
@@ -355,7 +354,7 @@
 
     </div>
 
-    <AppFooter /> -->
+    <AppFooter />
 
   </div>
 </template>
