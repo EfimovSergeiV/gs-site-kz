@@ -32,10 +32,7 @@
 
     <AppHeader />
     <MainSection :latest="latest" :banners="banners" />
-    <MainWelder />
-
-    <Reviews :reviews="randomreviews" />
-    
+    <MainWelder />    
     <UserData />
     <ESAB />
     <Recommend :recommends="recommends" />
