@@ -31,13 +31,13 @@
   <div class="">
 
     <AppHeader />
-    <MainSection :latest="latest" :banners="banners" />
-    <MainWelder />    
-    <UserData />
-    <ESAB />
-    <Recommend :recommends="recommends" />
-    <CorouselBrands />
-    <ShopMaps />
-    <AppFooter />
+    <!-- <MainSection :latest="latest" :banners="banners" /> -->
+    <!-- <MainWelder />     -->
+    <!-- <UserData /> -->
+    <!-- <ESAB /> -->
+    <!-- <Recommend :recommends="recommends" /> -->
+    <!-- <CorouselBrands /> -->
+    <!-- <ShopMaps /> -->
+    <!-- <AppFooter /> -->
   </div>
 </template>
