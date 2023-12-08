@@ -29,6 +29,14 @@
 <template>
 
   <div class="">
+    <p class="text-xs">{{ widebanner }}</p>
+    <p class="text-xs">{{ banners }}</p>
+    <p class="text-xs">{{ brands }}</p>
+    <p class="text-xs">{{ esab }}</p>
+    <p class="text-xs">{{ latest }}</p>
+    <p class="text-xs">{{ mpromobs }}</p>
+    <p class="text-xs">{{ recommends }}</p>
+    <p class="text-xs">{{ randomreviews }}</p>
     <!-- <AppHeader /> -->
     <!-- <AppNavbar /> -->
     <!-- <MainSection :latest="latest" :banners="banners" /> -->
