@@ -1,14 +1,13 @@
 <script setup>
   const config = useRuntimeConfig()
   const productsStore = useProductsStore()
+  const clientStore = useClientStore()
   const notificationsStore = useNotificationsStore()
   const route = useRoute()
   const router = useRouter()
 
   const { data: brands } = await useFetch(`${ config.public.baseURL }c/ctbrand/`, { params: route.query })
   const { data: props } = await useFetch(`${ config.public.baseURL }c/props/`, { params: route.query })
-
-
   const { data: products } = await useFetch(`${ config.public.baseURL }c/prods/`, { params: route.query })
   const { data: breadcrumbs } = await useFetch(`${ config.public.baseURL }c/breadcrumb/`, { params: route.query })
 
@@ -38,7 +37,6 @@
     }
   )
 
-  // const ct_id = ref(1)
   // const page_id = ref(1)
 
   // const { data: products, pending, error } = await useAsyncData(() => {
@@ -60,7 +58,15 @@
 
     <div class="mx-auto px-4 max-w-6xl lg:px-8">
 
-      <div class="">
+      <div class="flex items-center justify-between">
+
+        <div class="hidden md:block">
+          <div class="flex gap-1">
+            <button @click="clientStore.viewport = 'grid'" class="mdi mdi-24px mdi-view-grid text-gray-600 dark:text-gray-300"></button>            
+            <button @click="clientStore.viewport = 'row'" class="mdi mdi-24px mdi-view-agenda text-gray-600 dark:text-gray-300"></button>
+          </div>
+        </div>
+
         <div v-if="products.meta.inserted" class="flex items-center justify-end">
           <div id="" class="">
             <div class="flex flex-wrap gap-2 justify-end">
@@ -84,15 +90,16 @@
     <div class="mx-auto px-4 my-2 max-w-6xl lg:px-8">
       <div class="grid grid-cols-1 md:flex items-center justify-between">
 
-        <div class="flex items-center gap-0.5 justify-between md:justify-end my-2">
-          <button class="px-4 h-8 text-sm flex items-center justify-center text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" @click="notificationsStore.statusFilterComponent">Фильтр</button>
-          <nuxt-link :to="{ name: 'prods', query: { page: 1, ...route.query, by: 'Date' } }" class="px-3 md:px-4 h-8 text-xs md:text-sm flex items-center justify-center text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Новые</nuxt-link>
-          <nuxt-link :to="{ name: 'prods', query: { page: 1, ...route.query, by: 'Rating' } }" class="px-3 md:px-4 h-8 text-xs md:text-sm flex items-center justify-center text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Рейтинг</nuxt-link>
-          <nuxt-link :to="{ name: 'prods', query: { page: 1, ...route.query, by: 'LowPrice' } }" class="px-3 md:px-4 h-8 text-xs md:text-sm flex items-center justify-center text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Дешевле</nuxt-link>
-          <nuxt-link :to="{ name: 'prods', query: { page: 1, ...route.query, by: 'HighPrice' } }" class="px-3 md:px-4 h-8 text-xs md:text-sm flex items-center justify-center text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Дороже</nuxt-link>
+        <div class="flex items-center gap-1 justify-between md:justify-end my-2">
+          <button class="w-full px-4 h-8 text-sm flex items-center justify-center text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" @click="notificationsStore.statusFilterComponent">Фильтр</button>
+          <nuxt-link :to="{ name: 'prods', query: { page: 1, ...route.query, by: 'Date' } }" class="w-full px-3 md:px-4 h-8 text-xs md:text-sm flex items-center justify-center text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Новые</nuxt-link>
+          <nuxt-link :to="{ name: 'prods', query: { page: 1, ...route.query, by: 'Rating' } }" class="w-full px-3 md:px-4 h-8 text-xs md:text-sm flex items-center justify-center text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Рейтинг</nuxt-link>
+          <nuxt-link :to="{ name: 'prods', query: { page: 1, ...route.query, by: 'LowPrice' } }" class="w-full px-3 md:px-4 h-8 text-xs md:text-sm flex items-center justify-center text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Дешевле</nuxt-link>
+          <nuxt-link :to="{ name: 'prods', query: { page: 1, ...route.query, by: 'HighPrice' } }" class="w-full px-3 md:px-4 h-8 text-xs md:text-sm flex items-center justify-center text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Дороже</nuxt-link>
         </div>
 
         <Pagination :count="products.count" />
+
       </div>
 
     </div>
@@ -109,15 +116,26 @@
       <div class="container mx-auto px-4 max-w-6xl lg:px-8">
 
         <div v-if="products.results.length > 0" id="products" class="">
-          <div class="grid grid-cols-1 gap-y-4 gap-x-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
-            
-            <transition-group name="fade">
-              <div class="" v-for="product in products.results" :key="product.id">
-                <ProductCard :product="product" />
-              </div>
-            </transition-group>
 
-          </div>
+          <transition name="fade" mode="out-in">
+            <div v-if="clientStore.viewport === 'grid'" class="grid grid-cols-1 gap-y-4 gap-x-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
+              <transition-group name="fade">
+                  <div class="" v-for="product in products.results" :key="product.id">
+                    <ProductCard :product="product" />
+                  </div>                
+              </transition-group>
+            </div>
+
+            <div v-else class="grid grid-cols-1 gap-4">
+              <transition-group name="fade">
+                  <div class="" v-for="product in products.results" :key="product.id">
+                    <ProductCardLS :product="product" />
+                  </div>                
+              </transition-group>
+            </div>            
+          </transition>
+
+
         </div>
         <div class="" v-else>
 
