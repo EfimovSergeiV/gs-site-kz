@@ -107,67 +107,67 @@
 
       <div class="bg-white dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-700 my-2">
         <div class="">
-          <div class="flex items-center justify-center px-4 py-4">
-            <div class="py-2 ">
-              <div class="py-1">
-                <p class="text-xl">{{ descriptionData }}</p>  
-              </div>
-              <div class="py-1 max-w-3xl">
-                <p class="text-lg text-gray-600 dark:text-gray-400 text-center">
-                  Наши магазины – это место, где профессионалы и энтузиасты приходят за лучшими решениями для сварочных работ. Сварка - это искусство, и мы знаем, как сделать его доступным и эффективным для каждого.
-                </p>
-              </div>
+          <div class="flex flex-col items-center justify-center px-4 py-2">
+
+            <div class="py-1">
+              <p class="text-xl">{{ descriptionData }}</p>  
             </div>
+            <div class="py-1 max-w-3xl">
+              <p class="text-lg text-gray-600 dark:text-gray-400 text-center">
+                Наши магазины – это место, где профессионалы и энтузиасты приходят за лучшими решениями для сварочных работ. Сварка - это искусство, и мы знаем, как сделать его доступным и эффективным для каждого.
+              </p>
+            </div>
+
           </div>
 
-          <div class="py-4 px-4">
+          <div class="py-2 px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 items-end gap-4">
               <div class="py-4 ">
-                <p class="py-4 text-xl text-gray-600 dark:text-gray-400">Мы открыты для посетителей:</p>
+                <p class="py-2 text-base text-gray-600 dark:text-gray-400">Мы открыты для посетителей:</p>
                 <div class="flex gap-10">
-                  <div class="grid grid-cols-1 gap-2">
-                    <div class=" border-b border-gray-200 dark:border-gray-700">
-                      <div class="grid grid-cols-2 gap-6">
-                        <p class="text-xs md:text-base">понедельник</p>
-                        <p class="text-xs md:text-base">08:30 – 17:30</p>
+                  <div class="grid grid-cols-1">
+                    <div class="">
+                      <div class="grid grid-cols-2 gap-6 border-b border-gray-200 dark:border-gray-700">
+                        <p class="text-xs md:text-sm">понедельник</p>
+                        <p class="text-xs md:text-sm">08:30 – 17:30</p>
                       </div>                      
                     </div>
-                    <div class=" border-b border-gray-200 dark:border-gray-700">
-                      <div class="grid grid-cols-2 gap-6">
-                        <p class="text-xs md:text-base">вторник</p>
-                        <p class="text-xs md:text-base">08:30 – 17:30</p>
+                    <div class="">
+                      <div class="grid grid-cols-2 gap-6 border-b border-gray-200 dark:border-gray-700">
+                        <p class="text-xs md:text-sm">вторник</p>
+                        <p class="text-xs md:text-sm">08:30 – 17:30</p>
                       </div>                      
                     </div>
-                    <div class=" border-b border-gray-200 dark:border-gray-700">
-                      <div class="grid grid-cols-2 gap-6">
-                        <p class="text-xs md:text-base">среда</p>
-                        <p class="text-xs md:text-base">08:30 – 17:30</p>
+                    <div class="">
+                      <div class="grid grid-cols-2 gap-6 border-b border-gray-200 dark:border-gray-700">
+                        <p class="text-xs md:text-sm">среда</p>
+                        <p class="text-xs md:text-sm">08:30 – 17:30</p>
                       </div>                          
                     </div>
                   </div>
-                  <div class="grid grid-cols-1 gap-2">
-                    <div class=" border-b border-gray-200 dark:border-gray-700">
-                      <div class="grid grid-cols-2 gap-6">
-                        <p class="text-xs md:text-base">четверг</p>
-                        <p class="text-xs md:text-base">08:30 – 17:30</p>
+                  <div class="grid grid-cols-1">
+                    <div class="">
+                      <div class="grid grid-cols-2 gap-6 border-b border-gray-200 dark:border-gray-700">
+                        <p class="text-xs md:text-sm">четверг</p>
+                        <p class="text-xs md:text-sm">08:30 – 17:30</p>
                       </div>                      
                     </div>
-                    <div class=" border-b border-gray-200 dark:border-gray-700">
-                      <div class="grid grid-cols-2 gap-6">
-                        <p class="text-xs md:text-base">пятница</p>
-                        <p class="text-xs md:text-base">08:30 – 17:30</p>
+                    <div class="">
+                      <div class="grid grid-cols-2 gap-6 border-b border-gray-200 dark:border-gray-700">
+                        <p class="text-xs md:text-sm">пятница</p>
+                        <p class="text-xs md:text-sm">08:30 – 17:30</p>
                       </div>                      
                     </div>
-                    <div class=" border-b border-gray-200 dark:border-gray-700">
-                      <div class="grid grid-cols-2 gap-6">
-                        <p class="text-xs md:text-base">суббота</p>
-                        <p class="text-xs md:text-base">09:00 – 15:00</p>
+                    <div class="">
+                      <div class="grid grid-cols-2 gap-6 border-b border-gray-200 dark:border-gray-700">
+                        <p class="text-xs md:text-sm">суббота</p>
+                        <p class="text-xs md:text-sm">09:00 - 15:00</p>
                       </div>                      
                     </div>
-                    <div class=" border-b border-gray-200 dark:border-gray-700">
-                      <div class="grid grid-cols-2 gap-6">
-                        <p class="text-xs md:text-base">воскресенье</p>
-                        <p class="text-xs md:text-base">Закрыто</p>
+                    <div class="">
+                      <div class="grid grid-cols-2 gap-6 border-b border-gray-200 dark:border-gray-700">
+                        <p class="text-xs md:text-sm">воскресенье</p>
+                        <p class="text-xs md:text-sm">Закрыто</p>
                       </div>                          
                     </div>
                   </div>
@@ -183,7 +183,10 @@
                     </div>
                   </div>
                   <div class="py-2">
-                    <a href="tel:+77084238070" class="text-4xl">+7 (708) 423-80-70</a>
+                    <div class="grid grid-cols-1">
+                      <a href="tel:+77084238070" class="text-4xl">+7 (708) 423-80-70</a>
+                      <a href="mailto:zakaz@glsvar.kz" target="_blank" class="text-base text-right">zakaz@glsvar.kz</a>                      
+                    </div>
                   </div>
                 </div>                
               </div>
