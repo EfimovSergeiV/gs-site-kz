@@ -24,7 +24,7 @@
       <div class="w-full">
 
         <div class="flex items-center">
-          <p class="text-lg">{{ props.product.name }}</p>
+          <nuxt-link :to="{ name: 'product-id', params: { id: props.product.id } }" class="text-lg">{{ props.product.name }}</nuxt-link>
         </div>
 
 
