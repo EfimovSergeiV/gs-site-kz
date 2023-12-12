@@ -72,9 +72,9 @@
 
 
             <div class="flex items-center justify-end">
-              <div class="py-2 w-[345px]">
+              <div class="py-2 md:max-w-[345px]">
                 <nuxt-link :to="{ name: 'index' }">
-                  <img src="/images/blue-svar.webp" class="max-h-[4rem]" />
+                  <img src="/images/blue-svar.webp" class="max-h-[6rem] md:max-h-[4rem]" />
                 </nuxt-link>
                 <div class="flex flex-col py-2">
                   <p class="text-sm text-end">Рудный, ул. Топоркова 35, 111500</p>
