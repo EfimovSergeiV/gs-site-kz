@@ -69,23 +69,30 @@
       <div id="navbar" class="bg-gray-300 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-b border-gray-400 dark:border-gray-700 fixed hidden w-full z-40">
         
         <div class="container mx-auto px-4 max-w-6xl lg:px-8">
-          <div class="flex justify-end gap-4 md:gap-4 uppercase font-semibold py-2">
-            <div class="hidden md:block before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative my-2">
-              <nuxt-link :to="{ name: 'index' }" class="relative text-xs md:text-base">Главная</nuxt-link>
-            </div>
-            <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
-              <nuxt-link :to="{ name: 'lk' }" class="relative text-xs md:text-base">Избранное</nuxt-link>
-            </div>
-            <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
-              <nuxt-link :to="{ name: 'compare' }" class="relative text-xs md:text-base">В сравнении</nuxt-link>
-            </div>
-            <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 text-white before:bg-blue-600 transition-all duration-0 relative inline-block my-2 px-2">
-              <nuxt-link :to="{ name: 'cart' }" class="relative text-xs md:text-base">Корзина ( {{ productsStore.cart.length }} )</nuxt-link>
-            </div>
-            <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
-              <nuxt-link :to="{ name: 'about' }" class="relative text-xs md:text-base">О нас</nuxt-link>
-            </div>
+          <div class="lg:flex items-start justify-between">
+            <nuxt-link :to="{ name: 'index' }" class="hidden lg:block pb-1">
+              <img src="/images/blue-svar.webp" class="max-h-[3rem]" />
+            </nuxt-link>
+
+            <div class="flex justify-end gap-4 md:gap-4 uppercase font-semibold py-1">
+              <div class="hidden md:block before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative my-2">
+                <nuxt-link :to="{ name: 'index' }" class="relative text-xs md:text-base">Главная</nuxt-link>
+              </div>
+              <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
+                <nuxt-link :to="{ name: 'lk' }" class="relative text-xs md:text-base">Избранное</nuxt-link>
+              </div>
+              <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
+                <nuxt-link :to="{ name: 'compare' }" class="relative text-xs md:text-base">В сравнении</nuxt-link>
+              </div>
+              <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 text-white before:bg-blue-600 transition-all duration-0 relative inline-block h-5 mt-3 px-2">
+                <nuxt-link :to="{ name: 'cart' }" class="relative text-xs md:text-base">Корзина ( {{ productsStore.cart.length }} )</nuxt-link>
+              </div>
+              <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
+                <nuxt-link :to="{ name: 'about' }" class="relative text-xs md:text-base">О нас</nuxt-link>
+              </div>
+            </div>            
           </div>
+
         </div>
         
       </div>
