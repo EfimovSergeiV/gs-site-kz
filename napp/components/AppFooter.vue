@@ -13,11 +13,16 @@
       <div class="md:flex md:justify-between items-center py-2">
 
         <div class="md:order-2 py-2">
-          <div class="flex gap-2 items-end justify-end px-4 py-2">
-            <p class="mdi mdi-36px mdi-map-marker-outline"></p>
-            <div class="flex flex-col">
-              <p class="text-sm text-end">Рудный, ул. Топоркова 35, 111500</p>
-              <a href="tel:+77084238070" class="text-2xl text-end">+7 (708) 423-80-70</a>
+          <div class="">
+            <div class="flex gap-2 items-end justify-end">
+              <p class="mdi mdi-36px mdi-map-marker-outline"></p>
+              <div class="flex flex-col">
+                <p class="text-sm text-end">Рудный, ул. Топоркова 35, 111500</p>
+                <a href="tel:+77084238070" class="text-2xl text-end">+7 (708) 423-80-70</a>
+              </div>
+            </div>
+            <div class="flex items-center justify-end">
+              <a href="mailto:zakaz@glsvar.kz" target="_blank" class="text-sm text-right">zakaz@glsvar.kz</a>  
             </div>
           </div>
 

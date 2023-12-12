@@ -66,19 +66,42 @@
       <div class="grid grid-cols-1 md:flex gap-4">
         <div class="min-w-[345px]">
 
-          <div class="h-full grid grid-cols-1 content-end between">
+          <div class="h-full grid grid-cols-1">
 
-            <div class="flex items-center justify-center">
-              <div class="py-4 md:py-10 w-[345px]">
+
+
+
+            <div class="flex items-center justify-end">
+              <div class="py-2 w-[345px]">
                 <nuxt-link :to="{ name: 'index' }">
                   <img src="/images/blue-svar.webp" class="max-h-[4rem]" />
-                  <p class="text-2xl font-semibold italic text-end px-4 text-gray-700 dark:text-gray-300"><span class="text-xs ml-4">интернет магазин</span> GLSVAR.KZ</p>
                 </nuxt-link>
+                <div class="flex flex-col py-2">
+                  <p class="text-sm text-end">Рудный, ул. Топоркова 35, 111500</p>
+                  <a href="tel:+77084238070" class="text-xl font-semibold text-end py-0.5">+7 (708) 423-80-70</a>
+                  <a href="mailto:zakaz@glsvar.kz" target="_blank" class="text-sm text-right">zakaz@glsvar.kz</a>
+                </div>
               </div>
             </div>
 
 
-            <div class="grid grid-cols-1 gap-2">
+            <!-- <div class="py-4">
+              <div class="flex gap-2 items-end justify-end">
+                <p class="mdi mdi-36px mdi-map-marker-outline"></p>
+                <div class="flex flex-col">
+                  <p class="text-sm text-end">Рудный, ул. Топоркова 35, 111500</p>
+                  <a href="mailto:zakaz@glsvar.kz" class="text-sm text-right">zakaz@glsvar.kz</a>
+                </div>
+              </div>
+              <div class="flex items-start justify-end">
+                <a href="tel:+77084238070" class="text-xl font-semibold text-end">+7 (708) 423-80-70</a>
+                
+              </div>
+               
+            </div> -->
+
+
+            <div class="grid grid-cols-1 items-end gap-2">
               <div class="grid grid-cols-2 gap-x-2 gap-y-2">
                 <button @click="clientStore.locationModal = true" class="py-1 cursor-pointer bg-gray-100 shadow-lg shadow-black/30 border border-gray-100/10 dark:border-white/20 rounded-lg transition-all duration-500">
                   <div class="flex items-center gap-2 text-gray-700">
@@ -218,9 +241,6 @@
               
               <div class="">
                 <div class="flex justify-end gap-4 md:gap-4 uppercase font-semibold py-2">
-                  <div class="hidden md:block before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative my-2">
-                    <nuxt-link :to="{ name: 'index' }" class="relative text-xs md:text-base">Главная</nuxt-link>
-                  </div>
                   <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
                     <nuxt-link :to="{ name: 'like' }" class="relative text-xs md:text-base">Избранное</nuxt-link>
                   </div>

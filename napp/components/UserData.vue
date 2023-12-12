@@ -31,7 +31,6 @@
 
 
   onMounted( async () => {
-    console.log('mounted work ', products.value)
     if (!products.value) {
       products.value = []
       for (const product in random.value) {
