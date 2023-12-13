@@ -68,7 +68,7 @@
 
                 </div>
 
-                <div class="py-2">
+                <div class="py-6">
                   <div class="grid grid-cols-1 md:flex gap-4">
 
 

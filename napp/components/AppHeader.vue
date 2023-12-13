@@ -69,8 +69,6 @@
           <div class="h-full grid grid-cols-1">
 
 
-
-
             <div class="flex items-center justify-end">
               <div class="py-2 md:max-w-[345px]">
                 <nuxt-link :to="{ name: 'index' }">
@@ -78,27 +76,15 @@
                 </nuxt-link>
                 <div class="flex flex-col py-2">
                   <p class="text-sm text-end">Рудный, ул. Топоркова 35, 111500</p>
-                  <a href="tel:+77084238070" class="text-xl font-semibold text-end py-0.5">+7 (708) 423-80-70</a>
-                  <a href="mailto:zakaz@glsvar.kz" target="_blank" class="text-sm text-right">zakaz@glsvar.kz</a>
+                  <div class="flex justify-end">
+                    <div class="flex flex-col">
+                      <a href="tel:+77084238070" class="text-xl font-semibold text-end py-0.5">+7 (708) 423-80-70</a>
+                      <a href="mailto:zakaz@glsvar.kz" target="_blank" class="text-sm text-right">zakaz@glsvar.kz</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-
-
-            <!-- <div class="py-4">
-              <div class="flex gap-2 items-end justify-end">
-                <p class="mdi mdi-36px mdi-map-marker-outline"></p>
-                <div class="flex flex-col">
-                  <p class="text-sm text-end">Рудный, ул. Топоркова 35, 111500</p>
-                  <a href="mailto:zakaz@glsvar.kz" class="text-sm text-right">zakaz@glsvar.kz</a>
-                </div>
-              </div>
-              <div class="flex items-start justify-end">
-                <a href="tel:+77084238070" class="text-xl font-semibold text-end">+7 (708) 423-80-70</a>
-                
-              </div>
-               
-            </div> -->
 
 
             <div class="grid grid-cols-1 items-end gap-2">
