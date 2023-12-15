@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.safestring import mark_safe
 from mptt.admin import DraggableMPTTAdmin
 from mptt.admin import TreeRelatedFieldListFilter
-from mptt.forms import TreeNodeChoiceField
+from mptt.forms import TreeNodeChoiceField, TreeNodeMultipleChoiceField
 from catalog.models import *
 from django import forms
 from ckeditor.widgets import CKEditorWidget
@@ -205,8 +205,19 @@ class ProductAdmin(admin.ModelAdmin):
         )
 
 ##### НАЗВАНИЯ СВОЙСТВ ДЛЯ ФИЛЬТРОВ
+class TreeCategoryAdminForm(forms.ModelForm):
+    category = TreeNodeMultipleChoiceField(queryset=CategoryModel.objects.all(), label= 'Категория')
+    
+    class Meta:
+        model = PropsNameModel
+        fields = '__all__'
+    
+
 class PropNameAdmin(admin.ModelAdmin):
+    
     readonly_fields = ('get_alias', )
+    form = TreeCategoryAdminForm
+
     def get_alias(self, obj):
         if len(obj.prop_alias) == 0:
             prop = gen()
@@ -224,12 +235,12 @@ class PropNameAdmin(admin.ModelAdmin):
             % (prop))
     get_alias.short_description = 'Возможный алиас'
 
-    list_display = ('id', 'name', 'prop_alias', 'propwidget', 'position', 'activated',)
-    list_display_links = ('id', 'name',)
-    ordering = ('id',)
+    list_display = ('name', 'prop_alias', 'propwidget', 'position', 'activated',)
+    list_display_links = ('name',)
+    ordering = ('position', 'id',)
     search_fields = ('name', 'prop_alias', )
     list_editable = ('prop_alias', 'propwidget', 'position', 'activated',)
-    list_filter = ('category',)
+    list_filter = (('category', TreeRelatedFieldListFilter),)
     fieldsets = (
         ("ОТОБРАЖЕНИЕ В СПИСКЕ ФИЛЬТРОВ", {'fields': ( 
             ( 'position', 'activated', ), 

@@ -55,8 +55,8 @@
 
 
 <template>
-
-  <div class="bg-gradient-to-br from-gray-300 to-gray-200 dark:from-gray-900 dark:to-gray-800 w-screen md:w-[420px] h-screen overflow-y-auto border-r border-gray-300 dark:border-gray-700">
+ 
+  <div class="bg-gradient-to-br from-gray-300 to-gray-200 dark:from-gray-900 dark:to-gray-800 w-s creen md:w-[420px] h-screen overflow-y-auto border-r border-gray-300 dark:border-gray-700">
     <div class="p-4 relative">
 
 
@@ -65,7 +65,7 @@
         <div class=""><button @click="notificationsStore.statusFilterComponent" class="mdi mdi-24px mdi-close cursor-pointer"></button></div>
       </div>
 
-      <div class="pb-14">
+      <div class="overflow-y-auto">
 
         <div class="py-2">
           <div class="break-inside-avoid-column border border-gray-300 hover:border-gray-400 dark:border-gray-700 dark:hover:border-gray-600 rounded-md p-1 duration-700 transition-all">
@@ -138,8 +138,8 @@
     <div class="absolute bottom-0 right-0 w-full">
       <div class="bg-gray-300 dark:bg-gray-800">
         <div class="flex justify-end p-4">
-          <button @click="clearFilter" class="text-sm mx-2 mdi mdi-filter-variant-minus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Очистить</button>
-          <button @click="applyFilter" class="text-sm mx-2 mdi mdi-filter-variant-plus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Применить</button>
+          <button @click="clearFilter" class="text-base mx-2 mdi mdi-filter-variant-minus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Очистить</button>
+          <button @click="applyFilter" class="text-base mx-2 mdi mdi-filter-variant-plus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Применить</button>
         </div>                
       </div>
     </div>
