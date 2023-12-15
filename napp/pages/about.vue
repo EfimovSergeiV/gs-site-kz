@@ -33,7 +33,7 @@
 
     <div class="container mx-auto px-4 max-w-6xl lg:px-8 min-h-[40rem]">
 
-      <div class="bg-white dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-700 mt-2 mb-4">
+      <div class="bg-white dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-700 mt-4 mb-2">
         <div class="">
           <img src="/bnr/banner_image-1.webp" class=" rounded-t-md" />
         </div>
@@ -333,6 +333,8 @@
 
 
     </div>
+
+    <CorouselBrands />
 
     <AppFooter />
     
