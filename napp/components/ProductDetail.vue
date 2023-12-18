@@ -183,7 +183,7 @@
 
         <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2 mt-4">
           <p class="text-base my-2 px-2">Описание:</p>
-          <div class="px-4" v-html="props.product.description"></div> 
+          <div class="px-4 description-style" v-html="props.product.description"></div> 
         </div>
 
       </div>
@@ -193,13 +193,13 @@
 </template>
 
 <style scoped>
-  ::v-deep p {
+  .description-style ::v-deep(p) {
     margin-bottom: 15px;
   }
-  ::v-deep ul {
+  .description-style ::v-deep(ul) {
       margin:8px 24px;
   }
-  ::v-deep li {
+  .description-style ::v-deep(li) {
     list-style-type: disc;
     padding-left:  4px;
     padding-top: 2px;
