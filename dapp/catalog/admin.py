@@ -182,7 +182,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ('id', 'vcode', 'name', 'activated', 'price', 'currency', 'status', ) #'recommend',
     list_display_links = ('id', )
     search_fields = ('id', 'vcode', 'name', 'UID',)
-    list_filter = ('brand', 'recommend', 'created_date', 'activated', ('category', TreeRelatedFieldListFilter),)#'category'
+    list_filter = ('brand', 'show_more', 'recommend', 'created_date', 'activated', ('category', TreeRelatedFieldListFilter),)#'category'
     list_editable = ('price', 'activated', 'status')
     ordering = ('vcode', 'id',)
     inlines = (
@@ -197,7 +197,7 @@ class ProductAdmin(admin.ModelAdmin):
         )
     sortable_by = ('id')
     fieldsets = (
-        ("Отображение на сайте", {'fields': (('activated', 'recommend',), ('category', 'brand'), ( 'preview', 'preview_image',))}),
+        ("Отображение на сайте", {'fields': (('activated', 'show_more', 'recommend',), ('category', 'brand'), ( 'preview', 'preview_image',))}),
         ("Информация о товаре", {'fields': (('vcode', 'name',), ( 'rating', 'keywords',), 'description',)}),
         ("Стоимость и наличие", {'fields': ( ('price', 'currency', 'status', ),)}),
         ("", {'fields': (('get_property_ct',),)}),

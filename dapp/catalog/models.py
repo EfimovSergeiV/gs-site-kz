@@ -117,6 +117,7 @@ class ProductModel(AbsDateModel):
     )
 
     recommend = models.BooleanField(verbose_name="Рекомендуемый", default=False)
+    show_more = models.BooleanField(verbose_name="Показывать чаще", default=False)
     rating = models.DecimalField(verbose_name="Рейтинг", default=3, max_digits=3, decimal_places=1)
 
     UID = models.CharField(

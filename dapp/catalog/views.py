@@ -290,30 +290,66 @@ class OneRandomProductView(APIView):
     queryset = ProductModel.objects.filter(activated=True)
     cat_qs = CategoryModel.objects.all()#filter(activated=True)
 
+    # def get(self, request):
+    #     try:
+    #         cts = dict(self.request.query_params)
+    #         prods = []
+
+    #         for ct in cts['ct']:
+    #             all_categories = []
+    #             category_qs = self.cat_qs.get(id=ct)
+    #             children_qs = [ child.id for child in category_qs.get_children() ]
+                
+    #             all_categories.append(int(ct))
+    #             second_child_qs = self.cat_qs.filter(id__in=children_qs)
+    #             all_categories += [ second_category.id for second_category in second_child_qs ]
+    #             for third_child_qs in second_child_qs:
+    #                 all_categories += [third_child.id for third_child in third_child_qs.get_children()]
+
+    #             prods.append(self.queryset.filter(category_id__in=all_categories).order_by("?")[0])
+            
+    #         while len(prods) < 4:
+    #             prods.append(self.queryset.filter(category_id__in=all_categories).order_by("?")[0])
+
+    #         random.shuffle(prods)
+    #         serializer = self.serializer_class(prods[0:4], many=True, context={'request': request})
+            
+    #         return Response(serializer.data)
     def get(self, request):
         try:
             cts = dict(self.request.query_params)
             prods = []
 
+            # Добавляем в выдачу по одному случайному товару из указанной категории
             for ct in cts['ct']:
-                all_categories = []
-                category_qs = self.cat_qs.get(id=ct)
-                children_qs = [ child.id for child in category_qs.get_children() ]
-                
-                all_categories.append(int(ct))
-                second_child_qs = self.cat_qs.filter(id__in=children_qs)
-                all_categories += [ second_category.id for second_category in second_child_qs ]
-                for third_child_qs in second_child_qs:
-                    all_categories += [third_child.id for third_child in third_child_qs.get_children()]
+                descendants = [ child.id for child in self.cat_qs.get(id=ct).get_descendants(include_self=True) ]
+                prods.append(self.queryset.filter(category_id__in=descendants).order_by("?")[0])
 
-                prods.append(self.queryset.filter(category_id__in=all_categories).order_by("?")[0])
-            
+            # Если в списке меньше черырёх, дозабиваем, что бы на фронте было что показать.
+            all_categories = []
             while len(prods) < 4:
-                prods.append(self.queryset.filter(category_id__in=all_categories).order_by("?")[0])
+                for ct in cts['ct']:
+                    descendants = [ child.id for child in self.cat_qs.get(id=ct).get_descendants(include_self=True) ]
+                    all_categories += descendants
+                    prod = self.queryset.filter(category_id__in=descendants).order_by("?")[0]
+                    
+                    if prod not in prods:
+                        prods.append(prod)
+
+            # Продвигаемые товары из запрошенных категорий
+            show_more = [ qs for qs in self.queryset.filter(category_id__in=all_categories, show_more=True).order_by("?") ]
 
             random.shuffle(prods)
+
+            probability = 0.7
+            if random.random() < probability:
+                prods = show_more + [ x for x in prods if x not in show_more ]
+                start, end = prods[:2], prods[2:]
+                random.shuffle(start)
+                prods = start + end
+
             serializer = self.serializer_class(prods[0:4], many=True, context={'request': request})
-            
+
             return Response(serializer.data)
         
         except (KeyError, IndexError, ObjectDoesNotExist):
