@@ -12,6 +12,15 @@
   const username = ref('')
   const password = ref('')
 
+  const passwdCheckbox = ref(false)
+  const showPasswd = () => {
+    if ( passwdCheckbox.value ) {
+      return  'text'
+    } else {
+      return 'password'
+    }
+  }
+
   // definePageMeta({
   //   auth: {
   //     unauthenticatedOnly: true,
@@ -56,7 +65,7 @@
                   <div class="">
                     <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-700 dark:text-gray-400">Пароль</label>
                     <div>
-                      <input v-model="password" type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-600 dark:border-gray-700 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="">
+                      <input v-model="password" :type="showPasswd()" id="password" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-600 dark:border-gray-700 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="">
                     </div>
 
                     <div class="flex items-center justify-end py-2">
@@ -64,10 +73,11 @@
                       <input 
                         id="show-pwd"
                         type="checkbox"
+                        v-model="passwdCheckbox"
                         class="w-4 h-4 
                           rounded text-gray-700 focus:ring-0 
-                          focus:ring-gray-300 ring-offset-gray-300 bg-gray-700 border-gray-300
-                          dark:focus:ring-gray-700 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-700
+                          focus:ring-gray-300 ring-offset-gray-300 bg-gray-400 border-gray-300
+                          dark:focus:ring-gray-700 dark:ring-offset-gray-800 dark:bg-gray-600 dark:border-gray-700
                         " >
                       <label for="show-pwd" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Показать пароль</label>
 

@@ -14,16 +14,23 @@
   const last_name = ref(null)
   const password = ref(null)
 
-  /// Переключение видимости пароля
-  const showPassword = ref(false)
-  const inputStatus = ref('password')
-  watch(showPassword, async () => {
-    if (showPassword.value) {
-      inputStatus.value = 'text'
+  const passwdCheckbox = ref(false)
+  const showPasswd = () => {
+    if ( passwdCheckbox.value ) {
+      return  'text'
     } else {
-      inputStatus.value = 'password'
+      return 'password'
     }
-  })
+  }
+  /// Переключение видимости пароля
+  // const inputStatus = ref('password')
+  // watch(showPassword, async () => {
+  //   if (showPassword.value) {
+  //     inputStatus.value = 'text'
+  //   } else {
+  //     inputStatus.value = 'password'
+  //   }
+  // })
 
   const sendForm = async () => {
     if ( username.value && email.value && first_name.value && last_name && password.value ) {
@@ -64,11 +71,11 @@
       <div class="h-full w-full flex items-center justify-center">
         
 
-        <div class="container mx-auto px-4 lg:max-w-4xl lg:px-8">
+        <div class="container mx-auto px-4 lg:max-w-xl lg:px-8">
           <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
             <div class="">
 
-              <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-700">
+              <div class="flex justify-between items-start px-4 py-4 rounded-t border-b dark:border-gray-700">
                 <h3 class="text-xl font-semibold text-gray-800 dark:text-white">
                   Регистрация
                 </h3>
@@ -78,8 +85,8 @@
                 </button>
               </div>
 
-              <div class="px-4 py-8 min-h-[20rem]">
-                <div class="grid grid-cols-2 gap-4 items-end">
+              <div class="px-4 py-4 min-h-[20rem] overflow-y-auto">
+                <div class="grid grid-cols-1 gap-2 items-end">
                   <div class="">
                     <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-700 dark:text-gray-400">Логин</label>
                     <div>
@@ -107,7 +114,29 @@
                   <div class="">
                     <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-700 dark:text-gray-400">Пароль</label>
                     <div>
-                      <input v-model="password" :type="inputStatus" id="password" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-600 dark:border-gray-700 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="">
+                      <input v-model="password" :type="showPasswd()" id="password" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-600 dark:border-gray-700 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="">
+                    </div>
+                  </div>
+                  <div class="">
+                    <input 
+                      id="show-pwd"
+                      type="checkbox"
+                      v-model="passwdCheckbox"
+                      class="w-4 h-4 
+                        rounded text-gray-700 focus:ring-0 
+                        focus:ring-gray-300 ring-offset-gray-300 bg-gray-400 border-gray-300
+                        dark:focus:ring-gray-700 dark:ring-offset-gray-800 dark:bg-gray-600 dark:border-gray-700
+                      " >
+                    <label for="show-pwd" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Показать пароль</label>
+                  </div>
+
+                  <div class="flex items-center justify-between py-2">
+                    <div class="">
+
+                    </div>
+
+                    <div class="">
+                      <p class="text-red-600 dark:text-red-500 text-sm">{{ errorMsg }}</p>
                     </div>
                   </div>
 
@@ -120,24 +149,7 @@
                   </button>
 
                 </div>
-                <div class="flex items-center justify-between py-1">
-                  <div class="">
-                    <input 
-                      id="show-pwd"
-                      type="checkbox"
-                      value="text"
-                      v-model="showPassword"
-                      class="w-4 h-4 
-                        rounded text-gray-700 focus:ring-0 
-                        focus:ring-gray-300 ring-offset-gray-300 bg-gray-700 border-gray-300
-                        dark:focus:ring-gray-700 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-700
-                      " >
-                    <label for="show-pwd" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Показать пароль</label>
-                  </div>
-                  <div class="">
-                    <p class="text-red-600 dark:text-red-500 text-sm">{{ errorMsg }}</p>
-                  </div>
-                </div>
+
 
               </div>
 
