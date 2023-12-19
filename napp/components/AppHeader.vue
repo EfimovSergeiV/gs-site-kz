@@ -163,7 +163,7 @@
                     </div>
                   </div>
 
-                  <div v-if=" route.path !== '/cts'" class="py-2 absolute w-full left-0 z-40 invisible group-hover:visible ease-in-out transition-opacity duration-100 opacity-0 group-hover:opacity-100">
+                  <div v-if=" route.path !== '/cts'" class="py-2 absolute w-full left-0 z-20 invisible group-hover:visible ease-in-out transition-opacity duration-100 opacity-0 group-hover:opacity-100">
                     <div class="bg-white border border-gray-100 shadow-md shadow-black/30 backdrop-blur-md rounded-t-sm rounded-b-md">
                       <div class="px-2 py-2">
                         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
@@ -217,15 +217,12 @@
           </div>
         </div>
 
-        <!-- <a href="https://maps.app.goo.gl/yh6zuQBe2mQJ5Xyr8" target="blank">
-          <p class="text-gray-600 dark:text-gray-200 text-base "> ул. Топоркова 35, Рудный, 111500</p>
-        </a> -->
 
-        <div class="">          
-          <div class="flex items-end h-full">
-            <div class="grid grid-cols-1">
+        <div class="w-full">          
+          <div class="flex items-end h-full w-full">
+            <div class="grid grid-cols-1 w-full">
               
-              <div class="">
+              <div class="w-full">
                 <div class="flex justify-end gap-4 md:gap-4 uppercase font-semibold py-2">
                   <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
                     <nuxt-link :to="{ name: 'like' }" class="relative text-xs md:text-base">Избранное</nuxt-link>
@@ -241,19 +238,6 @@
                   </div>
                 </div>                
               </div>
-
-              <!-- <div class=" overflow-x-auto">
-                <div class="">
-                  <div class="flex gap-2">
-                    <div v-for="i in 15" :key="i" class="whitespace-nowrap">
-                      <p class="w-full">hallo welt</p>
-                    </div>
-                    
-                  </div>
-                  
-                </div>
-
-              </div> -->
 
 
               <div class="w-full">

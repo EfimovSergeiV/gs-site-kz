@@ -290,31 +290,6 @@ class OneRandomProductView(APIView):
     queryset = ProductModel.objects.filter(activated=True)
     cat_qs = CategoryModel.objects.all()#filter(activated=True)
 
-    # def get(self, request):
-    #     try:
-    #         cts = dict(self.request.query_params)
-    #         prods = []
-
-    #         for ct in cts['ct']:
-    #             all_categories = []
-    #             category_qs = self.cat_qs.get(id=ct)
-    #             children_qs = [ child.id for child in category_qs.get_children() ]
-                
-    #             all_categories.append(int(ct))
-    #             second_child_qs = self.cat_qs.filter(id__in=children_qs)
-    #             all_categories += [ second_category.id for second_category in second_child_qs ]
-    #             for third_child_qs in second_child_qs:
-    #                 all_categories += [third_child.id for third_child in third_child_qs.get_children()]
-
-    #             prods.append(self.queryset.filter(category_id__in=all_categories).order_by("?")[0])
-            
-    #         while len(prods) < 4:
-    #             prods.append(self.queryset.filter(category_id__in=all_categories).order_by("?")[0])
-
-    #         random.shuffle(prods)
-    #         serializer = self.serializer_class(prods[0:4], many=True, context={'request': request})
-            
-    #         return Response(serializer.data)
     def get(self, request):
         try:
             cts = dict(self.request.query_params)
