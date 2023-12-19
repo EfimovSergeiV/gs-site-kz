@@ -52,9 +52,9 @@
 
 
 
-      <div class="hidden lg:block">
+      <div class="hidden lg:block h-full">
         <Swiper
-          class="rounded-md relative w-full"
+          class="rounded-md relative w-full h-full"
           :modules="[]"
           :slides-per-view="1"
           :loop="true" >
@@ -63,7 +63,7 @@
             <nuxt-link :to="slide.link">
               <img
                 :src="slide.image"
-                class="rounded-md w-full border dark:border-gray-700"
+                class="rounded-md w-full h-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
               />             
             </nuxt-link>
           </SwiperSlide>
