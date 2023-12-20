@@ -12,6 +12,7 @@
 
   const { signIn, signOut, token, data, status, lastRefreshedAt } = useAuth()
 
+  const cookiesModal = ref(false)
 
   onMounted( async () => {
 
@@ -30,6 +31,7 @@
       /// Если tmp_id не найден, получаем новый
       const watcher = await $fetch(`${ config.public.baseURL }u/uwatch/`, { method: 'PUT' }).catch((error) => error.data)
       tmp_id.value = watcher.tmp_id
+      cookiesModal.value = true
     }
 
     /// Получаем данные о просмотренных товарах
@@ -183,11 +185,26 @@
           </div>
         </div>
 
-
       </div>
-
-
-
     </div>
+
+
+
+    <transition name="fade">
+      <div v-if="cookiesModal" class="fixed bottom-0 z-50">
+        <div class="bg-gray-700 border-t border-r border-gray-500 px-10 py-4 rounded-tr-3xl">
+          <div class=" flex gap-16 items-center">
+            <div class="">
+              <p class="text-2xl text-gray-300">Мы используем Cookies</p>
+            </div>
+            <div class="">
+              <button @click="cookiesModal = false" class="text-gray-100 text-sm font-semibold bg-blue-600 border border-blue-500 px-8 py-1 rounded-lg">Хорошо</button>
+            </div>
+          </div>
+        </div>
+      </div>      
+    </transition>
+
+
   </div>
 </template>
