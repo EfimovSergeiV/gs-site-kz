@@ -193,9 +193,9 @@
     <transition name="fade">
       <div v-if="cookiesModal" class="fixed bottom-0 z-50">
         <div class="bg-gray-700 border-t border-r border-gray-500 px-10 py-4 rounded-tr-3xl">
-          <div class=" flex gap-16 items-center">
+          <div class="flex gap-6 lg:gap-16 items-center">
             <div class="">
-              <p class="text-2xl text-gray-300">Мы используем Cookies</p>
+              <p class="text-sm lg:text-2xl text-gray-300">Мы используем Cookies</p>
             </div>
             <div class="">
               <button @click="cookiesModal = false" class="text-gray-100 text-sm font-semibold bg-blue-600 border border-blue-500 px-8 py-1 rounded-lg">Хорошо</button>
