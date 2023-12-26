@@ -3,10 +3,10 @@
   const text = "Бренд ESAB - синоним передового опыта в таких областях как: оборудование для ручной сварки и резки, сварочные материалы, автоматизированная сварка, механические системы резки. В каждой из этих сфер ESAB использует постоянно совершенствуемые методы, материалы и ноу-хау, чтобы в полной мере удовлетворить потребности всех секторов промышленности. Компания ESAB разрабатывает высокопроизводительные решения, которые отвечают требованиям заказчиков"
 
   const esabbanners = [
-    {id: 1, image: '/esab-ok.jpg', path: { name: 'prods', query: { ct: 31, w4r4: 'ok48.00' } } },
-    {id: 1, image: '/rogue-banner.jpg', path: { name: 'product-id', params: { id: 1705 } } },
-    {id: 1, image: '/ws-esab.jpg', path: { name: 'prods', query: { ct: 14, brnd: 3 } } },
-    {id: 1, image: '/handy-esab.jpg', path: { name: 'product-id', params: { id: 699 } } },
+    {id: 1, image: '/esab-ok.webp', path: { name: 'prods', query: { ct: 31, w4r4: 'ok48.00' } } },
+    {id: 1, image: '/rogue-banner.webp', path: { name: 'product-id', params: { id: 1705 } } },
+    {id: 1, image: '/ws-esab.webp', path: { name: 'prods', query: { ct: 14, brnd: 3 } } },
+    {id: 1, image: '/handy-esab.webp', path: { name: 'product-id', params: { id: 699 } } },
   ]
 
 </script>
@@ -26,7 +26,7 @@
                 width="800px"
                 height="400px"
                 alt="esab-1"
-                src="/esab-banner-one.jpg" 
+                src="/esab-banner-one.webp" 
               />              
 
             <div class="absolute bottom-0 left-0 top-0">
@@ -34,7 +34,7 @@
                 <div class="flex items-center bg-gray-800/80 rounded-t-md">
                   <div class="p-1">
                     <nuxt-link :to="{ name: 'prods', query: { brnd: 3, page: 1 } }">
-                      <img src="/esab-logo.jpg" class="w-[140px]" />
+                      <img src="/esab-logo.webp" alt="esab-logo" class="w-[140px]" />
                     </nuxt-link>
                   </div>
                   <div class="p-1 text-gray-300">
@@ -75,6 +75,7 @@
               <SwiperSlide v-for="banner in esabbanners" :key="banner.id" class="">
                 <nuxt-link :to="banner.path">
                   <img
+                    alt="esab-banner-1"
                     :src="banner.image"
                     class="rounded-md border dark:border-gray-700 shadow-md "
                   />                 
@@ -96,8 +97,9 @@
       <div class="flex items-center mt-2 p-1 bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md">
         <div class="hidden md:block flex-none">
           <img
-            src="/esab-logo.jpg"
+            src="/esab-logo.webp"
             class="w-[220px]"
+            alt="esab-logo"
           />
         </div>
         <div class=" md:p-4">
