@@ -17,7 +17,7 @@ class UserWatcherModel(models.Model):
     """ Смотрим за поведением пользователей """
 
     tmp_id = models.UUIDField(verbose_name="Идентификатор сессии", default=uuid.uuid4, unique=True) # unique_for_month=timezone.now() 
-    prods = models.JSONField(verbose_name="Просмотренные товары", default=get_structure)
+    prods = models.JSONField(verbose_name="Товары в сессии", null=True, blank=True, ) # default=get_structure
 
     createdAt = models.DateTimeField(verbose_name="Дата создания", default=timezone.now)
     updatedAt = models.DateTimeField(verbose_name="Дата обновления", auto_now=True)

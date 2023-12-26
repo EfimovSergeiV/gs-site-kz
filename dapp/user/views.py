@@ -15,6 +15,7 @@ from main.agent import send_alert_to_agent
 from user import serializers
 from user.models import *
 from django.shortcuts import render
+from django.utils import timezone
 
 
 """ Редактирование статуса сообщений пользователей """
@@ -165,14 +166,13 @@ class FeedbackView(APIView):
 
 
 
+from user.serializers import UserWatcherSerializer, UserWatcherUUIDSerializer
 from django.db.models import Case, When
+from django.db.models import Count, F, Value
 
 def preserved(prods):
     return Case(*[When(pk=pk, then=pos) for pos, pk in enumerate(prods)])
 
-
-from user.serializers import UserWatcherSerializer
-from user.serializers import UserWatcherUUIDSerializer
 class UserWatcherView(APIView):
     """ Пользовательская статистика """
 
@@ -195,18 +195,22 @@ class UserWatcherView(APIView):
 
             tmp_qs = userwatcher_qs[0]
             tmp_data = tmp_qs.prods
-            prods_qs = ProductModel.objects.filter(id__in = tmp_data["viewed"] + tmp_data["like"] + tmp_data["comp"])
 
-            sr = UserWatcherSerializer(
-                {
-                    "viewed": prods_qs.filter(id__in = tmp_data["viewed"]).order_by(preserved(tmp_data["viewed"])),
-                    "like": prods_qs.filter(id__in = tmp_data["like"]).order_by(preserved(tmp_data["like"])),
-                    "comp": prods_qs.filter(id__in = tmp_data["comp"]).order_by(preserved(tmp_data["comp"])),
-                },
-                context = { 'request': request }
-            )
+            if tmp_data:
+                prods_qs = ProductModel.objects.filter(id__in = tmp_data["viewed"] + tmp_data["like"] + tmp_data["comp"])
 
-            return Response(sr.data)
+                sr = UserWatcherSerializer(
+                    {
+                        "viewed": prods_qs.filter(id__in = tmp_data["viewed"]).order_by(preserved(tmp_data["viewed"])),
+                        "like": prods_qs.filter(id__in = tmp_data["like"]).order_by(preserved(tmp_data["like"])),
+                        "comp": prods_qs.filter(id__in = tmp_data["comp"]).order_by(preserved(tmp_data["comp"])),
+                    },
+                    context = { 'request': request }
+                )
+
+                return Response(sr.data)
+            else:
+                return Response(status=status.HTTP_200_OK)
         else:
             return Response(status=status.HTTP_404_NOT_FOUND)
     
@@ -217,10 +221,11 @@ class UserWatcherView(APIView):
         if request.headers.get('Authorization'):
             qs = UserWatcherModel.objects.filter(tmp_id=request.headers.get('Authorization'))
             
-            for key in request.data.keys():
-                current_data = qs[0].prods
-                current_data[key] = [request.data.get(key),] + current_data[key][0:11] if request.data.get(key) not in current_data[key] else current_data[key]
-                qs.update(prods=current_data)
+            if qs:  # Если tmp_id был удалён в активной сессии вручную, то в текущей сессии ошибка
+                for key in request.data.keys():
+                    current_data = qs[0].prods if qs[0].prods else { "comp": [], "like": [], "viewed": [] }
+                    current_data[key] = [request.data.get(key),] + current_data[key][0:11] if request.data.get(key) not in current_data[key] else current_data[key]
+                    qs.update(updatedAt=timezone.now(), prods=current_data)
 
         return Response(status=status.HTTP_201_CREATED)
     
@@ -240,7 +245,13 @@ class UserWatcherView(APIView):
 
 
     def put(self, request):
-        """ Получаем новый или обновляем временнный идентификатор """
+        """ 
+            1. Получаем новый или обновляем временнный идентификатор
+            2. Заодно сначало почистим UUID's с чистой историей
+        """
+
+        empty_tmp_prods = UserWatcherModel.objects.filter(models.Q(prods__isnull=True) | models.Q(prods__exact={})) #.filter(prods=Value('None'))
+        empty_tmp_prods.delete()
 
         if request.data.get('tmp_id'):
             tmp_exist = UserWatcherModel.objects.filter(tmp_id=request.data.get('tmp_id')).exists()

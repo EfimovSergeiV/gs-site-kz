@@ -103,9 +103,19 @@ export const useProductsStore = defineStore('ProductsStore', {
 
     restoreState( data:any ) {
       /// Восстановление состояния сессии пользователя
-      this.comp = data.comp
-      this.like = data.like
-      this.viewed = data.viewed
+
+      console.log(data)
+      if (data){
+        this.comp = data.comp
+        this.like = data.like
+        this.viewed = data.viewed        
+      } else {
+        this.comp = []
+        this.like = []
+        this.viewed = []
+      }
+
+
     },
 
     addProduct(target: string, payload: Product) {

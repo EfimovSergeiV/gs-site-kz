@@ -55,15 +55,18 @@ class UserWatcherAdmin(admin.ModelAdmin):
 
     def parse_prods(self, instance):
         products = instance.prods
-        qs_prods = ProductModel.objects.filter(id__in = products["viewed"] + products["like"] + products["comp"])
-        
-        data = render_to_string('admin_prods.html', {
-            "viewed": qs_prods.filter(id__in = products["viewed"]).order_by(self.preserved(products["viewed"])),
-            "like": qs_prods.filter(id__in = products["like"]).order_by(self.preserved(products["like"])),
-            "comp": qs_prods.filter(id__in = products["comp"]).order_by(self.preserved(products["comp"])),
+        if products:
+            qs_prods = ProductModel.objects.filter(id__in = products["viewed"] + products["like"] + products["comp"])
             
-        })
-        return data
+            data = render_to_string('admin_prods.html', {
+                "viewed": qs_prods.filter(id__in = products["viewed"]).order_by(self.preserved(products["viewed"])),
+                "like": qs_prods.filter(id__in = products["like"]).order_by(self.preserved(products["like"])),
+                "comp": qs_prods.filter(id__in = products["comp"]).order_by(self.preserved(products["comp"])),
+                
+            })
+            return data
+        else:
+            return 'В истории ничего нет'
     
     parse_prods.short_description = 'Товары в сессии'
 
