@@ -104,7 +104,6 @@ export const useProductsStore = defineStore('ProductsStore', {
     restoreState( data:any ) {
       /// Восстановление состояния сессии пользователя
 
-      console.log(data)
       if (data){
         this.comp = data.comp
         this.like = data.like
@@ -119,7 +118,6 @@ export const useProductsStore = defineStore('ProductsStore', {
     },
 
     addProduct(target: string, payload: Product) {
-      console.log('addProd')
       const product: Product = { ...payload}
       
       /// Добавление или удаление товара в корзину

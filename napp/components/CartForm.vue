@@ -72,7 +72,6 @@
       });
 
 
-      console.log(response.value)
       if ( productsStore.cartTotalPrice > 100000 ) {
         clientStore.order = response.value.order
       } else {

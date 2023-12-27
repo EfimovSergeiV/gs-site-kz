@@ -5,7 +5,6 @@
   const notificationsStore = useNotificationsStore()
 
   const delLikeProd = (id) => {
-    console.log('ID ', id)
     $fetch(`${ config.public.baseURL }u/uwatch/`, {
       method: 'DELETE',
       headers: { "Authorization": tmp_id.value, },

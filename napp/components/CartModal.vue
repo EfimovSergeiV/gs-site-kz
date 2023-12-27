@@ -9,7 +9,6 @@
   const goCart = () => {
     productsStore.showCartModal()
     setTimeout(() => {
-      console.log('go cart')
       router.push({ name: 'cart' })
     }, 500)
   }
