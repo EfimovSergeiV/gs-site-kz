@@ -10,7 +10,7 @@
 
       <nuxt-link :to="{ name: 'product-id', params: { id: props.product.id } }">
         <div class="flex md:grid md:grid-cols-1 gap-4">
-          <div class="bg-white rounded-md flex items-center justify-center">
+          <div class="bg-white rounded-md flex items-center justify-center min-h-24 md:min-h-40">
             <div class="w-28 md:w-48 p-1">
               <img :src="props.product.preview_image" :alt="props.product.name" class="rounded-md w-28 md:w-48"/>
             </div>          
@@ -37,7 +37,7 @@
           <div v-if="props.product.price" class="flex gap-1 items-start">
             <p class="text-base text-right font-semibold text-gray-900 dark:text-gray-200">{{ props.product.price.toLocaleString() }}</p>
             <p class="text-base">тг</p>
-          </div>          
+          </div>
           <p v-else  class="text-xs text-right font-medium text-gray-900 dark:text-gray-200">стоимость по запросу</p>
 
 
