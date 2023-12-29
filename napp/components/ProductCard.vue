@@ -8,6 +8,8 @@
   <div class="bg-white dark:bg-gray-800 border border-gray-200 hover:border-gray-300 dark:border-gray-700 hover:dark:border-gray-700 transition-all rounded-md px-2">
     <div class="py-2">
 
+      <p class="pb-1 text-xs font-semibold">{{ props.product.vcode }}</p>
+
       <nuxt-link :to="{ name: 'product-id', params: { id: props.product.id } }">
         <div class="flex md:grid md:grid-cols-1 gap-4">
           <div class="bg-white rounded-md flex items-center justify-center min-h-[6rem] md:min-h-[10rem]">
