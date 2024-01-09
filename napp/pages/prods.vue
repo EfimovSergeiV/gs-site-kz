@@ -13,11 +13,11 @@
 
   useSeoMeta({
     title: `${ products.value.meta.title }`,
-    description: `${ products.value.meta.title }, большой выбор, купить по низким ценам. Гарантия качества, доставка по всей России.`,
+    description: `${ products.value.meta.title }, большой выбор, купить по низким ценам. Гарантия качества.`,
     keywords: `${ products.value.meta.title }, сварочное оборудование, оборудование для сварки, купить электроды, купить проволоку, купить источник, купить сварочный инвертор`,
     ogLocale: 'ru_RU',
     ogTitle: `${ products.value.meta.title }`,
-    ogDescription: `${ products.value.meta.title }, большой выбор, купить по низким ценам. Гарантия качества, доставка по всей России.`,
+    ogDescription: `${ products.value.meta.title }, большой выбор, купить по низким ценам. Гарантия качества.`,
     ogImage: `/og-image.png`,
     twitterCard: `/og-image.png`,
   })
