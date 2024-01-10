@@ -181,7 +181,7 @@
 
         </div>
 
-        <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2 mt-4">
+        <div v-if="props.product.description" class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2 mt-4">
           <p class="text-base my-2 px-2">Описание:</p>
           <div class="px-4 description-style" v-html="props.product.description"></div> 
         </div>
