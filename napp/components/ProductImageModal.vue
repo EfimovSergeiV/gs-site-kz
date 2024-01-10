@@ -34,23 +34,10 @@
                 <div class="h-[28rem]">
                   <Swiper
                     class="rounded-md relative h-[28rem] flex items-center justify-center"
-                    :modules="[SwiperAutoplay, SwiperEffectCreative]"
+                    :modules="[SwiperEffectFade,SwiperAutoplay,]"
                     :slides-per-view="1"
                     :loop="true"
-                    :effect="'creative'"
-                    :autoplay="{
-                      delay: 10000,
-                      disableOnInteraction: true
-                    }"
-                    :creative-effect="{
-                      prev: {
-                        shadow: false,
-                        translate: ['-20%', 0, -1]
-                      },
-                      next: {
-                        translate: ['100%', 0, 0]
-                      }
-                    }"
+                    :effect="'fade'"
                   >
                     <SwiperSlide v-for="slide in productsStore.productImages" :key="slide.id" class="bg-white">
                       <div class="flex items-center justify-center h-full">
