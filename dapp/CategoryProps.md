@@ -265,18 +265,18 @@ CUT Воздушно-плазменная резка
 +    Горелка MIG 15AK, 3 м
 +    Горелка MIG 15AK, 4 м
 +    Горелка MIG 15AK, 5 м
--    Горелка MIG 24 AIR COOL 250A(60%) EURO, 5 м/Aurora
--    Горелка MIG 24KD, 3 м
--    Горелка MIG 24KD, 4 м
--    Горелка MIG 25AK, 3 м
--    Горелка MIG 25AK, 4 м
--    Горелка MIG 36KD, 3 м
--    Горелка MIG 36KD, 4 м
--    Горелка MIG 36KD, 5 м
--	 Сварочная горелка SGL-501 с водяным охлаждением    MIG/MAG
--    Горелка SGL-501 SUREGRIP ERGO- 3 метра (водяное  охлаждение)
--    Горелка TIG INTER TIG 200 AC/DC Pulse (Inn)/Aurora
--    Горелка PSF 315M 3m 25deg
++    Горелка MIG 24 AIR COOL 250A(60%) EURO, 5 м/Aurora
++    Горелка MIG 24KD, 3 м
++    Горелка MIG 24KD, 4 м
++    Горелка MIG 25AK, 3 м
++    Горелка MIG 25AK, 4 м
++    Горелка MIG 36KD, 3 м
++    Горелка MIG 36KD, 4 м
++    Горелка MIG 36KD, 5 м
++	 Сварочная горелка SGL-501 с водяным охлаждением    MIG/MAG
++    Горелка SGL-501 SUREGRIP ERGO- 3 метра (водяное  охлаждение)
++    Горелка TIG INTER TIG 200 AC/DC Pulse (Inn)/Aurora
++    Горелка PSF 315M 3m 25deg
 тиг
 -    Горелка BLUELINE ERGO TIG SR-26 (4 метра)
 газовые

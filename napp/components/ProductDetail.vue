@@ -15,32 +15,46 @@
       <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 p-2 mb-4">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div class="">
-            <div class="flex h-full min-h-[340px] bg-white rounded-md cursor-zoom-in relative" @click="productsStore.showProductImages(product.prod_img)">
+
+
+            <div v-if="product.prod_img.length > 0" class="flex h-full min-h-[340px] bg-white rounded-md cursor-zoom-in relative" @click="productsStore.showProductImages(product.prod_img)">
               <div class="flex gap-4">
-
-
                 <div class="px-3 py-3">
                   <div v-for="image in props.product.prod_img.slice(0, 4)" :key="image.id" class="w-[80px] h-[80px] rounded-md bg-white flex items-center justify-center">
                     <img :src="image.image" class="" />
                   </div>
                 </div>
-
-
               </div>
               <div class="flex items-center justify-center w-full">
                 <div class="bg-white p-4">
                   <img :src="props.product.preview_image" :alt="props.product.name" />
                 </div>
               </div>
-
               <div v-if="props.product.brand" class="absolute top-0 right-0">
                 <div class="px-4 py-2">
                   <img :src="props.product.brand.image" class="h-24" />
                 </div>
-                
               </div>
-
             </div>
+
+            <div v-else class="flex h-full min-h-[340px] bg-white rounded-md relative">
+              <div class="flex gap-4">
+                <div class="px-3 py-3">
+
+                </div>
+              </div>
+              <div class="flex items-center justify-center w-full">
+                <div class="bg-white p-4">
+                  <img :src="props.product.preview_image" :alt="props.product.name" />
+                </div>
+              </div>
+              <div v-if="props.product.brand" class="absolute top-0 right-0">
+                <div class="px-4 py-2">
+                  <img :src="props.product.brand.image" class="h-24" />
+                </div>
+              </div>
+            </div>
+
           </div>
 
           <div class="">
