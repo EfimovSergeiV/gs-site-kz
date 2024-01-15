@@ -3,7 +3,11 @@
 
   const config = useRuntimeConfig()
   const route = useRoute()
-  const tmp_id = useCookie('tmp_id')
+  const tmp_id = useCookie('tmp_id', {
+    sameSite: 'strict',
+    // default: () => 'no',
+    maxAge: 21 * 24 * 60 * 60,
+  })
 
   const shopStore = useShopStore()
   const productsStore = useProductsStore()
