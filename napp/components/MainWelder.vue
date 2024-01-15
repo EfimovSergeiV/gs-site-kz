@@ -69,13 +69,13 @@
                       </div>
                     </div>
                     <div class="grid grid-cols-1 gap-2">
-                      <nuxt-link :to="{ name: 'prods', query: { 'ct': 77 }}" class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all">Сварочные маски</nuxt-link>
+                      <nuxt-link :to="{ name: 'prods', query: { 'ct': 6 }}" class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all">Сварочные маски</nuxt-link>
                       <div class="flex gap-1">
-                        <nuxt-link :to="{ name: 'prods', query: { 'ct': 14 }}" class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all">Электроды</nuxt-link>
+                        <nuxt-link :to="{ name: 'prods', query: { 'ct': 11 }}" class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all">Электроды</nuxt-link>
                         <p class="text-xs"> и </p>
-                        <nuxt-link :to="{ name: 'prods', query: { 'ct': 18 }}" class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all">проволока</nuxt-link>
+                        <nuxt-link :to="{ name: 'prods', query: { 'ct': 12 }}" class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all">проволока</nuxt-link>
                       </div>
-                      <nuxt-link :to="{ name: 'prods', query: { 'ct': 5 }}" class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all">Химия для сварки</nuxt-link>
+                      <nuxt-link :to="{ name: 'prods', query: { 'ct': 14 }}" class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all">Химия для сварки</nuxt-link>
                     </div>
                   </div>
                 </div>                     
