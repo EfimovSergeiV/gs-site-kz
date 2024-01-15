@@ -56,7 +56,7 @@
 
 <template>
  
-  <div class="bg-gradient-to-br from-gray-300 to-gray-200 dark:from-gray-900 dark:to-gray-800 w-s creen md:w-[420px] h-screen overflow-y-auto border-r border-gray-300 dark:border-gray-700">
+  <div class="bg-gradient-to-br from-gray-300 to-gray-200 dark:from-gray-900 dark:to-gray-800 w-screen md:w-[420px] h-screen overflow-y-auto border-r border-gray-300 dark:border-gray-700">
     <div class="p-4 relative">
 
 
@@ -135,7 +135,7 @@
 
     </div>    
 
-    <div class="absolute bottom-0 right-0 w-full">
+    <div class="fixed bottom-0 left-0 w-screen md:w-[420px]">
       <div class="bg-gray-300 dark:bg-gray-800">
         <div class="flex justify-end p-4">
           <button @click="clearFilter" class="text-base mx-2 mdi mdi-filter-variant-minus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Очистить</button>
