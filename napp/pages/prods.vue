@@ -29,10 +29,16 @@
   }
 
   watch(() => route.fullPath, async (fullPath) => {
-      const { data: prods }  = await useFetch(`${ config.public.baseURL }c/prods/`, { params: route.query })
-      const { data: crumbs } = await useFetch(`${ config.public.baseURL }c/breadcrumb/`, { params: route.query })
-      products.value = ( await prods.value )
-      breadcrumbs.value = ( await crumbs.value )
+      const { data: brands_updated }  = await useFetch(`${ config.public.baseURL }c/ctbrand/`, { params: route.query })
+      const { data: prods_updated }  = await useFetch(`${ config.public.baseURL }c/prods/`, { params: route.query })
+      const { data: props_updated }  = await useFetch(`${ config.public.baseURL }c/props/`, { params: route.query })
+      const { data: breadcrumbs_updated } = await useFetch(`${ config.public.baseURL }c/breadcrumb/`, { params: route.query })
+      
+      brands.value = ( await brands_updated.value )
+      products.value = ( await prods_updated.value )
+      props.value = ( await props_updated.value)
+      breadcrumbs.value = ( await breadcrumbs_updated.value )
+      
       scrollToTop()
     }
   )
