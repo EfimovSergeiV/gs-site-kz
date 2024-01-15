@@ -46,6 +46,7 @@
     })
   }
 
+  // ? TypeError: Cannot destructure property 'country' of '(intermediate value)' as it is null
   const searchCountries = computed(() => {
     if (searchTerm.value === '') {
       return []
@@ -54,10 +55,7 @@
     let matches = 0
 
     return cities.filter(country => {
-      if (
-        country.toLowerCase().includes(searchTerm.value.toLowerCase())
-        && matches < 10
-      ) {
+      if ( country.toLowerCase().includes(searchTerm.value.toLowerCase()) && matches < 10 ) {
         matches++
         return country
       }
