@@ -239,7 +239,7 @@ class OrderViews(APIView):
             serializer.save()
 
             # Логика оповещений
-            # send_alert_to_agent(order=serializer.data)
+            send_alert_to_agent(order=serializer.data)
 
             mail_list = [
                 # 'shop@glsvar.ru',
