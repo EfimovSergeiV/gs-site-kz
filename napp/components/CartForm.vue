@@ -53,7 +53,7 @@
           email: clientStore.client.email,
           comment: clientStore.client.comment,
           delivery: clientStore.client.delivery,    
-          // adress: clientStore.client.adress.adress,
+          adress: 'ул. Топоркова 35, Рудный',   //clientStore.client.adress.adress,
 
           entity: clientStore.client.entity,
           company: clientStore.client.company,

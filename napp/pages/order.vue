@@ -41,6 +41,11 @@
       
       <div class="bg-white dark:bg-gray-800 rounded-md border dark:border-gray-700 px-4 py-4 min-h-[65vh]">
         <div v-if="orderinfo">
+
+          <div class="">
+            <p class="">Ваш заказ успешно принят!</p>
+          </div>
+
           <div class=" py-6">
             <p class="my-2">Номер заказа: <span class="font-semibold ml-2">{{ orderinfo.order_number }}</span></p>
             <p class="my-2">Статус: <span class="font-semibold ml-2" v-if="orderinfo.status === 'notprocessed'">В обработке</span><span class=" ml-2" v-else>Обработан</span></p>
@@ -62,6 +67,11 @@
               </div>
               
             </div>
+
+            <div class="">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9607.746256144887!2d63.1143089!3d52.9855424!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43cd03eb0088f70d%3A0xfaaebd2d312ed8f7!2z0JPQu9Cw0LLQvdGL0Lkg0KHQstCw0YDRidC40Lo!5e0!3m2!1sru!2sru!4v1695649108350!5m2!1sru!2sru" width="100%" height="300" frameborder="0" loading="lazy" class="rounded-md"></iframe>
+            </div>
+
           </div>
 
         </div>

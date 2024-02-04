@@ -96,6 +96,7 @@ class CustomerSerializer(serializers.ModelSerializer):
             'delivery_summ',
             'person',
             'phone',
+            'adress',
             'email',
             'comment',
             'company',
