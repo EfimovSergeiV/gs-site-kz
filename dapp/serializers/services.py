@@ -26,6 +26,6 @@ class ProdsServiceSerializer(serializers.Serializer):
 
     shop_UID = serializers.CharField(max_length=100,)
     prod_UID = serializers.CharField(max_length=100,)
-    price = serializers.FloatField() 
+    price = serializers.FloatField() # Узнать в каком формате прилетает цена FLOAT или INT
     currency = serializers.CharField(max_length=5, allow_blank=True)
     quantity = serializers.FloatField()
