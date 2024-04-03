@@ -10,13 +10,16 @@
     body: { "viewed": product.value.id }
   })
 
+  
+  const price = ref("0")
   const brand = ref('noname')
+  if ( product.value.brand ) {
+    brand.value = product.value.brand.brand
+  }
+  if ( product.value.price ) {
+    price.value = `${product.value.price}0`
+  }
 
-  onMounted( async () => {
-    if ( product.value.brand ) {
-      brand.value = product.value.brand.brand
-    }
-  })
 
   useHead({
     script: [{
@@ -44,7 +47,7 @@
               '@type': 'Offer',
               "url": 'https://glsvar.kz/product/' + product.value.id,
               "priceCurrency": 'KZT',
-              "price": product.value.price,
+              "price": price.value,
               "itemCondition": 'https://schema.org/UsedCondition',
               "availability": 'https://schema.org/InStock',
             },

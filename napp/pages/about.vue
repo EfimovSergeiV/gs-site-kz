@@ -40,14 +40,14 @@
 
         <div class="px-4">
           <div class="">
-            <blockquote class="text-2xl font-semibold italic text-center text-gray-700 dark:text-gray-300">
-              
-              <span class="px-4">ЕСЛИ НУЖНО</span>
-              <span class="before:block before:absolute before:-inset-2 before:-skew-y-3 before:bg-blue-600 relative inline-block my-2 lg:my-0">
-                <span class="relative text-white"> СВАРОЧНОЕ ОБОРУДОВАНИЕ </span>
+            <blockquote class="text-xs md:text-2xl font-semibold italic text-center text-gray-700 dark:text-gray-300">
+          
+              <span class="text-base md:text-2xl px-4">ЕСЛИ НУЖНО</span>
+              <span class="before:block before:absolute before:-inset-2 before:-skew-y-3 before:bg-blue-600 relative inline-block my-4 lg:my-2">
+                <span class="text-base md:text-2xl relative text-white"> СВАРОЧНОЕ ОБОРУДОВАНИЕ </span>
               </span>
-              <span class="px-4">,ЗАКАЗЫВАЙТЕ ОНЛАЙН </span>
-              <p class="mt-1">НА GLSVAR.KZ!</p>
+              <span class="text-base md:text-2xl px-4">,ЗАКАЗЫВАЙТЕ ОНЛАЙН </span>
+              <p class="text-base md:text-2xl mt-1">НА GLSVAR.KZ!</p>
               
             </blockquote>
 
