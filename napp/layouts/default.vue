@@ -85,7 +85,7 @@
                 <nuxt-link :to="{ name: 'index' }" class="relative text-xs md:text-base">Главная</nuxt-link>
               </div>
               <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
-                <nuxt-link :to="{ name: 'lk' }" class="relative text-xs md:text-base">Избранное</nuxt-link>
+                <nuxt-link :to="{ name: 'like' }" class="relative text-xs md:text-base">Избранное</nuxt-link>
               </div>
               <div class="before:block before:absolute before:-inset-2 before:-skew-y-3 transition-all duration-0 relative inline-block my-2">
                 <nuxt-link :to="{ name: 'compare' }" class="relative text-xs md:text-base">В сравнении</nuxt-link>
