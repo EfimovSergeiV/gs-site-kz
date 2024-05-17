@@ -72,8 +72,11 @@
       });
 
 
-      if ( productsStore.cartTotalPrice > 100000 ) {
+      if ( productsStore.cartTotalPrice > 38000 ) {
+        
         clientStore.order = response.value.order
+        ctx.$metrika.reachGoal('EXPENSIVE_ORDER')
+
       } else {
         await router.push({ name: 'order', hash: `#${ response.value.order }` })
       }

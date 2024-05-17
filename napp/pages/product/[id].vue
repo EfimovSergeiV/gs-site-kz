@@ -10,54 +10,63 @@
     body: { "viewed": product.value.id }
   })
 
-  
+
   const price = ref("0")
   const brand = ref('noname')
   if ( product.value.brand ) {
     brand.value = product.value.brand.brand
   }
   if ( product.value.price ) {
-    price.value = `${product.value.price}0`
+    price.value = `${product.value.price}00`
   }
 
 
-  useHead({
-    script: [{
-    type: 'application/ld+json',
-    innerHTML: JSON.stringify({
-        "type": "application/ld+json",
-        "textContent": {
-            "@context": "https://schema.org",
-            "@type": "Product",
-            "id": product.value.vcode,
-            "name": product.value.name,
-            "image": product.value.preview_image,
-            "description": product.value.clean_desc,
-            "mpn": product.value.vcode,
-            "brand": {
-              "@type": 'Brand',
-              "name": brand.value,
-            },
-            "aggregateRating": {
-              '@type': 'AggregateRating',
-              "ratingValue": product.value.rating,
-              "reviewCount": '5',
-            },
-            "offers": {
-              '@type': 'Offer',
-              "url": 'https://glsvar.kz/product/' + product.value.id,
-              "priceCurrency": 'KZT',
-              "price": price.value,
-              "itemCondition": 'https://schema.org/UsedCondition',
-              "availability": 'https://schema.org/InStock',
-            },
-          }
-      })
-    }],
-  })
+  if ( product.value.id ) {
+    useHead({
+      script: [{
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+          "type": "application/ld+json",
+          "textContent": {
+              "@context": "https://schema.org",
+              "@type": "Product",
+              "id": product.value.vcode,
+              "name": product.value.name,
+              "image": product.value.preview_image,
+              "description": product.value.clean_desc,
+              "mpn": product.value.vcode,
+              "brand": {
+                "@type": 'Brand',
+                "name": brand.value,
+              },
+              "aggregateRating": {
+                '@type': 'AggregateRating',
+                "ratingValue": product.value.rating,
+                "reviewCount": '5',
+              },
+              "offers": {
+                '@type': 'Offer',
+                "url": 'https://glsvar.kz/product/' + product.value.id,
+                "priceCurrency": 'KZT',
+                "price": price.value,
+                "itemCondition": 'https://schema.org/UsedCondition',
+                "availability": 'https://schema.org/InStock',
+              },
+            }
+        })
+      }],
+    })    
+  }
+
+
+  const status = ref('заказать')
+
+  if ( product.value.status === 'stock' ) {
+    status.value = 'купить'
+  }
 
   useSeoMeta({
-    title: `${ product.value.name } - Главный Сварщик`,
+    title: `${ product.value.name } - ${status.value} онлайн в Главный Сварщик`,
     description: `${ product.value.clean_desc }`,
     keywords: `${ product.value.name }, Главный Сварщик - сварочное оборудование, оборудование для сварки, купить электроды, купить проволоку, купить источник, купить сварочный инвертор`,
     ogLocale: 'ru_RU',

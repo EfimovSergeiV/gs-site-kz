@@ -64,6 +64,12 @@
 
     <div class="mx-auto px-4 max-w-6xl lg:px-8">
 
+
+      <div class="flex items-center justify-end pb-2">
+        <h1 class="text-xl font-semibold">{{ products.meta.title }}</h1>
+      </div>
+
+
       <div class="flex items-center justify-between">
 
         <div class="hidden md:block">
