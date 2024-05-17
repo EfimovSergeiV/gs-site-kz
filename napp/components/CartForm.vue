@@ -1,4 +1,5 @@
 <script setup>
+  const ctx = useNuxtApp()
   const config = useRuntimeConfig()
   const router = useRouter()
 
@@ -73,7 +74,6 @@
 
 
       if ( productsStore.cartTotalPrice > 38000 ) {
-        
         clientStore.order = response.value.order
         ctx.$metrika.reachGoal('EXPENSIVE_ORDER')
 
