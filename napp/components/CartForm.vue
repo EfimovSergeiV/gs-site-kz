@@ -82,6 +82,7 @@
       }
       
       productsStore.clearCartProducts()
+      ctx.$metrika.reachGoal('SEND_ORDER')
 
     } else {
       errorMsg.value = 'Ошибка: Укажите как с вами связаться.'

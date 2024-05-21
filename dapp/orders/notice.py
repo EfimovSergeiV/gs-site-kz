@@ -50,7 +50,7 @@ class OrderMails():
             'client_product': data['client_product']
         })
         send_mail(
-            'Заказ на сумму ' + str(data['total']) + 'RUB успешно принят',
+            'Заказ на сумму ' + str(data['total']) + 'тг успешно принят',
             message = html_content,
             from_email = 'shop@glsvar.ru',
             recipient_list = email,
