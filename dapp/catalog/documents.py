@@ -1,10 +1,7 @@
-from django.db import models
-from django.db.models.fields import CharField
-from django_elasticsearch_dsl import Document, fields
-from django_elasticsearch_dsl.registries import registry
-from elasticsearch_dsl.field import Keyword
-
 from catalog.models import ProductModel
+from django_opensearch_dsl import Document
+from django_opensearch_dsl.registries import registry
+from django_opensearch_dsl.fields import GeoPointField
 
 
 @registry.register_document

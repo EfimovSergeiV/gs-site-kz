@@ -416,15 +416,9 @@ class SearchView(APIView):
 
     def post(self, request):
         search_query = request.data['name']
-        query = Q('multi_match', query=search_query,
-                fields=[
-                    'vcode',
-                    'name',
-                    'keywords',
-                ], fuzziness='auto')
-
-        search = self.document_class.search().query(query)[0:30]
-        response = search.execute()
+        
+        s = ProductDocument.search().query('multi_match', query=search_query, fields=['name', 'vcode', 'keywords'], fuzziness='auto')
+        response = s.execute()
 
         prods = [prod.id for prod in response ]
         preserved = Case(*[When(pk=pk, then=pos) for pos, pk in enumerate(prods)])
