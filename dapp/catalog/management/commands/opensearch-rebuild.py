@@ -21,7 +21,7 @@ opensearch_client = OpenSearch(
     verify_certs=True
 )
 
-index_name = 'productskz'
+
 
 # Функция для записи данных в индекс
 def index_document(index_name, doc_id, document):
@@ -35,11 +35,16 @@ def index_document(index_name, doc_id, document):
 
 
 for product in ProductModel.objects.filter(activated=True):
+    
+    index_name = 'productskz'
+    
     document = {
         'id': product.id,
         'vcode': product.vcode,
         'name': product.name,
         'keywords': product.keywords,
     }
+
     response = index_document(index_name, doc_id=product.id, document=document)
-    print(f'Document indexed: {response}')
+    
+    print(f'{ document["id"]}\t{response["result"]} {response["_index"]} {document["name"]}')
