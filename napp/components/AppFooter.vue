@@ -1,5 +1,7 @@
 <script setup>
   const config = useRuntimeConfig()
+
+  const currentData = new Date().getFullYear()
   
   const { data: brands } = await useFetch(`${ config.public.baseURL }c/brands/`)
 
@@ -107,7 +109,7 @@
       <div class="">
         <div class="flex items-center justify-start">
 
-          <span class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 flex items-end justify-center md:justify-start">© 2023 <p class="mx-1">Главный сварщик</p></span>
+          <span class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 flex items-end justify-center md:justify-start">© {{ currentData }} <p class="mx-1">Главный сварщик</p></span>
 
         </div>
       </div>
