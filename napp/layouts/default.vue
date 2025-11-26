@@ -143,51 +143,30 @@
         </div>
       </div>
 
-      <div  v-if=" route.path !== '/banner'" class="">
+      <div v-if=" route.path !== '/banner'" class="">
         <div class="">
           <div class="fixed z-10 bottom-60 md:bottom-54 right-20 hover:right-24 transition-all duration-500">
             <div class="relative">
               <div class="absolute z-40">
-                <div class="-rotate-90 bg-blue-600 px-4 pb-12 group rounded-md w-44 cursor-pointer" @click="shopStore.showWriteUsModal">
-                  <div class="flex items-center justify-center group-hover:text-gray-100 text-gray-300 font-bold transition-all duration-500">
-                    <div class="">
-                      <p class="text-sm mx-2">Напишите нам</p>
-                    </div>
-                    <div class="rotate-90">
-                      <p class="mdi mdi-24px mdi-message-text-outline"></p>
+
+                <a  href="https://wa.me/+77084238070" target="_blank">
+                  <div class="-rotate-90 bg-green-500 border border-green-300 px-4 pb-12 group rounded-md w-44 cursor-pointer">
+                    <div class="flex items-center justify-center group-hover:text-gray-100 text-gray-300 font-bold transition-all duration-500">
+                      <div class="">
+                        <p class="text-xs text-white px-0.5 pr-2 uppercase">Напишите нам</p>
+                      </div>
+                      <div class="rotate-90">
+                        <p class="mdi text-white font-semibold mdi-24px mdi-whatsapp"></p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </a>
+
               </div>
             </div>
           </div>
         </div>
 
-
-        <div class="">
-          <div class="fixed z-10 bottom-16 -right-[126px] hover:right-0 focus:right-0 transition-all duration-500">
-            <div class="relative">
-              <div class="">
-                <div class=" bg-blue-600 group rounded-l-md cursor-pointer transition-all duration-500">
-                  <div class="flex items-center justify-center">
-                    <div class="grid grid-cols-4 items-center gap-4 px-1">
-                      <p class="mdi mdi-24px mdi-cellphone-link text-gray-200 pl-0.5"></p>
-                      <a class="" title="WhatsApp" href="shopStore.shop.whatsapp" target="_blank">
-                        <img src="/WhatsApp-logo.webp" class="w-5" />
-                      </a>
-                      <a class="" title="Telegramm" href="shopStore.shop.telegram" target="_blank">
-                        <img src="/telegr-logo.webp" class="w-5" />
-                      </a>
-                      <a class="" title="Viber" href="shopStore.shop.viber" target="_blank">
-                        <img src="/viber-logo.webp" class="w-5" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
       </div>
     </div>

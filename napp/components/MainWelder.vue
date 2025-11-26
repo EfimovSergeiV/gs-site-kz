@@ -10,7 +10,7 @@
             
             <div class="grid grid-cols-1 gap-2">
 
-              <div class="flex gap-2">
+              <div class="flex flex-wrap gap-x-1 md:gap-x-2">
                 <p class="text-base md:text-xl font-semibold uppercase shadow-2xl text-red-500">Становись профессионалом</p>
                 <p class="text-base md:text-xl font-bold uppercase shadow-2xl text-gray-700 dark:text-gray-100 ">с нами!</p>
               </div>
